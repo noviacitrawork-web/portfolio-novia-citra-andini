@@ -3,8 +3,8 @@ import nodemailer from 'nodemailer';
 
 // Simple in-memory rate limiting (per container instance)
 const rateLimit = new Map<string, number[]>();
-const WINDOW_MS = 60 * 60 * 1000; // 1 hour
-const MAX_REQUESTS = 3; // 3 emails per hour
+const WINDOW_MS = 15 * 60 * 1000; // 15 minutes
+const MAX_REQUESTS = 5; // 5 emails per 15 minutes
 
 export default async function handler(
   request: VercelRequest,
@@ -19,7 +19,7 @@ export default async function handler(
   const recentRequests = requestTimestamps.filter(time => now - time < WINDOW_MS);
   
   if (recentRequests.length >= MAX_REQUESTS) {
-    return response.status(429).json({ error: 'Terlalu banyak percobaan pengiriman email. Silakan coba lagi dalam 1 jam.' });
+    return response.status(429).json({ error: 'Terlalu banyak percobaan pengiriman email. Silakan coba lagi dalam 15 menit.' });
   }
   
   // Update rate limit record
