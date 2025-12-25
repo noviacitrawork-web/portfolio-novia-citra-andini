@@ -55,15 +55,21 @@ const Projects: React.FC = () => {
                   ></iframe>
                 </div>
                 
-                {/* Manual Fallback Button */}
+                {/* Fallback Link */}
                 <div className="text-center py-3 bg-card/50 border-t border-gray-800">
-                  <button 
-                    onClick={() => setShowFallback(true)}
+                  <a 
+                    href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7289203499630829568" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setShowFallback(true);
+                    }}
                     className="inline-flex items-center gap-2 text-xs text-gray-500 hover:text-primary transition-colors"
                   >
                     <ExternalLink size={12} />
-                    <span>Can't see the video? Click here to watch on LinkedIn</span>
-                  </button>
+                    <span>Can't see the video? Click here</span>
+                  </a>
                 </div>
               </div>
             ) : (
