@@ -20,8 +20,16 @@ export const SOCIAL_LINKS = [
   { name: 'LinkedIn', icon: <Linkedin className="w-5 h-5" />, href: PERSONAL_INFO.linkedin },
   { name: 'GitHub', icon: <Github className="w-5 h-5" />, href: "https://github.com/masnajiib" },
   { name: 'Instagram', icon: <Instagram className="w-5 h-5" />, href: "https://www.instagram.com/almas_a45amg" },
-  { name: 'Email', icon: <Mail className="w-5 h-5" />, href: `mailto:${PERSONAL_INFO.email}` },
-  { name: 'WhatsApp', icon: <Phone className="w-5 h-5" />, href: "https://wa.me/6285951409211" },
+  { 
+    name: 'Email', 
+    icon: <Mail className="w-5 h-5" />, 
+    href: `mailto:${PERSONAL_INFO.email}?subject=${encodeURIComponent("Halo Almas, Saya ingin berdiskusi")}&body=${encodeURIComponent("Halo Almas,\n\nSaya tertarik dengan profil Anda dan ingin mendiskusikan potensi kerjasama.\n\nTerima kasih.")}` 
+  },
+  { 
+    name: 'WhatsApp', 
+    icon: <Phone className="w-5 h-5" />, 
+    href: `https://wa.me/6285951409211?text=${encodeURIComponent("Halo Almas, saya melihat portofolio Anda dan ingin berdiskusi lebih lanjut.")}` 
+  },
 ];
 
 export const EXPERIENCES: Experience[] = [
