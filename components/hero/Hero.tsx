@@ -245,7 +245,7 @@ const Hero: React.FC = () => {
                 className="absolute inset-0 z-0"
                 style={{ rotate: rotation }}
               >
-                 <svg className="w-full h-full dark:drop-shadow-[0_0_15px_rgba(6,182,212,0.3)] pointer-events-none" viewBox="0 0 100 100">
+                 <svg className="w-full h-full dark:drop-shadow-[0_0_30px_rgba(6,182,212,0.5)] pointer-events-none" viewBox="0 0 100 100">
                     <defs>
                       <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" stopColor="#3b82f6" />
@@ -266,7 +266,7 @@ const Hero: React.FC = () => {
               </motion.div>
               
               {/* Inner Profile Image - Remains Static */}
-              <div className="relative w-[85%] h-[85%] rounded-full border border-gray-200 dark:border-gray-800 overflow-hidden dark:shadow-[0_0_30px_rgba(6,182,212,0.5)] z-10 bg-white dark:bg-gray-900 pointer-events-none select-none">
+              <div className="relative w-[85%] h-[85%] rounded-full border border-gray-200 dark:border-gray-800 overflow-hidden z-10 bg-white dark:bg-gray-900 pointer-events-none select-none">
                  <img 
                    src={PERSONAL_INFO.profileImage}
                    alt={`${PERSONAL_INFO.firstName} ${PERSONAL_INFO.lastName}`}
