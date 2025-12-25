@@ -57,6 +57,38 @@ const Hero: React.FC = () => {
     isDragging.current = false;
   };
 
+  const scrollToSection = (href: string) => {
+    const targetId = href.replace('#', '');
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+      const startPosition = window.pageYOffset;
+      const distance = targetPosition - startPosition;
+      const duration = 1000; // 1 second for smooth scroll
+      let startTime: number | null = null;
+
+      const animation = (currentTime: number) => {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        
+        // Easing function for smooth animation (easeInOutCubic)
+        const easeInOutCubic = (t: number): number => {
+          return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        };
+        
+        window.scrollTo(0, startPosition + distance * easeInOutCubic(progress));
+        
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        }
+      };
+      
+      requestAnimationFrame(animation);
+    }
+  };
+
   // Find WhatsApp link
   const whatsappLink = SOCIAL_LINKS.find(link => link.name === 'WhatsApp')?.href || "#";
 
@@ -149,6 +181,10 @@ const Hero: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href="#projects" 
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('#projects');
+              }}
               className="px-8 py-3 bg-primary hover:bg-blue-600 text-white font-medium rounded-full flex items-center justify-center transition-all shadow-lg shadow-blue-500/25"
             >
               View Projects <ChevronRight className="ml-2 w-4 h-4" />
