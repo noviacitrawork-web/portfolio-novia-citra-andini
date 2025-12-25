@@ -12,25 +12,29 @@ const Hero: React.FC = () => {
   const rotation = useMotionValue(0);
   const velocity = useRef(0.5); // Initial idle speed (clockwise)
   const isDragging = useRef(false);
+  const lastTime = useRef(performance.now());
 
   // Physics Loop for Fidget Spinner Effect
-  useAnimationFrame((time, delta) => {
+  useAnimationFrame((time) => {
+    const now = performance.now();
+    const deltaTime = Math.min(now - lastTime.current, 32); // Cap delta to avoid jumps
+    lastTime.current = now;
+
     if (!isDragging.current) {
-      const friction = 0.98;
-      const idleSpeed = 0.5; // Always return to clockwise (positive)
+      // Time-normalized friction (roughly 0.98 per 16ms frame)
+      const friction = Math.pow(0.98, deltaTime / 16);
+      const idleSpeed = 0.5; 
       
-      // If moving faster than idle speed (in either direction), apply friction
       if (Math.abs(velocity.current) > idleSpeed) {
         velocity.current *= friction;
       } else {
-        // If slow (or spinning backwards slowly), gently accelerate towards positive idle speed
-        // This ensures if it was spinning left, it slows to stop then starts spinning right
-        const recoveryFactor = 0.02; 
+        // Recovery towards idle clockwise rotation
+        const recoveryFactor = 0.002 * deltaTime; 
         velocity.current = velocity.current * (1 - recoveryFactor) + idleSpeed * recoveryFactor;
       }
       
-      // Update rotation
-      rotation.set(rotation.get() + velocity.current);
+      // Update rotation based on velocity and time
+      rotation.set(rotation.get() + velocity.current * (deltaTime / 16));
     }
   });
 
@@ -39,12 +43,14 @@ const Hero: React.FC = () => {
   };
 
   const handlePan = (event: any, info: any) => {
-    // Calculate velocity based on drag movement
-    const sensitivity = 0.5; 
-    velocity.current = info.delta.x * sensitivity;
+    // Calculate velocity based on drag movement delta
+    // We use info.delta.x and y to make it feel responsive in all drag directions
+    const sensitivity = 0.4; 
+    const dragForce = (info.delta.x - info.delta.y) * sensitivity;
+    velocity.current = dragForce;
     
-    // Direct rotation tracking while dragging
-    rotation.set(rotation.get() + velocity.current);
+    // Immediate feedback
+    rotation.set(rotation.get() + dragForce);
   };
 
   const handlePanEnd = () => {
@@ -61,24 +67,20 @@ const Hero: React.FC = () => {
     let timeout: ReturnType<typeof setTimeout>;
 
     if (isDeleting) {
-      // Deleting
       if (displayRole.length > 0) {
         timeout = setTimeout(() => {
           setDisplayRole(currentRole.substring(0, displayRole.length - 1));
         }, 50);
       } else {
-        // Finished deleting
         setIsDeleting(false);
         setRoleIndex((prev) => (prev + 1) % roles.length);
       }
     } else {
-      // Typing
       if (displayRole.length < currentRole.length) {
         timeout = setTimeout(() => {
           setDisplayRole(currentRole.substring(0, displayRole.length + 1));
         }, 100);
       } else {
-        // Finished typing, pause
         timeout = setTimeout(() => {
           setIsDeleting(true);
         }, 2000);
@@ -130,9 +132,8 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="flex flex-wrap gap-4 lg:justify-center"
+            className="flex flex-wrap gap-4"
           >
-            {/* Hire Me Button (Primary Action) */}
             <motion.a 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -144,7 +145,6 @@ const Hero: React.FC = () => {
               Hire Me Now <MessageCircle className="ml-2 w-4 h-4 fill-current" />
             </motion.a>
 
-            {/* View Projects Button */}
             <motion.a 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -154,7 +154,6 @@ const Hero: React.FC = () => {
               View Projects <ChevronRight className="ml-2 w-4 h-4" />
             </motion.a>
 
-            {/* Download CV Button */}
             <motion.a 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -168,14 +167,13 @@ const Hero: React.FC = () => {
             </motion.a>
           </motion.div>
 
-          {/* Social Links Section in Hero */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="flex items-center gap-6 pt-2 lg:justify-center"
+            className="flex items-center gap-6 pt-2"
           >
-            {SOCIAL_LINKS.map((link, index) => (
+            {SOCIAL_LINKS.map((link) => (
               <motion.a
                 key={link.name}
                 href={link.href}
@@ -196,17 +194,17 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 1 }}
-          className="order-1 lg:order-2 flex justify-center lg:justify-end lg:-mt-16 relative"
+          className="order-1 lg:order-2 flex justify-center lg:justify-end relative"
         >
-           {/* Interactive Fidget Spinner Area - Wrapper captures input but DOES NOT rotate itself */}
+           {/* Interactive Fidget Spinner Area */}
            <motion.div 
-             className="relative w-72 h-72 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] flex items-center justify-center cursor-grab active:cursor-grabbing"
+             className="relative w-72 h-72 md:w-96 md:h-96 lg:w-[480px] lg:h-[480px] flex items-center justify-center cursor-grab active:cursor-grabbing"
              onPanStart={handlePanStart}
              onPan={handlePan}
              onPanEnd={handlePanEnd}
+             style={{ touchAction: 'none' }} // CRITICAL: Prevents scrolling interference on mobile/tablet
            >
-              
-              {/* Rotating Segmented Border - Only this part rotates */}
+              {/* Rotating Segmented Border */}
               <motion.div 
                 className="absolute inset-0 z-0"
                 style={{ rotate: rotation }}
@@ -214,8 +212,8 @@ const Hero: React.FC = () => {
                  <svg className="w-full h-full drop-shadow-[0_0_15px_rgba(6,182,212,0.3)] pointer-events-none" viewBox="0 0 100 100">
                     <defs>
                       <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#3b82f6" /> {/* Primary Blue */}
-                        <stop offset="100%" stopColor="#06b6d4" /> {/* Secondary Cyan */}
+                        <stop offset="0%" stopColor="#3b82f6" />
+                        <stop offset="100%" stopColor="#06b6d4" />
                       </linearGradient>
                     </defs>
                     <circle 
@@ -225,18 +223,18 @@ const Hero: React.FC = () => {
                       fill="none" 
                       stroke="url(#borderGradient)" 
                       strokeWidth="2" 
-                      strokeDasharray="24 16" /* Creates the segmented look */
+                      strokeDasharray="24 16"
                       strokeLinecap="round"
                     />
                  </svg>
               </motion.div>
               
               {/* Inner Profile Image - Remains Static */}
-              <div className="relative w-[85%] h-[85%] rounded-full border border-gray-800 overflow-hidden shadow-2xl z-10 bg-gray-900 pointer-events-none">
+              <div className="relative w-[85%] h-[85%] rounded-full border border-gray-800 overflow-hidden shadow-2xl z-10 bg-gray-900 pointer-events-none select-none">
                  <img 
                    src={PERSONAL_INFO.profileImage}
                    alt={`${PERSONAL_INFO.firstName} ${PERSONAL_INFO.lastName}`}
-                   className="w-full h-full rounded-full object-cover transition-all duration-500"
+                   className="w-full h-full rounded-full object-cover"
                    draggable="false"
                  />
               </div>
