@@ -25,6 +25,24 @@ const Navbar: React.FC = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
+  const handleMobileNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setIsOpen(false);
+    
+    // Wait for menu to close animation, then scroll
+    setTimeout(() => {
+      const targetId = href.replace('#', '');
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        targetElement.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }, 300); // Match exit animation duration
+  };
+
   return (
     <motion.nav 
       initial={{ y: -100, opacity: 0 }}
@@ -86,7 +104,7 @@ const Navbar: React.FC = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => handleMobileNavClick(e, link.href)}
                   className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors"
                 >
                   {link.name}
