@@ -7,6 +7,7 @@ const Contact: React.FC = () => {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -29,17 +30,22 @@ const Contact: React.FC = () => {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to send message');
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error || 'Failed to send message');
       }
 
       setSubmitStatus('success');
       setFormState({ name: '', email: '', message: '' });
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error:", error);
       setSubmitStatus('error');
+      setErrorMessage(error.message || 'Failed to send message. Please try again.');
     } finally {
       setIsSubmitting(false);
-      setTimeout(() => setSubmitStatus('idle'), 5000);
+      setTimeout(() => {
+        setSubmitStatus('idle');
+        setErrorMessage('');
+      }, 5000);
     }
   };
 
@@ -151,7 +157,7 @@ const Contact: React.FC = () => {
                 className="flex items-center gap-2 text-red-600 dark:text-red-400 text-sm mt-2 justify-center"
               >
                 <AlertCircle className="w-4 h-4" />
-                <span>Failed to send message. Please try again.</span>
+                <span>{errorMessage}</span>
               </motion.div>
             )}
           </form>

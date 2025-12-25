@@ -19,7 +19,7 @@ export default async function handler(
   const recentRequests = requestTimestamps.filter(time => now - time < WINDOW_MS);
   
   if (recentRequests.length >= MAX_REQUESTS) {
-    return response.status(429).json({ error: 'Terlalu banyak percobaan pengiriman email. Silakan coba lagi dalam 15 menit.' });
+    return response.status(429).json({ error: 'Too many email attempts. Please try again in 15 minutes.' });
   }
   
   // Update rate limit record
