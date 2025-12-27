@@ -2,7 +2,7 @@ import { title } from 'process';
 import { Experience, Project, SkillCategory, Education, Certification, GalleryItem } from './types';
 import { Linkedin, Mail, FileText, Phone, Instagram, Github } from 'lucide-react';
 
-export const RESUME_URL = "public/assets/resume/CV_Novia Citra Andini.pdf"; // Replace with actual file path if hosting
+export const RESUME_URL = "assets/resume/CV_Novia Citra Andini.pdf"; // Replace with actual file path if hosting
 export const ENABLE_FIDGET_SPINNER = false; // Set to false to disable interactive spinning (idle animation remains)
 
 export const METADATA = {
@@ -37,7 +37,7 @@ export const PERSONAL_INFO = {
   typingRoles: ["Data Analyst", "Data Scientist", "General Affair", "Data Entry", "Research and Development", "Assistant", "Public Speaker", "Moderator"], // Roles for the typing animation
   email: "noviacitrawork@gmail.com",
   linkedin: "https://linkedin.com/in/noviacitraandini",
-  profileImage: "public/assets/profile/profile.png", // Replace with your actual photo URL
+  profileImage: "assets/profile/profile.png", // Replace with your actual photo URL
   about: "Mathematics graduate from Mataram University blending analytical rigor with strong communication skills. Passionate about Data Science, Machine Learning, and Business Intelligence, with proven experience in building AI models and handling large-scale data. A confident public speaker and moderator, capable of translating complex technical insights into clear, actionable strategies."
 };
 
@@ -108,7 +108,7 @@ export const PROJECTS: Project[] = [
       "Developed an object detection model using YOLOv7 to identify Anthracnose pests on chili plants.",
     ],
     tags: ["YOLOv7", "Python", "Computer Vision", "Research"],
-    image: "public/assets/experience/chili_yolov7/chili_yolov7.png"
+    image: "assets/experience/chili_yolov7/chili_yolov7.png"
   },
   {
     id: 'p2',
@@ -119,7 +119,7 @@ export const PROJECTS: Project[] = [
       "Compared LSTM and Backpropagation Neural Networks for predicting Solana cryptocurrency prices.",
     ],
     tags: ["LSTM", "Neural Networks", "Python", "Financial Analysis"],
-    image: "public/assets/experience/solana/output.png"
+    image: "assets/experience/solana/output.png"
   },
   {
     id: 'p3',
@@ -130,7 +130,7 @@ export const PROJECTS: Project[] = [
       "Developed a breast cancer prediction application using SVM Algorithms as a Capstone Project at BISA AI.",
     ],
     tags: ["SVM", "Machine Learning", "Health AI", "Python"],
-    image: "public/assets/experience/breast_cancer/breast_cancer.png"
+    image: "assets/experience/breast_cancer/breast_cancer.png"
   },
   {
     id: 'p4',
@@ -141,7 +141,7 @@ export const PROJECTS: Project[] = [
       "Archived over 40,000 local TV running text records and media publications using Excel during internship at PT PLN (Persero) Unit Induk Wilayah NTB.",
     ],
     tags: ["Data Management", "Excel", "Internship"],
-    image: "public/assets/experience/pln/pln.png"
+    image: "assets/experience/pln/pln.png"
   }
 
 ];
@@ -214,7 +214,7 @@ export const CERTIFICATIONS: Certification[] = [
     title: "Finalist, Science and Technology National Competition 2024",
     issuer: "National Competition",
     date: "Oct 2024",
-    image: "public/assets/certificates/finalist_national_seminar/Finalist Karya Ilmiah.jpg",
+    image: "assets/certificates/finalist_national_seminar/Finalist Karya Ilmiah.jpg",
     hoverText: "Became a finalist in the national seminar for participation in the Science And Technology National Competition 2024 in the Scientific Writing category",
   },
   {
@@ -222,7 +222,7 @@ export const CERTIFICATIONS: Certification[] = [
     title: "Independent Study MSIB 6 Data Science",
     issuer: "BISA AI Academy",
     date: "Jun 2024",
-    image: "public/assets/certificates/msib_6/MSIB 6.png",
+    image: "assets/certificates/msib_6/MSIB 6.png",
     hoverText: "Completed Independent Study in Data Science from BISA AI Academy"
   },
   {
@@ -230,7 +230,7 @@ export const CERTIFICATIONS: Certification[] = [
     title: "Journal Review Session Presenter",
     issuer: "Mataram University",
     date: "Dec 2024",
-    image: "public/assets/certificates/national_seminar_presenter/national_seminar_presenter.jpg",
+    image: "assets/certificates/national_seminar_presenter/national_seminar_presenter.jpg",
     hoverText: "Became a presenter at the National Seminar at Mataram University"
   },
   {
@@ -238,7 +238,7 @@ export const CERTIFICATIONS: Certification[] = [
     title: "Mental Health Fest Moderator",
     issuer: "Mataram University",
     date: "Nov 2022",
-    image: "public/assets/certificates/mental_health_fest_moderator/Moderator Mental Health Fest.jpg",
+    image: "assets/certificates/mental_health_fest_moderator/Moderator Mental Health Fest.jpg",
     hoverText: "Served as the moderator for the Mental Health Fest event held at Mataram University"
   },
   {
@@ -246,7 +246,7 @@ export const CERTIFICATIONS: Certification[] = [
     title: "Python Training for Data Science Moderator",
     issuer: "Mataram University",
     date: "Sep 2023",
-    image: "public/assets/certificates/python_training_data_science_moderator/Moderator Python Training.jpg",
+    image: "assets/certificates/python_training_data_science_moderator/Moderator Python Training.jpg",
     hoverText: "Served as the moderator for the Python Training for Data Science workshop at Mataram University"
   },
   {
@@ -254,7 +254,7 @@ export const CERTIFICATIONS: Certification[] = [
     title: "Secretary OPTION",
     issuer: "Mataram University",
     date: "2022",
-    image: "public/assets/certificates/secretary_option/Sekretaris OPTION.jpg",
+    image: "assets/certificates/secretary_option/Sekretaris OPTION.jpg",
     hoverText: "Served as the secretary of the OPTION organization at Mataram University"
   },
   {
@@ -262,7 +262,7 @@ export const CERTIFICATIONS: Certification[] = [
     title: "WDSC Moderator",
     issuer: "Mataram University",
     date: "Jul 2022",
-    image: "public/assets/certificates/wdsc_moderator/Moderator WDSC.jpg",
+    image: "assets/certificates/wdsc_moderator/Moderator WDSC.jpg",
     hoverText: "Served as the moderator for the Workshop and Digital Startup Competition 2022 at Mataram University"
   },
   {
@@ -270,7 +270,7 @@ export const CERTIFICATIONS: Certification[] = [
     title: "Webinar Speaker at BISA AI Academy",
     issuer: "BISA AI Academy",
     date: "Mar 2022",
-    image: "public/assets/certificates/webinar_speaker_bisaai/Sertif Pemateri 1.png",
+    image: "assets/certificates/webinar_speaker_bisaai/Sertif Pemateri 1.png",
     hoverText: "Delivered a webinar on Quality Control Statistics at BISA AI Academy"
   },
   {
@@ -278,7 +278,7 @@ export const CERTIFICATIONS: Certification[] = [
     title: "Webinar Speaker at BISA AI Academy",
     issuer: "BISA AI Academy",
     date: "Mar 2022",
-    image: "public/assets/certificates/webinar_speaker_bisaai/Sertif Pemateri 2.png",
+    image: "assets/certificates/webinar_speaker_bisaai/Sertif Pemateri 2.png",
     hoverText: "Delivered a webinar on Quality Control Attributes at BISA AI Academy"}
 ];
 
@@ -287,69 +287,69 @@ export const GALLERY: GalleryItem[] = [
     id: 'g1',
     title: "Graduation Day",
     description: "Celebrating the completion of my Bachelor's degree in Mathematics at Mataram University",
-    images: ["public/assets/gallery/graduate/1.jpg", "public/assets/gallery/graduate/2.jpg", "public/assets/gallery/graduate/3.jpg", "public/assets/gallery/graduate/4.jpg", "public/assets/gallery/graduate/5.jpg", "public/assets/gallery/graduate/6.jpg" ]
+    images: ["assets/gallery/graduate/1.jpg", "assets/gallery/graduate/2.jpg", "assets/gallery/graduate/3.jpg", "assets/gallery/graduate/4.jpg", "assets/gallery/graduate/5.jpg", "assets/gallery/graduate/6.jpg" ]
 
   },
   {
     id: 'g2',
     title: "Webinar Speaker at BISA AI Academy",
     description: "Delivering a webinar on Quality Control Statistics at BISA AI Academy",
-    images: ["public/assets/gallery/webinar_bisaai/1.png", "public/assets/gallery/webinar_bisaai/2.png"]
+    images: ["assets/gallery/webinar_bisaai/1.png", "assets/gallery/webinar_bisaai/2.png"]
   },
   {
     id: 'g3',
     title: "Workshop and Digital Startup Competition 2022",
     description: "Startup Optimization for Creative Tech Business in Society 5.0",
-    images: ["public/assets/gallery/wdsc/1.png", "public/assets/gallery/wdsc/2.png", "public/assets/gallery/wdsc/3.jpg", "public/assets/gallery/wdsc/4.jpg"]
+    images: ["assets/gallery/wdsc/1.png", "assets/gallery/wdsc/2.png", "assets/gallery/wdsc/3.jpg", "assets/gallery/wdsc/4.jpg"]
   },
   {
     id: 'g4',
     title: " Workshop Python Training for Data Science",
     description: "Becoming the MC for Python Training for Data Science workshop at Mataram University",
-    images: ["public/assets/gallery/python_data_science/1.jpg", "public/assets/gallery/python_data_science/2.jpg", "public/assets/gallery/python_data_science/3.jpg"]
+    images: ["assets/gallery/python_data_science/1.jpg", "assets/gallery/python_data_science/2.jpg", "assets/gallery/python_data_science/3.jpg"]
   },
   {
     id: 'g5',
     title: "Internship at PT PLN (Persero) Unit Induk Wilayah NTB",
     description: "Completed internship program at PT PLN (Persero) Unit Induk Wilayah NTB, gaining practical experience in the energy sector",
-    images: ["public/assets/gallery/pkl_pln/1.jpg", "public/assets/gallery/pkl_pln/2.jpg", "public/assets/gallery/pkl_pln/3.jpg"]
+    images: ["assets/gallery/pkl_pln/1.jpg", "assets/gallery/pkl_pln/2.jpg", "assets/gallery/pkl_pln/3.jpg"]
   },
   {
     id: 'g6',
     title: "Journal Review Session",
     description: "Presented a journal review session at Mataram University, exploring machine learning in research and applications",
-    images: ["public/assets/gallery/journal_review/1.jpg", "public/assets/gallery/journal_review/2.jpg", "public/assets/gallery/journal_review/3.jpg"]
+    images: ["assets/gallery/journal_review/1.jpg", "assets/gallery/journal_review/2.jpg", "assets/gallery/journal_review/3.jpg"]
   },
   {
     id: 'g7',
     title: "Loka Karya Gamatika Coding Club 2025",
     description: "Presented at the Gamatika Coding Club workshop at Mataram University on 'Computation for Solutions: Computational Mathematics for Real World Problems'",
-    images: ["public/assets/gallery/loka_karya/pamflet_loka_karya.jpg"]
+    images: ["assets/gallery/loka_karya/pamflet_loka_karya.jpg"]
   },
   {
     id: 'g8',
     title: "Sharing Session at Gamatika Coding Club 2025",
     description: "Sharing session at Gamatika Coding Club on 'Growing Further with Internships and Independent Studies'",
-    images: ["public/assets/gallery/sharing_session/pamflet_sharing_session.jpg"]
+    images: ["assets/gallery/sharing_session/pamflet_sharing_session.jpg"]
   },
   {
     id: 'g9',
     title: "Finalist, Science and Technology National Competition 2024",
     description: "Became a finalist in the national seminar for participation in the Science And Technology National Competition 2024 in the Scientific Writing category organized by the Mathematics Student Association FMIPA Sriwijaya University on October 30, 2024",
-    images: ["public/assets/gallery/national_seminar/national_seminar.jpg"]
+    images: ["assets/gallery/national_seminar/national_seminar.jpg"]
   },
   {
     id: 'g10',
     title: "Mental Health Fest Moderator",
     description: "Served as the moderator for the Mental Health Fest event held at Mataram University, facilitating discussions on mental health awareness and support",
-    images: ["public/assets/gallery/mental_health_fest/mental_health_fest.jpg"]
+    images: ["assets/gallery/mental_health_fest/mental_health_fest.jpg"]
   },
  
   {    
     id: 'g11',
     title: "Teaching Assistant Role",
     description: "Serving as a Teaching Assistant for the Programming Algorithms and Database courses at Mataram University",
-    images: ["public/assets/gallery/asdos/asdos.jpg"]
+    images: ["assets/gallery/asdos/asdos.jpg"]
   }
 
 
