@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ZoomIn, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, ZoomIn, ChevronLeft, ChevronRight, Loader2 } from 'lucide-react';
 import { GalleryItem } from '../types';
 
 interface CarouselProps {
@@ -14,18 +14,23 @@ const Carousel: React.FC<CarouselProps> = ({ items, autoPlayInterval = 5000 }) =
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
   const touchStartX = useRef<number>(0);
   const touchEndX = useRef<number>(0);
 
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || selectedItem) return;
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % items.length);
     }, autoPlayInterval);
 
     return () => clearInterval(interval);
-  }, [items.length, autoPlayInterval, isPaused]);
+  }, [items.length, autoPlayInterval, isPaused, selectedItem]);
+
+  const handleImageLoad = (src: string) => {
+    setLoadedImages(prev => new Set(prev).add(src));
+  };
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev - 1 + items.length) % items.length);
@@ -38,6 +43,12 @@ const Carousel: React.FC<CarouselProps> = ({ items, autoPlayInterval = 5000 }) =
   const handleOpenModal = (item: GalleryItem) => {
     setSelectedItem(item);
     setCurrentImageIndex(0);
+    setIsPaused(true);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedItem(null);
+    setIsPaused(false);
   };
 
   const handleNextImage = () => {
@@ -93,13 +104,21 @@ const Carousel: React.FC<CarouselProps> = ({ items, autoPlayInterval = 5000 }) =
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.5 }}
-            className="absolute inset-0 w-full h-full cursor-pointer"
+            className="absolute inset-0 w-full h-full cursor-pointer bg-gray-200 dark:bg-gray-800"
             onClick={() => handleOpenModal(items[currentIndex])}
           >
+            {!loadedImages.has(items[currentIndex].images[0]) && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Loader2 className="w-8 h-8 animate-spin text-primary" />
+              </div>
+            )}
             <img 
               src={items[currentIndex].images[0]} 
               alt={items[currentIndex].title} 
-              className="w-full h-full object-cover"
+              onLoad={() => handleImageLoad(items[currentIndex].images[0])}
+              className={`w-full h-full object-cover transition-opacity duration-300 ${
+                loadedImages.has(items[currentIndex].images[0]) ? 'opacity-100' : 'opacity-0'
+              }`}
             />
             <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
                <p className="text-white text-lg font-bold mb-2">{items[currentIndex].title}</p>
@@ -147,7 +166,7 @@ const Carousel: React.FC<CarouselProps> = ({ items, autoPlayInterval = 5000 }) =
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => setSelectedItem(null)}
+              onClick={handleCloseModal}
               className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
             >
             <motion.div
@@ -155,33 +174,43 @@ const Carousel: React.FC<CarouselProps> = ({ items, autoPlayInterval = 5000 }) =
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-5xl w-full bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-2xl"
+              className="relative max-w-5xl w-[95%] md:w-full bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-2xl max-h-[90vh] flex flex-col md:block"
             >
               <button
-                onClick={() => setSelectedItem(null)}
+                onClick={handleCloseModal}
                 className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-black/70 text-white rounded-full transition-colors"
               >
                 <X size={20} />
               </button>
 
-              <div className="grid md:grid-cols-[2fr,1fr]">
+              <div className="grid md:grid-cols-[2fr,1fr] h-full overflow-y-auto md:overflow-hidden">
                 <div 
-                  className="bg-black flex items-center justify-center p-2 relative group"
+                  className="bg-black flex items-center justify-center p-2 relative group min-h-[300px] md:min-h-[500px]"
                   onTouchStart={handleTouchStart}
                   onTouchMove={handleTouchMove}
                   onTouchEnd={handleModalTouchEnd}
                 >
                   <AnimatePresence mode='wait'>
-                    <motion.img
-                      key={currentImageIndex}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -20 }}
-                      transition={{ duration: 0.3 }}
-                      src={selectedItem.images[currentImageIndex]}
-                      alt={selectedItem.title}
-                      className="max-h-[80vh] w-auto object-contain"
-                    />
+                    <div className="relative w-full h-full flex items-center justify-center">
+                      {!loadedImages.has(selectedItem.images[currentImageIndex]) && (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <Loader2 className="w-10 h-10 animate-spin text-white" />
+                        </div>
+                      )}
+                      <motion.img
+                        key={currentImageIndex}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -20 }}
+                        transition={{ duration: 0.3 }}
+                        src={selectedItem.images[currentImageIndex]}
+                        alt={selectedItem.title}
+                        onLoad={() => handleImageLoad(selectedItem.images[currentImageIndex])}
+                        className={`max-w-full max-h-[50vh] md:max-h-[80vh] w-auto object-contain transition-opacity duration-300 ${
+                          loadedImages.has(selectedItem.images[currentImageIndex]) ? 'opacity-100' : 'opacity-0'
+                        }`}
+                      />
+                    </div>
                   </AnimatePresence>
 
                   {/* Navigation Buttons (Desktop only, if multiple images) */}
@@ -213,12 +242,12 @@ const Carousel: React.FC<CarouselProps> = ({ items, autoPlayInterval = 5000 }) =
                   )}
                 </div>
 
-                <div className="p-8 flex flex-col justify-center bg-white dark:bg-gray-800">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                <div className="p-6 md:p-8 flex flex-col justify-center bg-white dark:bg-gray-800">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4">
                     {selectedItem.title}
                   </h3>
                   <div className="w-20 h-1 bg-secondary rounded-full mb-6"></div>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm md:text-base">
                     {selectedItem.description}
                   </p>
                 </div>
