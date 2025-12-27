@@ -95,6 +95,16 @@ export const EXPERIENCES: Experience[] = [
     description: [
       "Assisted 154 students in Programming Algorithms and Database courses."
     ]
+  },
+  // moderator
+  {
+    id: '5',
+    role: "Moderator",
+    company: "Mataram University",
+    period: "2022 - 2024",
+    description: [
+      "Moderated 5+ events including Mental Health Fest, Python Training for Data Science, and Workshop on Digital Startup Competition with 300+ participants."
+    ]
   }
 ];
 
@@ -143,7 +153,6 @@ export const PROJECTS: Project[] = [
     tags: ["Data Management", "Excel", "Internship"],
     image: "assets/experience/pln/pln.png"
   }
-
 ];
 
 export const SKILLS: SkillCategory[] = [
@@ -312,7 +321,7 @@ export const GALLERY: GalleryItem[] = [
     id: 'g5',
     title: "Internship at PT PLN (Persero) Unit Induk Wilayah NTB",
     description: "Completed internship program at PT PLN (Persero) Unit Induk Wilayah NTB, gaining practical experience in the energy sector",
-    images: ["assets/gallery/pkl_pln/1.jpg", "assets/gallery/pkl_pln/2.jpg", "assets/gallery/pkl_pln/3.jpg"]
+    images: ["assets/gallery/pkl_pln/1.jpg", "assets/gallery/pkl_pln/2.jpg"]
   },
   {
     id: 'g6',
@@ -356,7 +365,7 @@ export const GALLERY: GalleryItem[] = [
 ];
 
 // Select which gallery items to show in the carousel by ID
-const CAROUSEL_IDS = ['g1', 'g2', 'g3'];
+const CAROUSEL_IDS = ['g1', 'g3', 'g4','g10'];
 
 export const CAROUSEL_ITEMS: GalleryItem[] = CAROUSEL_IDS.map(id => 
   GALLERY.find(item => item.id === id)
