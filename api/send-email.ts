@@ -114,17 +114,17 @@ ${message}
 <html>
 <head>
   <style>
-    body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background-color: #D6EBF3; margin: 0; padding: 0; }
     .container { max-width: 600px; margin: 40px auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
-    .header { background: linear-gradient(to right, #3b82f6, #06b6d4); padding: 30px; text-align: center; color: white; }
+    .header { background: linear-gradient(to right, #447F98, #629BB5); padding: 30px; text-align: center; color: white; }
     .header h1 { margin: 0; font-size: 24px; font-weight: 700; }
     .content { padding: 30px; color: #1f2937; }
     .field { margin-bottom: 20px; }
     .label { font-size: 12px; text-transform: uppercase; color: #6b7280; font-weight: 600; letter-spacing: 0.05em; margin-bottom: 4px; }
     .value { font-size: 16px; line-height: 1.5; color: #111827; }
-    .message-box { background-color: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-top: 8px; white-space: pre-wrap; }
-    .footer { background-color: #f9fafb; padding: 20px; text-align: center; font-size: 12px; color: #9ca3af; border-top: 1px solid #e5e7eb; }
-    .button { display: inline-block; background-color: #3b82f6; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: 500; margin-top: 20px; }
+    .message-box { background-color: #f9fafb; border: 1px solid #B9D8E1; border-radius: 8px; padding: 16px; margin-top: 8px; white-space: pre-wrap; }
+    .footer { background-color: #f9fafb; padding: 20px; text-align: center; font-size: 12px; color: #9ca3af; border-top: 1px solid #B9D8E1; }
+    .button { display: inline-block; background-color: #447F98; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: 500; margin-top: 20px; }
   </style>
 </head>
 <body>
@@ -140,7 +140,7 @@ ${message}
       
       <div class="field">
         <div class="label">Email</div>
-        <div class="value"><a href="mailto:${email}" style="color: #3b82f6; text-decoration: none;">${email}</a></div>
+        <div class="value"><a href="mailto:${email}" style="color: #447F98; text-decoration: none;">${email}</a></div>
       </div>
 
       <div class="field">
@@ -152,7 +152,7 @@ ${message}
         <!-- Button with nested span for better dark mode support -->
         <a href="mailto:${email}?subject=${encodeURIComponent("Pesan dari Novia Citra Andini")}&body=${encodeURIComponent(`Halo ${name},\n\nTerima kasih telah menghubungi saya.\n`)}" 
            class="button" 
-           style="display: inline-block; background-color: #3b82f6; color: #ffffff; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #2563eb;">
+           style="display: inline-block; background-color: #447F98; color: #ffffff; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #629BB5;">
            <span style="color: #ffffff !important; font-family: sans-serif;">Balas via Email</span>
         </a>
       </div>
