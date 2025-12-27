@@ -130,7 +130,7 @@ const Gallery: React.FC = () => {
               
               <div className="grid md:grid-cols-[2fr,1fr] h-full overflow-y-auto md:overflow-hidden">
                 <div 
-                  className="bg-black flex items-center justify-center p-2 relative group min-h-[300px] md:min-h-[500px]"
+                  className="bg-black flex items-center justify-center p-2 relative group h-[40vh] md:h-auto min-h-[200px] md:min-h-[500px] shrink-0"
                   onTouchStart={handleTouchStart}
                   onTouchMove={handleTouchMove}
                   onTouchEnd={handleTouchEnd}
@@ -151,7 +151,7 @@ const Gallery: React.FC = () => {
                         src={selectedItem.images[currentImageIndex]}
                         alt={selectedItem.title}
                         onLoad={() => handleImageLoad(selectedItem.images[currentImageIndex])}
-                        className={`max-w-full max-h-[50vh] md:max-h-[80vh] w-auto object-contain transition-opacity duration-300 ${
+                        className={`max-w-full max-h-full w-auto object-contain transition-opacity duration-300 ${
                           loadedImages.has(selectedItem.images[currentImageIndex]) ? 'opacity-100' : 'opacity-0'
                         }`}
                       />
