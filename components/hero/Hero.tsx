@@ -60,6 +60,12 @@ const Hero: React.FC = () => {
     isDragging.current = false;
   };
 
+  const panHandlers = ENABLE_FIDGET_SPINNER ? {
+    onPanStart: handlePanStart,
+    onPan: handlePan,
+    onPanEnd: handlePanEnd
+  } : {};
+
   const scrollToSection = (href: string) => {
     const targetId = href.replace('#', '');
     const targetElement = document.getElementById(targetId);
@@ -238,9 +244,7 @@ const Hero: React.FC = () => {
            {/* Interactive Fidget Spinner Area */}
            <motion.div 
              className={`relative w-72 h-72 md:w-96 md:h-96 lg:w-[480px] lg:h-[480px] flex items-center justify-center ${ENABLE_FIDGET_SPINNER ? 'cursor-grab active:cursor-grabbing' : ''}`}
-             onPanStart={handlePanStart}
-             onPan={handlePan}
-             onPanEnd={handlePanEnd}
+             {...panHandlers}
              style={{ touchAction: ENABLE_FIDGET_SPINNER ? 'none' : 'auto' }} // CRITICAL: Prevents scrolling interference on mobile/tablet
            >
               {/* Rotating Segmented Border */}
