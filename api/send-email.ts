@@ -9,6 +9,7 @@ const MAX_REQUESTS = 5; // 5 emails per 15 minutes
 // Security: Allowed Origins
 const ALLOWED_ORIGINS = [
   'https://www.noviacitraandini.site',
+  'https://noviacitraandini.vercel.app/',
   'http://localhost:5173',
   'http://localhost:3000'
 ];
