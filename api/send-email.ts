@@ -8,8 +8,7 @@ const MAX_REQUESTS = 5; // 5 emails per 15 minutes
 
 // Security: Allowed Origins
 const ALLOWED_ORIGINS = [
-  'https://www.almasnajiib27.my.id',
-  'https://almasnajiib27.vercel.app',
+  'https://www.noviacitraandini.site',
   'http://localhost:5173',
   'http://localhost:3000'
 ];
@@ -149,12 +148,12 @@ ${message}
       </div>
 
       <div style="text-align: center;">
-        <a href="mailto:${email}?subject=${encodeURIComponent("Pesan dari Almas Najiib Imam Muttaqin")}&body=${encodeURIComponent(`Halo ${name},\n\nTerima kasih telah menghubungi saya.\n`)}" class="button">Balas via Email</a>
+        <a href="mailto:${email}?subject=${encodeURIComponent("Pesan dari Novia Citra Andini")}&body=${encodeURIComponent(`Halo ${name},\n\nTerima kasih telah menghubungi saya.\n`)}" class="button">Balas via Email</a>
       </div>
     </div>
     <div class="footer">
       <p>Email ini dikirim dari formulir kontak portofolio Anda.</p>
-      <p>&copy; ${new Date().getFullYear()} Almas Najiib Imam Muttaqin</p>
+      <p>&copy; ${new Date().getFullYear()} Novia Citra Andini</p>
     </div>
   </div>
 </body>

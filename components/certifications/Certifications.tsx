@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Award, ExternalLink, Calendar, X, ZoomIn } from 'lucide-react';
-import { CERTIFICATIONS } from '../../constants';
+import { CERTIFICATIONS, CERTIFICATIONS_DESCRIPTION } from '../../constants';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Certifications: React.FC = () => {
@@ -8,11 +8,11 @@ const Certifications: React.FC = () => {
 
   return (
     <section id="certifications" className="py-24 bg-gray-50 dark:bg-dark relative overflow-hidden transition-colors duration-500">
-       {/* Texture Pattern: Radial Dots (Distinct from Projects square grid) */}
-      <div className="absolute inset-0 bg-[radial-gradient(#9ca3af_1px,transparent_1px)] dark:bg-[radial-gradient(#4b5563_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.2] z-0"></div>
+       {/* Texture Pattern: Geometric Triangles (Geometry Theme) */}
+      <div className="absolute inset-0 bg-[linear-gradient(30deg,#80808008_1px,transparent_1px),linear-gradient(150deg,#80808008_1px,transparent_1px)] bg-[size:20px_34px] z-0"></div>
       
       {/* Central Spotlight effect */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#f9fafb_100%)] dark:bg-[radial-gradient(circle_at_center,transparent_0%,#0f172a_100%)] z-0 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#D6EBF3_100%)] dark:bg-[radial-gradient(circle_at_center,transparent_0%,#020617_100%)] z-0 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
@@ -24,7 +24,7 @@ const Certifications: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Certifications</h2>
           <div className="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-4">
-            Professional certifications validating expertise in AI, Machine Learning, and Data Science.
+            {CERTIFICATIONS_DESCRIPTION}
           </p>
         </motion.div>
 

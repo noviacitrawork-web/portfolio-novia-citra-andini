@@ -6,9 +6,8 @@ import { motion } from 'framer-motion';
 const Experience: React.FC = () => {
   return (
     <section id="experience" className="py-24 bg-gray-50 dark:bg-dark relative overflow-hidden transition-colors duration-500">
-      {/* Texture Pattern: Diagonal Mesh (Diamond Grid) */}
-      {/* Uses repeating linear gradients to create a cross-hatch/diamond pattern that doesn't conflict with vertical lines */}
-      <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,rgba(0,0,0,0.03)_0px,rgba(0,0,0,0.03)_1px,transparent_1px,transparent_30px),repeating-linear-gradient(-45deg,rgba(0,0,0,0.03)_0px,rgba(0,0,0,0.03)_1px,transparent_1px,transparent_30px)] dark:bg-[repeating-linear-gradient(45deg,rgba(255,255,255,0.03)_0px,rgba(255,255,255,0.03)_1px,transparent_1px,transparent_30px),repeating-linear-gradient(-45deg,rgba(255,255,255,0.03)_0px,rgba(255,255,255,0.03)_1px,transparent_1px,transparent_30px)] z-0"></div>
+      {/* Texture Pattern: Vertical Lines (Statistical/Timeline look) */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px)] bg-[size:40px_100%] z-0"></div>
       
       {/* Subtle radial fade for the background pattern */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-transparent to-gray-50 dark:from-dark dark:via-transparent dark:to-dark z-0 pointer-events-none"></div>
@@ -105,7 +104,7 @@ const Experience: React.FC = () => {
                     <div className="text-left md:text-right mt-2 md:mt-0">
                       {edu.gpa && (
                         <p className="text-secondary font-bold text-lg">
-                          {edu.institution.includes("Dian Nuswantoro") ? "GPA" : "Grade"}: {edu.gpa}
+                          {edu.institution.toLowerCase().includes("university") || edu.institution.toLowerCase().includes("universitas") ? "GPA" : "Grade"}: {edu.gpa}
                         </p>
                       )}
                       <p className="text-sm text-gray-500 dark:text-gray-400 font-mono">{edu.period}</p>

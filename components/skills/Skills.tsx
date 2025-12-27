@@ -70,11 +70,11 @@ const Skills: React.FC = () => {
 
   return (
     <section id="skills" className="py-24 bg-gray-50 dark:bg-dark relative overflow-hidden transition-colors duration-500">
-       {/* Texture Pattern: Small Isometric-style Rectangular Grid (Millimeter paper) */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] z-0"></div>
+       {/* Texture Pattern: Isometric Grid / Coordinate System (Algebra Theme) */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_100%)] z-0"></div>
       
       {/* Radial Gradient for depth */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-200/50 via-gray-50 to-gray-50 dark:from-slate-900/50 dark:via-dark dark:to-dark z-0 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-50/50 via-gray-50 to-gray-50 dark:from-dark/50 dark:via-dark dark:to-dark z-0 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.h2 

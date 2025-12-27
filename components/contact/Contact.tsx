@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SOCIAL_LINKS } from '../../constants';
+import { SOCIAL_LINKS, CONTACT_TITLE, CONTACT_DESCRIPTION } from '../../constants';
 import { motion } from 'framer-motion';
 import { ArrowUp, Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 
@@ -54,15 +54,23 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-white dark:bg-black text-center relative transition-colors duration-500">
-      <div className="max-w-4xl mx-auto px-4">
+    <section id="contact" className="py-24 bg-gray-50 dark:bg-dark text-center relative transition-colors duration-500 overflow-hidden">
+      {/* Texture Pattern: Simple Grid (Cartesian Plane) - Very Low Contrast */}
+      <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03]"
+           style={{
+               backgroundImage: `linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)`,
+               backgroundSize: '40px 40px'
+           }}
+      ></div>
+
+      <div className="max-w-4xl mx-auto px-4 relative z-10">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           className="text-3xl font-bold text-gray-900 dark:text-white mb-6"
         >
-          Let's Work Together
+          {CONTACT_TITLE}
         </motion.h2>
         <motion.p 
           initial={{ opacity: 0 }}
@@ -71,7 +79,7 @@ const Contact: React.FC = () => {
           transition={{ delay: 0.2 }}
           className="text-gray-600 dark:text-gray-400 mb-12 max-w-lg mx-auto"
         >
-          I'm currently available for freelance projects and full-time opportunities in AI Development and Data Science.
+          {CONTACT_DESCRIPTION}
         </motion.p>
 
         <motion.div

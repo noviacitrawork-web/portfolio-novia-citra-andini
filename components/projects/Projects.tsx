@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Folder, ExternalLink } from 'lucide-react';
-import { PROJECTS } from '../../constants';
+import { PROJECTS, PROJECTS_DESCRIPTION } from '../../constants';
 import { motion } from 'framer-motion';
 
 const Projects: React.FC = () => {
-  const [showFallback, setShowFallback] = useState(false);
-
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -22,9 +20,12 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="py-24 bg-gray-50 dark:bg-dark relative transition-colors duration-500">
-        {/* Subtle grid pattern bg */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+    <section id="projects" className="py-24 bg-gray-50 dark:bg-dark relative transition-colors duration-500 overflow-hidden">
+        {/* Texture Pattern: Diagonal Lines (Linear Algebra/Vectors Theme) - Low Contrast */}
+        <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.03] bg-[repeating-linear-gradient(45deg,currentColor_0px,currentColor_1px,transparent_1px,transparent_30px)]"></div>
+        
+        {/* Soft Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 via-transparent to-gray-50/50 dark:from-dark/50 dark:via-transparent dark:to-dark/50 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
@@ -35,92 +36,8 @@ const Projects: React.FC = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Featured Projects</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mb-8">
-            A selection of AI, Computer Vision, and Data Analysis projects I've developed for enterprise and research.
+            {PROJECTS_DESCRIPTION}
           </p>
-
-          {/* Featured Video Section - Universal Fallback */}
-          <div className="w-full max-w-3xl mx-auto mb-16">
-            {!showFallback ? (
-              /* LinkedIn Iframe Embed - Try first for all browsers */
-              <div className="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-2xl bg-white dark:bg-black relative">
-                <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
-                  <iframe 
-                    src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7289203499630829568?compact=1" 
-                    className="absolute inset-0 w-full h-full bg-white dark:bg-black"
-                    frameBorder="0" 
-                    allowFullScreen={true}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    title="Featured Project Video"
-                    onError={() => setShowFallback(true)}
-                  ></iframe>
-                </div>
-                
-                {/* Fallback Link */}
-                <div className="text-center py-3 bg-gray-50/50 dark:bg-card/50 border-t border-gray-200 dark:border-gray-800">
-                  <a 
-                    href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7289203499630829568" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setShowFallback(true);
-                    }}
-                    className="inline-flex items-center gap-2 text-xs text-gray-500 hover:text-primary transition-colors"
-                  >
-                    <ExternalLink size={12} />
-                    <span>Can't see the video? Click here</span>
-                  </a>
-                </div>
-              </div>
-            ) : (
-              /* Clickable Preview - Fallback for all browsers that block iframe */
-              <a 
-                href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7289203499630829568" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="block group"
-              >
-                <div className="relative rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-2xl bg-gray-100 dark:bg-gray-900 hover:border-primary/50 transition-all duration-500">
-                  <div className="relative w-full aspect-video">
-                    <motion.img 
-                      whileHover={{ scale: 1.02 }}
-                      transition={{ duration: 0.4 }}
-                      src="/assets/project/elang_ai.jpg" 
-                      alt="Featured Project - Elang AI"
-                      className="w-full h-full object-cover"
-                    />
-                    
-                    {/* Overlay with Play Button */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-white/40 to-transparent dark:from-black/80 dark:via-black/40 dark:to-transparent flex items-center justify-center">
-                      <div className="bg-primary/90 group-hover:bg-primary rounded-full p-6 transition-all duration-500 transform group-hover:scale-110 shadow-lg">
-                        <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z"/>
-                        </svg>
-                      </div>
-                    </div>
-                    
-                    {/* Badge */}
-                    <div className="absolute top-4 left-4 bg-white/80 dark:bg-black/80 backdrop-blur-sm px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700">
-                      <span className="text-sm font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-                        <ExternalLink size={16} className="text-primary" />
-                        Watch on LinkedIn
-                      </span>
-                    </div>
-                  </div>
-                  
-                  {/* Description */}
-                  <div className="p-6 bg-white/50 dark:bg-card/50 backdrop-blur-sm">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
-                      Featured: Elang AI Launch Event
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm">
-                      Official AI model launch at the Circle Java Kick-Off Meeting in Surabaya with executives and 400+ participants from Indosat Ooredoo Hutchison.
-                    </p>
-                  </div>
-                </div>
-              </a>
-            )}
-          </div>
         </motion.div>
 
         <motion.div 

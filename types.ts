@@ -50,3 +50,10 @@ export interface Certification {
   hoverText: string;
   link?: string;
 }
+
+export interface GalleryItem {
+  id: string;
+  title: string;
+  description: string;
+  images: string[];
+}

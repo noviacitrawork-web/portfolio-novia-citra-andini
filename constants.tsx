@@ -1,101 +1,99 @@
-import { Experience, Project, Publication, SkillCategory, Education, Certification } from './types';
+import { title } from 'process';
+import { Experience, Project, SkillCategory, Education, Certification, GalleryItem } from './types';
 import { Linkedin, Mail, FileText, Phone, Instagram, Github } from 'lucide-react';
 
-export const RESUME_URL = "/assets/resume/CV-Almas Najiib Imam Muttaqin.pdf"; // Replace with actual file path if hosting
+export const RESUME_URL = "public/assets/resume/CV_Novia Citra Andini.pdf"; // Replace with actual file path if hosting
+export const ENABLE_FIDGET_SPINNER = false; // Set to false to disable interactive spinning (idle animation remains)
+
+export const METADATA = {
+  title: "Novia Citra Andini",
+  description: "Portfolio of Novia Citra Andini, a Data Scientist and Analyst specializing in AI, Machine Learning, and Business Intelligence.",
+  image: "/assets/profile/profile.png",
+  url: "https://portfolio-noviacitra.vercel.app/",
+  type: "website",
+  twitterCard: "summary_large_image"
+};
+
+// Profile Background Style Options:
+// 'MATH_GRID'       : Coordinate dots, technical look (Best for Math/Data Science)
+// 'ABSTRACT_FLUID'  : Soft blobs, artistic gradients
+// 'TECH_CIRCUIT'    : Tech Ring / Circuit pattern (Data Science Theme)
+// 'GRADIENT_MESH'   : Vibrant multi-color mesh gradient
+// 'GEOMETRIC_SHAPES': Floating geometric shapes (Triangle, Circle, Square)
+export const PROFILE_BACKGROUND_STYLE: 'MATH_GRID' | 'ABSTRACT_FLUID' | 'TECH_CIRCUIT' | 'GRADIENT_MESH' | 'GEOMETRIC_SHAPES' = 'TECH_CIRCUIT';
+
+export const PROJECTS_DESCRIPTION = "A showcase of my key projects demonstrating expertise in AI model development, data analysis, and machine learning applications across various domains.";
+export const CERTIFICATIONS_DESCRIPTION = "A testament to technical expertise in AI & Data Science, complemented by recognition in public speaking and scientific communication.";
+export const GALLERY_DESCRIPTION = "A visual journey through academic milestones, professional speaking engagements, and impactful community contributions.";
+export const CONTACT_TITLE = "Contact Me";
+export const CONTACT_DESCRIPTION = " Feel free to reach out for collaborations, new projects, general inquiries, or business partnerships.";
 
 export const PERSONAL_INFO = {
-  name: "Almas Najiib Imam Muttaqin",
-  firstName: "Almas Najiib", // First line of name in Hero
-  lastName: "Imam Muttaqin", // Second line of name in Hero
-  logo: "Almas", // Logo text in Navbar
-  role: "AI Developer & Computer Vision Engineer", // Static role for SEO/Metadata
-  typingRoles: ["AI Developer", "Computer Vision Engineer", "Data Scientist","Data Analyst"], // Roles for the typing animation
-  email: "almasnajiib27@gmail.com",
-  linkedin: "https://linkedin.com/in/masnajiib27",
-  profileImage: "/assets/profile/profile.jpg", // Replace with your actual photo URL
-  about: "AI Developer, Data Scientist, and Informatics Engineering graduate (GPA 3.83/4.00) specializing in Computer Vision, AI Agents, and Data Analytics. Proven track record in developing scalable AI-driven solutions for the telecommunications industry, focusing on object detection models and LLM-based integration. Combines technical expertise with strong research capabilities, evidenced by 5 published scientific journals (1 as First Author, Sinta 2)."
+  name: "Novia Citra Andini",
+  firstName: "Novia Citra", // First line of name in Hero
+  lastName: "Andini", // Second line of name in Hero
+  logo: "Novia", // Logo text in Navbar
+  role: "Data Analyst | Data Scientist | Mathematics Graduate | Public Speaker | Moderator", // Static role for SEO/Metadata
+  typingRoles: ["Data Analyst", "Data Scientist", "General Affair", "Data Entry", "Research and Development", "Assistant", "Public Speaker", "Moderator"], // Roles for the typing animation
+  email: "noviacitrawork@gmail.com",
+  linkedin: "https://linkedin.com/in/noviacitraandini",
+  profileImage: "public/assets/profile/profile.png", // Replace with your actual photo URL
+  about: "Mathematics graduate from Mataram University blending analytical rigor with strong communication skills. Passionate about Data Science, Machine Learning, and Business Intelligence, with proven experience in building AI models and handling large-scale data. A confident public speaker and moderator, capable of translating complex technical insights into clear, actionable strategies."
 };
 
 export const SOCIAL_LINKS = [
   { name: 'LinkedIn', icon: <Linkedin className="w-5 h-5" />, href: PERSONAL_INFO.linkedin },
-  { name: 'GitHub', icon: <Github className="w-5 h-5" />, href: "https://github.com/masnajiib" },
-  { name: 'Instagram', icon: <Instagram className="w-5 h-5" />, href: "https://www.instagram.com/almas_a45amg" },
+  { name: 'Instagram', icon: <Instagram className="w-5 h-5" />, href: "https://www.instagram.com/novia0315" },
   { 
     name: 'Email', 
     icon: <Mail className="w-5 h-5" />, 
-    href: `mailto:${PERSONAL_INFO.email}?subject=${encodeURIComponent("Diskusi Kerjasama")}&body=${encodeURIComponent("Halo Almas,\n\nSaya tertarik dengan profil Anda dan ingin mendiskusikan potensi kerjasama.\n\n\n\nTerima kasih.")}` 
+    href: `mailto:${PERSONAL_INFO.email}?subject=${encodeURIComponent("Diskusi Kerjasama")}` 
   },
   { 
     name: 'WhatsApp', 
     icon: <Phone className="w-5 h-5" />, 
-    href: `https://wa.me/6285951409211?text=${encodeURIComponent("Halo Almas, saya melihat portofolio Anda dan ingin berdiskusi lebih lanjut.")}` 
+    href: `https://wa.me/+6285238004884` 
   },
 ];
 
 export const EXPERIENCES: Experience[] = [
   {
     id: '1',
-    role: "Artificial Intelligence Developer (Freelance)",
-    company: "Indosat Ooredoo Hutchison",
-    period: "Feb 2025 – Oct 2025",
+    role: "Intern Research and Development",
+    company: "Jadi Maju",
+    period: "Nov 2025 - Present",
     description: [
-      "Developed an AgentFlow-based AI system integrated with Sahabat AI (Indosat Ooredoo Hutchison & GoTo) for database interaction and advanced data analytics.",
-      "Built AI Model Development workflows for post-material and product detection across all telecommunications operators using Computer Vision, achieving over 80% accuracy.",
-      "Mentored AI interns in designing and implementing object detection models for multi-operator detection tasks.",
-      "Identified critical bugs through black-box testing to improve the reliability and feature performance of internal applications."
+      "Performed sentiment analysis from 34 program databases.",
+      "Identified patterns in participant feedback and translated insights into reports.",
+      "Conducted market research for new class themes."
     ]
   },
   {
     id: '2',
-    role: "Artificial Intelligence Developer Internship",
-    company: "Indosat Ooredoo Hutchison",
-    period: "Dec 2024 – Feb 2025",
+    role: "Researcher & Speaker",
+    company: "Mataram University",
+    period: "Dec 2024 - Jul 2025",
     description: [
-      "Built an annotated dataset of 2,000+ images to train object detection models (IM3 and 3 brands), achieving over 90% accuracy.",
-      "Supported deployment of AI systems currently used by 3,000+ users across six provinces across Indonesia.",
-      "Participated in the official AI model launch at the Circle Java Kick-Off Meeting in Surabaya, attended by executives and 400+ participants."
+      "Developed YOLOv7 object detection model for Anthracnose pests (94% accuracy).",
+      "Compared LSTM vs Backpropagation for Solana price prediction (LSTM achieved 96% accuracy)."
     ]
   },
   {
     id: '3',
-    role: "Supervisor Data Science",
-    company: "Bengkel Koding – Dian Nuswantoro University",
-    period: "Jul 2024 – Feb 2025",
+    role: "Intern (Communication Division)",
+    company: "PT PLN (Persero) Unit Induk Wilayah NTB",
+    period: "Jul 2024 - Aug 2024",
     description: [
-      "Monitored and evaluated teaching performance to ensure quality learning outcomes.",
-      "Ensured teaching quality and evaluation materials by reviewing assistant performance and validating Capstone Project exam questions."
+      "Archived 40,000+ local TV running text records and media publications using Excel."
     ]
   },
   {
     id: '4',
-    role: "AI Researcher & Scientific Contributor",
-    company: "Dian Nuswantoro University",
-    period: "Jul 2024 – Feb 2025",
+    role: "Teaching Assistant",
+    company: "Mataram University",
+    period: "Sep 2023 - Dec 2024",
     description: [
-      "Led an AI research team, resulting in 4 published journals (Sinta 2 & 3) in Computer Vision (face recognition).",
-      "Served as the first author for the Sinta 2 journal, developing a face recognition model using FaceNet512 and YOLOv8 based on Deep Learning.",
-      "Contributed to Health AI research (diabetes prediction), resulting in 1 Sinta 3 journal publication."
-    ]
-  },
-  {
-    id: '5',
-    role: "Mentor Data Science",
-    company: "Bengkel Koding – Dian Nuswantoro University",
-    period: "Sep 2023 – Jul 2024",
-    description: [
-      "Provided technical guidance and mentorship to Data Science students, achieving a pass rate above 80%.",
-      "Developed the curriculum by updating learning modules and creating exam materials to align with current industry standards.",
-      "Facilitated career preparation workshops for LSP certification, mentoring 60+ students with over 80% success rate."
-    ]
-  },
-  {
-    id: '6',
-    role: "Assistant Lecturer",
-    company: "Dian Nuswantoro University",
-    period: "Nov 2022 – Jan 2023",
-    description: [
-      "Provided technical guidance and coding support for the Basic Programming course to 30+ students.",
-      "Managed exam score recording, resulting in a pass rate above 90%."
+      "Assisted 154 students in Programming Algorithms and Database courses."
     ]
   }
 ];
@@ -103,211 +101,90 @@ export const EXPERIENCES: Experience[] = [
 export const PROJECTS: Project[] = [
   {
     id: 'p1',
-    title: "CV ATS Analysis System (Applicant Tracking System)",
-    role: "Developer",
-    date: "Nov 2025",
+    title: "Anthracnose Pest Detection on Chili",
+    role: "Researcher",
+    date: "2025",
     description: [
-      "Developed an AI-powered CV analysis system using local Ollama models and OpenRouter to automatically evaluate candidate suitability for applied positions.",
+      "Developed an object detection model using YOLOv7 to identify Anthracnose pests on chili plants.",
     ],
-    tags: ["Ollama", "OpenRouter", "Python", "MySQL", "AI Agents", "Local LLM"],
-    image: "/assets/project/cv_ats_analyzer.jpg"
+    tags: ["YOLOv7", "Python", "Computer Vision", "Research"],
+    image: "public/assets/experience/chili_yolov7/chili_yolov7.png"
   },
   {
     id: 'p2',
-    title: "Elang AI SATSPAM Model",
-    role: "Developer",
-    date: "Aug 2025",
+    title: "Solana Price Prediction",
+    role: "Researcher",
+    date: "2025",
     description: [
-      "Developed an object detection model to detect promotional materials for the specific 'IM3 SATSPAM' and 'Tri AI - Anti Spam/Scam' Campaign.",
+      "Compared LSTM and Backpropagation Neural Networks for predicting Solana cryptocurrency prices.",
     ],
-    tags: ["Computer Vision", "Object Detection", "Python", "Elang AI"],
-    image: "/assets/project/elang_satspam.jpg",
+    tags: ["LSTM", "Neural Networks", "Python", "Financial Analysis"],
+    image: "public/assets/experience/solana/output.png"
   },
   {
     id: 'p3',
-    title: "Elang AI All Operator",
+    title: " Breast Cancer Prediction App",
     role: "Developer",
-    date: "May 2025",
+    date: "2024",
     description: [
-      "Developed an computer vision model to detect and count products and promotional materials for all telecommunications operators (IM3, 3, Telkomsel, XL, Smartfren, Axis, by.U).",
+      "Developed a breast cancer prediction application using SVM Algorithms as a Capstone Project at BISA AI.",
     ],
-    tags: ["Computer Vision", "YOLO", "Data Analytics"],
-    image: "/assets/project/elang_all_operator.jpg"
+    tags: ["SVM", "Machine Learning", "Health AI", "Python"],
+    image: "public/assets/experience/breast_cancer/breast_cancer.png"
   },
   {
     id: 'p4',
-    title: "Elang LLM (AI Agent Chatbot Analytics)",
-    role: "Developer",
-    date: "Apr 2025",
+    title: "Internship (Communication Division) at PT PLN (Persero) Unit Induk Wilayah NTB",
+    role: "Intern",
+    date: "2024",
     description: [
-      "Built an AI Agent Chatbot using LLMs and an Agent Framework for data analysis and database interaction.",
+      "Archived over 40,000 local TV running text records and media publications using Excel during internship at PT PLN (Persero) Unit Induk Wilayah NTB.",
     ],
-    tags: ["LLM", "Agent Framework", "NLP", "Chatbot"],
-    image: "/assets/project/elang_llm.jpg"
-  },
-  {
-    id: 'p5',
-    title: "Elang AI (IM3 and 3)",
-    role: "Developer",
-    date: "Dec 2024",
-    description: [
-      "Built an object detection model to identify and count products and promotional materials specific to the IM3 and 3 brands.",
-    ],
-    tags: ["Computer Vision", "Object Detection", "Brand Detection"],
-    image: "/assets/project/elang_ai.jpg",
-    link: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7289203499630829568"
-  },
-  {
-    id: 'p6',
-    title: "Face Recognition Research",
-    role: "Leader of Developers and Researcher",
-    date: "Jul 2024 – Feb 2025",
-    description: [
-      "Developed and benchmarked various face recognition models (FaceNet512, GhostFaceNet, ArcFace, etc.).",
-    ],
-    tags: ["FaceNet512", "ArcFace", "Research", "Python"],
-    image: "/assets/project/face_recognition.jpg"
-  },
-  {
-    id: 'p7',
-    title: "Diabetes Disease Prediction Application",
-    role: "Developer",
-    date: "Jun 2024",
-    description: [
-      "Developed a diabetes prediction application using 3 Machine Learning algorithms as the Final Capstone Project for MSIB Batch 6.",
-    ],
-    tags: ["Machine Learning", "Health AI", "Python"],
-    image: "/assets/project/diab_pred.jpg"
-  },
-  {
-    id: 'p8',
-    title: "Heart Disease Prediction Application",
-    role: "Developer",
-    date: "Dec 2023",
-    description: [
-      "Built a web application to predict heart disease using 3 Machine Learning algorithms.",
-    ],
-    tags: ["Machine Learning", "Web App", "Health AI"],
-    image: "/assets/project/heart_disease.jpg"
+    tags: ["Data Management", "Excel", "Internship"],
+    image: "public/assets/experience/pln/pln.png"
   }
-];
 
-export const PUBLICATIONS: Publication[] = [
-  {
-    id: 'pub1',
-    title: "Single-Image Face Recognition For Student Identification Using Facenet512 And Yolov8",
-    journal: "Jurnal Teknik Informatika (Unsoed) - Sinta 2",
-    year: "2025",
-    role: "First Author",
-    link: "https://jutif.if.unsoed.ac.id/index.php/jurnal/article/view/3908"
-  },
-  {
-    id: 'pub2',
-    title: "Optimizing Face Recognition and Emotion Detection in Student Identification",
-    journal: "Inform (Universitas Dr. Soetomo) - Sinta 3",
-    year: "2025",
-    role: "Fourth Author",
-    link: "https://ejournal.unitomo.ac.id/index.php/inform/article/view/9304"
-  },
-  {
-    id: 'pub3',
-    title: "Komparasi Deteksi SSD Dengan YouLook Menggunakan GhostFaceNet",
-    journal: "Building of Informatics, Technology and Science (BITS) - Sinta 3",
-    year: "2024",
-    role: "Fourth Author",
-    link: "https://ejurnal.seminar-id.com/index.php/bits/article/view/6225"
-  },
-  {
-    id: 'pub4',
-    title: "Comparison of ArcFace and Dlib Performance in Face Recognition",
-    journal: "Jurnal Inovtek Polbeng - Sinta 3",
-    year: "2024",
-    role: "Fourth Author",
-    link: "https://jurnal.polbeng.ac.id/index.php/ISI/article/view/206"
-  },
-  {
-    id: 'pub5',
-    title: "DiabTrack: Sistem Prediksi Dini Diabetes Melitus Tipe 2 berbasis Web menggunakan Algoritma K-Nearest Neighbors",
-    journal: "Edumatic : Jurnal Pendidikan Informatika (Universitas Hamzanwadi) - Sinta 3",
-    year: "2025",
-    role: "Fourth Author",
-    link: "https://e-journal.hamzanwadi.ac.id/index.php/edumatic/article/view/29691"
-  }
 ];
 
 export const SKILLS: SkillCategory[] = [
   {
-    category: "AI & Data Science",
+    category: "Hard Skills",
     items: [
-      "AI Model Development", 
-      "Machine Learning", 
-      "Deep Learning", 
-      "Data Science", 
-      "Data Analysis", 
-      "Data Visualization", 
-      "NLP (Natural Language Processing)", 
-      "AI Agents (Flowise)", 
-      "Computer Vision (Roboflow, Ultralytics, Label Studio)"
+      "Python", "SQL", "Power BI", "Google Looker", "Excel", "Canva"
     ]
   },
   {
-    category: "Programming & Databases",
+    category: "Core Concepts",
     items: [
-      "Python", 
-      "SQL (MySQL, PostgreSQL)", 
-      "Redis", 
-      "C/C++"
+      "Data Analysis", "Machine Learning (YOLO, LSTM, SVM)", "AI Model Development", "Market Research"
     ]
   },
   {
-    category: "Tools & Platforms",
+    category: "Soft Skills",
     items: [
-      "TensorFlow", 
-      "PyTorch", 
-      "Docker", 
-      "Git", 
-      "Google Cloud Console", 
-      "Flask", 
-      "Tableau", 
-      "Google Colab", 
-      "Datagrip", 
-      "Navicat", 
-      "Meta for Developers", 
-      "Microsoft Office", 
-      "Trae", 
-      "Visual Studio Code", 
-      "Google Antigravity", 
-      "Ollama", 
-      "LM Studio", 
-      "Streamlit", 
-      "OpenRouter", 
-      "Groq"
+      "Communication", "Public Speaking", "Leadership", "Problem Solving"
     ]
   }
 ];
 
 export const EDUCATION: Education[] = [
   {
-    institution: "Dian Nuswantoro University",
-    degree: "Bachelor Degree in Informatics Engineering",
-    period: "Sep 2021 – Feb 2025",
-    gpa: "3.83/4.00",
+    institution: "Mataram University",
+    degree: "Bachelor Degree in Mathematics",
+    period: "Aug 2021 - Jul 2025",
+    gpa: "3.36/4.00",
     details: [
-      "Selected for the 'Kelas Unggulan 2021' (Excellent Class), an exclusive program class for the top students in the Informatics Engineering major.",
-      "Completed the degree program with AI research contributions resulting in 5 published scientific journals (Sinta 2 & 3) in Computer Vision and Health AI.",
-      "Served as a Data Science Supervisor and Mentor for the Bengkel Koding Program."
+      "Fresh graduate with a strong interest in Data Science and Machine Learning."
     ],
-    image: "/assets/education/logo_udinus.png"
+    image: "/assets/education/logo_unram.png"
   },
   {
-    institution: "BISA AI Academy (MSIB Batch 6)",
-    degree: "Independent Study - Data Science",
-    period: "Feb 2024 – Jun 2024",
-    gpa: "96/100 (Excellent)",
+    institution: "BISA AI Academy",
+    degree: "Independent Study MSIB 6 Data Science",
+    period: "2024",
+    gpa: "Score 96/100",
     details: [
-      "Completed the Kampus Merdeka Batch 6 independent study program in Data Science.",
-      "Developed a Capstone Project, creating a diabetes prediction application using 3 machine learning algorithms.",
-      "Conducted 2 webinars related to Data Science during the program."
+      "Completed Independent Study in Data Science with a score of 96/100."
     ],
     image: "/assets/education/logo_bisaai.png"
   }
@@ -319,127 +196,168 @@ export const CERTIFICATIONS: Certification[] = [
     title: "CertNexus AIBIZ™ Credential",
     issuer: "CertNexus",
     date: "Oct 2024",
-    image: "/assets/certificates/certnexus_aibiz.png",
-    hoverText: "CertNexus AIBIZ™ Credential awarded for demonstrating expertise in AI business applications.",
-    link: "https://www.credential.net/9d4fa8cb-3ce0-4279-a196-32db2faf8bfc#acc.QrN072iL"
+    image: "/assets/certificates/certnexus/aibiz.jpg",
+    hoverText: "Successfully obtained the AIBIZ™ credential from CertNexus",
+    link:"https://certifications.certnexus.com/1fc2521e-5cb3-4ace-86e2-5db043be94e3#acc.Wmc1ix9w"
   },
   {
     id: 'c2',
-    title: "Certification Scheme of Associate Data Scientist",
-    issuer: "BNSP",
-    date: "Sep 2024",
-    image: "/assets/certificates/bnsp_data_science.jpg",
-    hoverText: "BNSP Certification Scheme of Associate Data Scientist awarded for demonstrating competence in Data Science.",
-  },
-  {
-    id: 'c3',
     title: "CertNexus DSBIZ™ Credential",
     issuer: "CertNexus",
     date: "Jul 2024",
-    image: "/assets/certificates/certnexus_dsbiz.png",
-    hoverText: "CertNexus DSBIZ™ Credential awarded for demonstrating expertise in Data Science business applications.",
-    link: "https://www.credential.net/705f3b12-17b8-4453-8cf5-7351727d0aab#acc.XAdp4E1i"
+    image: "/assets/certificates/certnexus/dsbiz.png",
+    hoverText: "Successfully obtained the DSBIZ™ credential from CertNexus",
+    link:"https://www.credential.net/ebed4275-99c4-458d-bdab-3614dc4ee56f#acc.nl2wkINj"
+  },
+  {
+    id: 'c3',
+    title: "Finalist, Science and Technology National Competition 2024",
+    issuer: "National Competition",
+    date: "Oct 2024",
+    image: "public/assets/certificates/finalist_national_seminar/Finalist Karya Ilmiah.jpg",
+    hoverText: "Became a finalist in the national seminar for participation in the Science And Technology National Competition 2024 in the Scientific Writing category",
   },
   {
     id: 'c4',
-    title: "MSIB 6 - Data Science Participation Certificate",
-    issuer: "BISA AI Academy x Kampus Merdeka",
+    title: "Independent Study MSIB 6 Data Science",
+    issuer: "BISA AI Academy",
     date: "Jun 2024",
-    image: "/assets/certificates/msib_6_data_science_certificates.jpg",
-    hoverText: "Participation certificate for completing the MSIB Batch 6 Data Science independent study program organized by BISA AI Academy in collaboration with Kampus Merdeka.",
-  },
-  {
-    id: 'c3',
-    title: "Generative AI with Stable Diffusion - Speaker Certificate",
-    issuer: "BISA AI Academy x Kampus Merdeka",
-    date: "May 2024",
-    image: "/assets/certificates/gen_ai_stable_diffusion.jpg",
-    hoverText: "Speaker in the Generative AI with Stable Diffusion webinar organized by BISA AI Academy in collaboration with Kampus Merdeka.",
-  },
-  {
-    id: 'c3',
-    title: "Fundamentals of SQL - Speaker Certificate",
-    issuer: "BISA AI Academy x Kampus Merdeka",
-    date: "Apr 2024",
-    image: "/assets/certificates/fundamental_sql.jpg",
-    hoverText: "Speaker in the Fundamentals of SQL webinar organized by BISA AI Academy in collaboration with Kampus Merdeka.",
-  },
-  {
-    id: 'c4',
-    title: "Certificate of Competency - Kimia Farma Big Data Analytics Project Based Internship Program",
-    issuer: "Kimia Farma x Rakamin Academy",
-    date: "Mar 2024",
-    image: "/assets/certificates/kimia_farma_rakamin.png",
-    hoverText: "Big Data Analytics Project Based Internship Program certificate awarded by Kimia Farma in collaboration with Rakamin Academy.",
+    image: "public/assets/certificates/msib_6/MSIB 6.png",
+    hoverText: "Completed Independent Study in Data Science from BISA AI Academy"
   },
   {
     id: 'c5',
-    title: "Memulai Pemrograman dengan Python",
-    issuer: "Dicoding",
-    date: "Feb 2024",
-    image: "/assets/certificates/dicoding_memulai_python.png",
-    hoverText: "Certificate awarded by Dicoding for completing the course on Pemrograman dengan Python.",
+    title: "Journal Review Session Presenter",
+    issuer: "Mataram University",
+    date: "Dec 2024",
+    image: "public/assets/certificates/national_seminar_presenter/national_seminar_presenter.jpg",
+    hoverText: "Became a presenter at the National Seminar at Mataram University"
   },
   {
-    id: 'c5',
-    title: "Mentor Data Science - Bengkel Koding",
-    issuer: "Bengkel Koding",
-    date: "Jan 2024",
-    image: "/assets/certificates/bengkod.jpg",
-    hoverText: "Mentor Data Science certificate awarded by Bengkel Koding for mentoring Data Science students.",
+    id: 'c6',
+    title: "Mental Health Fest Moderator",
+    issuer: "Mataram University",
+    date: "Nov 2022",
+    image: "public/assets/certificates/mental_health_fest_moderator/Moderator Mental Health Fest.jpg",
+    hoverText: "Served as the moderator for the Mental Health Fest event held at Mataram University"
   },
   {
-    id: 'c5',
-    title: "Data Analysis with Python",
-    issuer: "IBM X Coursera",
-    date: "Dec 2023",
-    image: "/assets/certificates/coursera_ibm_data_analysis_with_python.png",
-    hoverText: "Data Analysis with Python certificate awarded by IBM via Coursera.",
-    link: "https://www.coursera.org/account/accomplishments/verify/LAADXBGGX33X"
-  },
-  {
-    id: 'c5',
-    title: "Databases and SQL for Data Science with Python (with Honors)",
-    issuer: "IBM X Coursera",
-    date: "Dec 2023",
-    image: "/assets/certificates/coursera_databases_and_sql.png",
-    hoverText: "Databases and SQL for Data Science with Python certificate (with Honors) awarded by IBM via Coursera.",
-    link: "https://www.coursera.org/account/accomplishments/certificate/6A3L9YH5T5XZ"
-  },
-  {
-    id: 'c5',
-    title: "Python Project for Data Science",
-    issuer: "IBM X Coursera",
-    date: "Nov 2023",
-    image: "/assets/certificates/coursera_python_for_data_science.png",
-    hoverText: "Python Project for Data Science certificate awarded by IBM via Coursera.",
-    link: "https://www.coursera.org/account/accomplishments/certificate/3RER66R2YDZ6"
-  },
-  {
-    id: 'c5',
-    title: "Python for Data Science, AI & Development",
-    issuer: "IBM X Coursera",
-    date: "Nov 2023",
-    image: "/assets/certificates/coursera_python_ai_development.png",
-    hoverText: "Python for Data Science, AI & Development certificate awarded by IBM via Coursera.",
-    link: "https://www.coursera.org/account/accomplishments/certificate/AKWZQACDBTHB"
-  },
-  {
-    id: 'c5',
-    title: "Belajar Dasar Data Science",
-    issuer: "Dicoding",
+    id: 'c7',
+    title: "Python Training for Data Science Moderator",
+    issuer: "Mataram University",
     date: "Sep 2023",
-    image: "/assets/certificates/dicoding_dasar_data_science.png",
-    hoverText: "Belajar Dasar Data Science certificate awarded by Dicoding.",
-    link: "https://www.dicoding.com/certificates/JMZV1G3NJXN9"
+    image: "public/assets/certificates/python_training_data_science_moderator/Moderator Python Training.jpg",
+    hoverText: "Served as the moderator for the Python Training for Data Science workshop at Mataram University"
   },
   {
-    id: 'c5',
-    title: "Get Started with Deep Learning",
-    issuer: "NVIDIA",
-    date: "Jan 2023",
-    image: "/assets/certificates/nvidia_deep_learning.png",
-    hoverText: "Get Started with Deep Learning certificate awarded by NVIDIA.",
-    link: "https://learn.nvidia.com/certificates?id=4FuhfitKQd-9BZ7MD6vKug"
+    id: 'c8',
+    title: "Secretary OPTION",
+    issuer: "Mataram University",
+    date: "2022",
+    image: "public/assets/certificates/secretary_option/Sekretaris OPTION.jpg",
+    hoverText: "Served as the secretary of the OPTION organization at Mataram University"
   },
+  {
+    id: 'c9',
+    title: "WDSC Moderator",
+    issuer: "Mataram University",
+    date: "Jul 2022",
+    image: "public/assets/certificates/wdsc_moderator/Moderator WDSC.jpg",
+    hoverText: "Served as the moderator for the Workshop and Digital Startup Competition 2022 at Mataram University"
+  },
+  {
+    id: 'c10',
+    title: "Webinar Speaker at BISA AI Academy",
+    issuer: "BISA AI Academy",
+    date: "Mar 2022",
+    image: "public/assets/certificates/webinar_speaker_bisaai/Sertif Pemateri 1.png",
+    hoverText: "Delivered a webinar on Quality Control Statistics at BISA AI Academy"
+  },
+  {
+    id: 'c11',
+    title: "Webinar Speaker at BISA AI Academy",
+    issuer: "BISA AI Academy",
+    date: "Mar 2022",
+    image: "public/assets/certificates/webinar_speaker_bisaai/Sertif Pemateri 2.png",
+    hoverText: "Delivered a webinar on Quality Control Attributes at BISA AI Academy"}
 ];
+
+export const GALLERY: GalleryItem[] = [
+  {
+    id: 'g1',
+    title: "Graduation Day",
+    description: "Celebrating the completion of my Bachelor's degree in Mathematics at Mataram University",
+    images: ["public/assets/gallery/graduate/1.jpg", "public/assets/gallery/graduate/2.jpg", "public/assets/gallery/graduate/3.jpg", "public/assets/gallery/graduate/4.jpg", "public/assets/gallery/graduate/5.jpg", "public/assets/gallery/graduate/6.jpg" ]
+
+  },
+  {
+    id: 'g2',
+    title: "Webinar Speaker at BISA AI Academy",
+    description: "Delivering a webinar on Quality Control Statistics at BISA AI Academy",
+    images: ["public/assets/gallery/webinar_bisaai/1.png", "public/assets/gallery/webinar_bisaai/2.png"]
+  },
+  {
+    id: 'g3',
+    title: "Workshop and Digital Startup Competition 2022",
+    description: "Startup Optimization for Creative Tech Business in Society 5.0",
+    images: ["public/assets/gallery/wdsc/1.png", "public/assets/gallery/wdsc/2.png", "public/assets/gallery/wdsc/3.jpg", "public/assets/gallery/wdsc/4.jpg"]
+  },
+  {
+    id: 'g4',
+    title: " Workshop Python Training for Data Science",
+    description: "Becoming the MC for Python Training for Data Science workshop at Mataram University",
+    images: ["public/assets/gallery/python_data_science/1.jpg", "public/assets/gallery/python_data_science/2.jpg", "public/assets/gallery/python_data_science/3.jpg"]
+  },
+  {
+    id: 'g5',
+    title: "Internship at PT PLN (Persero) Unit Induk Wilayah NTB",
+    description: "Completed internship program at PT PLN (Persero) Unit Induk Wilayah NTB, gaining practical experience in the energy sector",
+    images: ["public/assets/gallery/pkl_pln/1.jpg", "public/assets/gallery/pkl_pln/2.jpg", "public/assets/gallery/pkl_pln/3.jpg"]
+  },
+  {
+    id: 'g6',
+    title: "Journal Review Session",
+    description: "Presented a journal review session at Mataram University, exploring machine learning in research and applications",
+    images: ["public/assets/gallery/journal_review/1.jpg", "public/assets/gallery/journal_review/2.jpg", "public/assets/gallery/journal_review/3.jpg"]
+  },
+  {
+    id: 'g7',
+    title: "Loka Karya Gamatika Coding Club 2025",
+    description: "Presented at the Gamatika Coding Club workshop at Mataram University on 'Computation for Solutions: Computational Mathematics for Real World Problems'",
+    images: ["public/assets/gallery/loka_karya/pamflet_loka_karya.jpg"]
+  },
+  {
+    id: 'g8',
+    title: "Sharing Session at Gamatika Coding Club 2025",
+    description: "Sharing session at Gamatika Coding Club on 'Growing Further with Internships and Independent Studies'",
+    images: ["public/assets/gallery/sharing_session/pamflet_sharing_session.jpg"]
+  },
+  {
+    id: 'g9',
+    title: "Finalist, Science and Technology National Competition 2024",
+    description: "Became a finalist in the national seminar for participation in the Science And Technology National Competition 2024 in the Scientific Writing category organized by the Mathematics Student Association FMIPA Sriwijaya University on October 30, 2024",
+    images: ["public/assets/gallery/national_seminar/national_seminar.jpg"]
+  },
+  {
+    id: 'g10',
+    title: "Mental Health Fest Moderator",
+    description: "Served as the moderator for the Mental Health Fest event held at Mataram University, facilitating discussions on mental health awareness and support",
+    images: ["public/assets/gallery/mental_health_fest/mental_health_fest.jpg"]
+  },
+ 
+  {    
+    id: 'g11',
+    title: "Teaching Assistant Role",
+    description: "Serving as a Teaching Assistant for the Programming Algorithms and Database courses at Mataram University",
+    images: ["public/assets/gallery/asdos/asdos.jpg"]
+  }
+
+
+];
+
+// Select which gallery items to show in the carousel by ID
+const CAROUSEL_IDS = ['g1', 'g2', 'g3'];
+
+export const CAROUSEL_ITEMS: GalleryItem[] = CAROUSEL_IDS.map(id => 
+  GALLERY.find(item => item.id === id)
+).filter((item): item is GalleryItem => item !== undefined);
