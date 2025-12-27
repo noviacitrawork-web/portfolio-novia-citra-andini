@@ -237,11 +237,11 @@ const Hero: React.FC = () => {
         >
            {/* Interactive Fidget Spinner Area */}
            <motion.div 
-             className="relative w-72 h-72 md:w-96 md:h-96 lg:w-[480px] lg:h-[480px] flex items-center justify-center cursor-grab active:cursor-grabbing"
+             className={`relative w-72 h-72 md:w-96 md:h-96 lg:w-[480px] lg:h-[480px] flex items-center justify-center ${ENABLE_FIDGET_SPINNER ? 'cursor-grab active:cursor-grabbing' : ''}`}
              onPanStart={handlePanStart}
              onPan={handlePan}
              onPanEnd={handlePanEnd}
-             style={{ touchAction: 'none' }} // CRITICAL: Prevents scrolling interference on mobile/tablet
+             style={{ touchAction: ENABLE_FIDGET_SPINNER ? 'none' : 'auto' }} // CRITICAL: Prevents scrolling interference on mobile/tablet
            >
               {/* Rotating Segmented Border */}
               <motion.div 
