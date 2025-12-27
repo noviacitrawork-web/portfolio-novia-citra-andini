@@ -2,7 +2,7 @@ import { title } from 'process';
 import { Experience, Project, SkillCategory, Education, Certification, GalleryItem } from './types';
 import { Linkedin, Mail, FileText, Phone, Instagram, Github } from 'lucide-react';
 
-export const RESUME_URL = "assets/resume/CV_Novia Citra Andini.pdf"; // Replace with actual file path if hosting
+export const RESUME_URL = `https://drive.google.com/uc?export=download&id=${import.meta.env.VITE_RESUME_FILE_ID}`;
 export const ENABLE_FIDGET_SPINNER = false; // Set to false to disable interactive spinning (idle animation remains)
 
 export const METADATA = {
@@ -35,8 +35,8 @@ export const PERSONAL_INFO = {
   logo: "Novia", // Logo text in Navbar
   role: "Data Analyst | Data Scientist | Mathematics Graduate | Public Speaker | Moderator", // Static role for SEO/Metadata
   typingRoles: ["Data Analyst", "Data Scientist", "General Affair", "Data Entry", "Research and Development", "Assistant", "Public Speaker", "Moderator"], // Roles for the typing animation
-  email: "noviacitrawork@gmail.com",
-  linkedin: "https://linkedin.com/in/noviacitraandini",
+  email: import.meta.env.VITE_EMAIL || "",
+  linkedin: import.meta.env.VITE_LINKEDIN_URL || "",
   profileImage: "assets/profile/profile.png", // Replace with your actual photo URL
   about: "Mathematics graduate from Mataram University blending analytical rigor with strong communication skills. Passionate about Data Science, Machine Learning, and Business Intelligence, with proven experience in building AI models and handling large-scale data. A confident public speaker and moderator, capable of translating complex technical insights into clear, actionable strategies."
 };
@@ -52,7 +52,7 @@ export const SOCIAL_LINKS = [
   { 
     name: 'WhatsApp', 
     icon: <Phone className="w-5 h-5" />, 
-    href: `https://wa.me/+6285238004884` 
+    href: `https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER}` 
   },
 ];
 
