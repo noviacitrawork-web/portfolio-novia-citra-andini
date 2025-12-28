@@ -28,6 +28,24 @@ export const GALLERY_DESCRIPTION = "A visual journey through academic milestones
 export const CONTACT_TITLE = "Contact Me";
 export const CONTACT_DESCRIPTION = " Feel free to reach out for collaborations, new projects, general inquiries, or business partnerships.";
 
+export const ABOUT_DETAILS = {
+  subtitle: "Data Scientist & Analyst",
+  introduction: "I am a Mathematics graduate from Mataram University with a strong foundation in analytical thinking and problem-solving. My passion lies in Data Science, Machine Learning, and Business Intelligence, where I apply mathematical rigor to build AI models and derive actionable insights from complex data. Beyond technical skills, I am an experienced public speaker and moderator, adept at communicating technical concepts to diverse audiences.",
+  highlights: [
+    "Expertise in Python, SQL, & Power BI",
+    "Machine Learning (YOLO, LSTM, SVM)",
+    "Mathematics Graduate (GPA 3.36/4.00)",
+    "Public Speaking & Leadership"
+  ],
+  quickStats: [
+    { label: "Years Experience", value: "2+" },
+    { label: "Projects Completed", value: "5+" },
+    { label: "Certifications", value: "10+" },
+    { label: "GPA", value: "3.36" }
+  ],
+  buttonText: "View Projects"
+};
+
 export const PERSONAL_INFO = {
   name: "Novia Citra Andini",
   firstName: "Novia Citra", // First line of name in Hero

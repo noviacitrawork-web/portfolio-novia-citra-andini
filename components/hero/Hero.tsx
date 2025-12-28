@@ -132,7 +132,7 @@ const Hero: React.FC = () => {
   }, [displayRole, isDeleting, roleIndex]);
 
   return (
-    <section id="about" className="min-h-screen flex items-center pt-20 relative overflow-hidden bg-gray-50 dark:bg-dark transition-colors duration-500">
+    <section id="home" className="min-h-screen flex items-center pt-20 pb-20 relative overflow-hidden bg-gray-50 dark:bg-dark transition-colors duration-500">
       {/* Texture Pattern: Dot Grid */}
       <div className="absolute inset-0 bg-[radial-gradient(#00000033_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff33_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.1] z-0"></div>
 
@@ -158,8 +158,20 @@ const Hero: React.FC = () => {
               <span>{displayRole}</span>
               <span className="animate-pulse ml-1 text-primary">|</span>
             </h2>
+            
+            {/* Role Badges */}
+            <div className="flex flex-wrap gap-2 mt-6 justify-center md:justify-start max-w-lg mx-auto md:mx-0">
+              {PERSONAL_INFO.typingRoles.map((role, index) => (
+                <span 
+                  key={index} 
+                  className="px-3 py-1 text-xs md:text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 rounded-full border border-gray-200 dark:border-gray-700 shadow-sm"
+                >
+                  {role}
+                </span>
+              ))}
+            </div>
           </motion.div>
-          
+
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -168,7 +180,7 @@ const Hero: React.FC = () => {
           >
             {PERSONAL_INFO.about}
           </motion.p>
-
+          
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -189,19 +201,6 @@ const Hero: React.FC = () => {
             <motion.a 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="#projects" 
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('#projects');
-              }}
-              className="px-8 py-3 bg-primary hover:bg-blue-600 text-white font-medium rounded-full flex items-center justify-center transition-all shadow-lg shadow-blue-500/25"
-            >
-              View Projects <ChevronRight className="ml-2 w-4 h-4" />
-            </motion.a>
-
-            <motion.a 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
               href={RESUME_URL}
               target="_blank"
               download
@@ -216,7 +215,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="flex items-center gap-6 pt-2 justify-center md:justify-start"
+            className="flex items-center gap-6 pt-8 justify-center md:justify-start"
           >
             {SOCIAL_LINKS.map((link) => (
               <motion.a

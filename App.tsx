@@ -7,6 +7,7 @@ import { METADATA } from './constants';
 
 // Lazy load components
 const Hero = lazy(() => import('./components/hero/Hero'));
+const About = lazy(() => import('./components/about/About'));
 const Experience = lazy(() => import('./components/experience/Experience'));
 const Projects = lazy(() => import('./components/projects/Projects'));
 const Skills = lazy(() => import('./components/skills/Skills'));
@@ -66,6 +67,7 @@ function App() {
                 <main>
                   <Suspense fallback={<LoadingFallback />}>
                     <Hero />
+                    <About />
                     <Experience />
                     <Projects />
                     <Certifications />
