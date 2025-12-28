@@ -31,21 +31,9 @@ const About: React.FC = () => {
   };
 
   return (
-    <section id="about" className="py-20 relative overflow-hidden bg-white dark:bg-dark transition-colors duration-500">
-      {/* Background Motif: Neural Network / Data Nodes */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <defs>
-            <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-              <circle cx="1" cy="1" r="0.5" className="fill-primary" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-          {/* Abstract connecting lines */}
-          <path d="M0,50 Q25,30 50,50 T100,50" fill="none" stroke="currentColor" strokeWidth="0.2" className="text-primary opacity-30" />
-          <path d="M0,30 Q25,50 50,30 T100,30" fill="none" stroke="currentColor" strokeWidth="0.2" className="text-secondary opacity-30" />
-        </svg>
-      </div>
+    <section id="about" className="py-20 relative overflow-hidden bg-gray-50 dark:bg-dark transition-colors duration-500">
+      {/* Background Motif: Dot Grid (Matching Hero Section) */}
+      <div className="absolute inset-0 bg-[radial-gradient(#00000033_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff33_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.1] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
