@@ -18,6 +18,14 @@ const Carousel: React.FC<CarouselProps> = ({ items, autoPlayInterval = 5000 }) =
   const touchStartX = useRef<number>(0);
   const touchEndX = useRef<number>(0);
 
+  // Helper to parse bold text using * syntax
+  const parseBoldText = (text: string | React.ReactNode, className = "font-bold text-gray-900 dark:text-white") => {
+    if (typeof text !== 'string') return text;
+    return text.split('*').map((part, index) => 
+      index % 2 === 1 ? <span key={index} className={className}>{part}</span> : part
+    );
+  };
+
   useEffect(() => {
     if (isPaused || selectedItem) return;
 
@@ -104,7 +112,7 @@ const Carousel: React.FC<CarouselProps> = ({ items, autoPlayInterval = 5000 }) =
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.5 }}
-            className="absolute inset-0 w-full h-full cursor-pointer bg-gray-200 dark:bg-gray-800"
+            className="absolute inset-0 w-full h-full cursor-pointer bg-black"
             onClick={() => handleOpenModal(items[currentIndex])}
           >
             {!loadedImages.has(items[currentIndex].images[0]) && (
@@ -122,7 +130,7 @@ const Carousel: React.FC<CarouselProps> = ({ items, autoPlayInterval = 5000 }) =
             />
             <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
                <p className="text-white text-lg font-bold mb-2">{items[currentIndex].title}</p>
-               <p className="text-white/80 text-sm max-w-md text-center px-4 mb-4 line-clamp-2">{items[currentIndex].description}</p>
+               <p className="text-white/80 text-sm max-w-md text-center px-4 mb-4 line-clamp-2">{parseBoldText(items[currentIndex].description, "font-bold text-white")}</p>
                <div className="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-wider bg-primary/80 px-3 py-1.5 rounded-full">
                   <ZoomIn size={14} /> View Full Size
                </div>
@@ -174,7 +182,7 @@ const Carousel: React.FC<CarouselProps> = ({ items, autoPlayInterval = 5000 }) =
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-5xl w-[95%] md:w-full bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-2xl max-h-[90vh] flex flex-col md:block"
+              className="relative max-w-5xl w-[95%] md:w-full bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-2xl max-h-[90vh] lg:h-[85vh] flex flex-col"
             >
               <button
                 onClick={handleCloseModal}
@@ -183,9 +191,9 @@ const Carousel: React.FC<CarouselProps> = ({ items, autoPlayInterval = 5000 }) =
                 <X size={20} />
               </button>
 
-              <div className="grid md:grid-cols-[2fr,1fr] h-full overflow-y-auto md:overflow-hidden">
+              <div className="flex flex-col lg:grid lg:grid-cols-[65%_35%] flex-1 min-h-0 overflow-hidden">
                 <div 
-                  className="bg-black flex items-center justify-center p-2 relative group h-[40vh] md:h-auto min-h-[200px] md:min-h-[500px] shrink-0"
+                  className="bg-black flex items-center justify-center p-0 relative group h-[40%] min-h-[250px] lg:h-full w-full shrink-0"
                   onTouchStart={handleTouchStart}
                   onTouchMove={handleTouchMove}
                   onTouchEnd={handleModalTouchEnd}
@@ -218,13 +226,13 @@ const Carousel: React.FC<CarouselProps> = ({ items, autoPlayInterval = 5000 }) =
                     <>
                       <button 
                         onClick={(e) => { e.stopPropagation(); handlePrevImage(); }}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-colors hidden md:block"
+                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 backdrop-blur-sm text-white p-2 rounded-full transition-colors hidden md:block"
                       >
                         <ChevronLeft className="w-6 h-6" />
                       </button>
                       <button 
                         onClick={(e) => { e.stopPropagation(); handleNextImage(); }}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-colors hidden md:block"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 backdrop-blur-sm text-white p-2 rounded-full transition-colors hidden md:block"
                       >
                         <ChevronRight className="w-6 h-6" />
                       </button>
@@ -242,14 +250,19 @@ const Carousel: React.FC<CarouselProps> = ({ items, autoPlayInterval = 5000 }) =
                   )}
                 </div>
 
-                <div className="p-6 md:p-8 flex flex-col justify-center bg-white dark:bg-gray-800">
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                    {selectedItem.title}
-                  </h3>
-                  <div className="w-20 h-1 bg-secondary rounded-full mb-6"></div>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm md:text-base">
-                    {selectedItem.description}
-                  </p>
+                {/* Unified Scroll Container */}
+                <div className="flex-1 lg:h-full overflow-y-auto bg-white dark:bg-gray-800 p-6 md:p-8 custom-scrollbar">
+                  <div className="flex flex-col min-h-full">
+                    <div className="flex-shrink-0">
+                      <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                        {selectedItem.title}
+                      </h3>
+                      <div className="w-20 h-1 bg-secondary rounded-full mb-6"></div>
+                    </div>
+                    <div className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm md:text-base">
+                      {parseBoldText(selectedItem.description)}
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>

@@ -32,13 +32,13 @@ export const ABOUT_DETAILS = {
   subtitle: "Data Scientist & Analyst",
   introduction: "I am a Mathematics graduate from Mataram University with a strong foundation in analytical thinking and problem-solving. My passion lies in Data Science, Machine Learning, and Business Intelligence, where I apply mathematical rigor to build AI models and derive actionable insights from complex data. Beyond technical skills, I am an experienced public speaker and moderator, adept at communicating technical concepts to diverse audiences.",
   highlights: [
-    "Expertise in Python, SQL, & Power BI",
+    "Expertise in Python & Power BI",
     "Machine Learning (YOLO, LSTM, SVM)",
     "Mathematics Graduate (GPA 3.36/4.00)",
     "Public Speaking & Leadership"
   ],
   quickStats: [
-    { label: "Years Experience", value: "2+" },
+    { label: "Years Experience", value: "1+" },
     { label: "Projects Completed", value: "5+" },
     { label: "Certifications", value: "10+" },
     { label: "GPA", value: "3.36" }
@@ -56,7 +56,7 @@ export const PERSONAL_INFO = {
   email: import.meta.env.VITE_EMAIL || "",
   linkedin: import.meta.env.VITE_LINKEDIN_URL || "",
   profileImage: "assets/profile/profile.png", // Replace with your actual photo URL
-  about: "Mathematics graduate from Mataram University blending analytical rigor with strong communication skills. Passionate about Data Science, Machine Learning, and Business Intelligence, with proven experience in building AI models and handling large-scale data. A confident public speaker and moderator, capable of translating complex technical insights into clear, actionable strategies."
+  about: "Mathematics graduate with a strong foundation in data handling, structured analysis, and clear communication. Experienced in documentation, workflow mapping, and presenting ideas effectively to technical and non-technical audiences."
 };
 
 export const SOCIAL_LINKS = [
@@ -86,90 +86,63 @@ export const EXPERIENCES: Experience[] = [
       "Conducted market research for new class themes."
     ]
   },
-  {
-    id: '2',
-    role: "Researcher & Speaker",
-    company: "Mataram University",
-    period: "Dec 2024 - Jul 2025",
-    description: [
-      "Developed YOLOv7 object detection model for Anthracnose pests (94% accuracy).",
-      "Compared LSTM vs Backpropagation for Solana price prediction (LSTM achieved 96% accuracy)."
-    ]
-  },
-  {
-    id: '3',
-    role: "Intern (Communication Division)",
-    company: "PT PLN (Persero) Unit Induk Wilayah NTB",
-    period: "Jul 2024 - Aug 2024",
-    description: [
-      "Archived 40,000+ local TV running text records and media publications using Excel."
-    ]
-  },
-  {
-    id: '4',
-    role: "Teaching Assistant",
-    company: "Mataram University",
-    period: "Sep 2023 - Dec 2024",
-    description: [
-      "Assisted 154 students in Programming Algorithms and Database courses."
-    ]
-  },
-  // moderator
-  {
-    id: '5',
-    role: "Moderator",
-    company: "Mataram University",
-    period: "2022 - 2024",
-    description: [
-      "Moderated 5+ events including Mental Health Fest, Python Training for Data Science, and Workshop on Digital Startup Competition with 300+ participants."
-    ]
-  }
 ];
 
 export const PROJECTS: Project[] = [
   {
     id: 'p1',
-    title: "Anthracnose Pest Detection on Chili",
+    title: "Intelligent Anthracnose Detection on Chili Peppers Using YOLOv7",
     role: "Researcher",
     date: "2025",
     description: [
-      "Developed an object detection model using YOLOv7 to identify Anthracnose pests on chili plants.",
+      "This project developed a *YOLOv7-based object detection model* to identify anthracnose disease in chili plants using image data. The model was trained on labeled images of healthy and infected chilies through data preparation, annotation, and evaluation stages, achieving an *accuracy of 94%*. The results demonstrate YOLOv7’s potential as an effective solution for early pest detection to support agricultural productivity and reduce crop losses.",
     ],
-    tags: ["YOLOv7", "Python", "Computer Vision", "Research"],
+    tags: ["Data Annotation","Data Labeling","YOLOv7", "Python", "Computer Vision", "Research"],
     image: "assets/experience/chili_yolov7/chili_yolov7.png"
   },
   {
     id: 'p2',
-    title: "Solana Price Prediction",
+    title: "Machine Learning Models for Cryptocurrency Price Prediction (Solana Case Study)",
     role: "Researcher",
     date: "2025",
     description: [
-      "Compared LSTM and Backpropagation Neural Networks for predicting Solana cryptocurrency prices.",
+      "This project compares Backpropagation and Long Short-Term Memory (LSTM) neural networks for predicting the daily closing price of Solana (SOL) using historical time-series data from Binance. The study involved data preprocessing, normalization, model construction, and evaluation using the Mean Absolute Percentage Error (MAPE) metric. Results show that both models achieved high prediction accuracy, with LSTM slightly outperforming Backpropagation (MAPE 3.14% vs. 3.16%), demonstrating LSTM’s stronger capability in capturing time-series patterns in highly volatile cryptocurrency markets.",
     ],
-    tags: ["LSTM", "Neural Networks", "Python", "Financial Analysis"],
+    tags: ["LSTM", "Neural Networks", "Python", "Financial Analysis","Machine Learning", "Research"],
     image: "assets/experience/solana/output.png"
   },
   {
     id: 'p3',
-    title: " Breast Cancer Prediction App",
+    title: "Breast Care: Web-Based Breast Cancer Early Detection System Using Machine Learning",
     role: "Developer",
     date: "2024",
     description: [
-      "Developed a breast cancer prediction application using SVM Algorithms as a Capstone Project at BISA AI.",
+      "Breast Care is a web-based early detection application for breast cancer developed as a capstone project in the Data Science program at BISA AI Academy. The system applies data mining techniques by comparing multiple classification algorithms—K-Nearest Neighbor (KNN), Support Vector Machine (SVM), and Naive Bayes—to predict benign and malignant breast cancer cases. Using the Breast Cancer Wisconsin Dataset and an 80:20 train-test split, the KNN model achieved the best performance with 97% accuracy, precision, and recall. The final model was deployed using Streamlit and integrated with Firebase, providing an accessible, data-driven decision support tool for early breast cancer screening and public health awareness.",
     ],
     tags: ["SVM", "Machine Learning", "Health AI", "Python"],
     image: "assets/experience/breast_cancer/breast_cancer.png"
   },
   {
     id: 'p4',
-    title: "Internship (Communication Division) at PT PLN (Persero) Unit Induk Wilayah NTB",
+    title: "Media Monitoring and Public Communication Documentation at PT PLN (Persero) UIW NTB",
     role: "Intern",
     date: "2024",
     description: [
-      "Archived over 40,000 local TV running text records and media publications using Excel during internship at PT PLN (Persero) Unit Induk Wilayah NTB.",
+      "This project documents my internship at PT PLN (Persero) Unit Induk Wilayah NTB, where I supported public communication through systematic media monitoring and documentation. My responsibilities included collecting, archiving, and recording media publications from online platforms, newspapers, and television broadcasts. I managed large-scale datasets using Microsoft Excel and Google Drive to ensure data accuracy, traceability, and structured reporting. The project highlights my experience in data entry workflows, evidence management, monitoring processes, and cross-platform documentation to support organizational reporting and public communication strategies.",
     ],
     tags: ["Data Management", "Excel", "Internship"],
     image: "assets/experience/pln/pln.png"
+  },
+  {
+    id: 'p5',
+    title: "Data Visualization and Reporting Module Using Power BI",
+    role: "Analyst",
+    date: "2024",
+    description: [
+      "Conducted comprehensive sales data analysis and created interactive visualizations to provide actionable business insights. Utilized tools such as Power BI and Excel to identify trends, forecast sales, and support strategic decision-making processes. The project enhanced data-driven approaches within the organization, improving sales performance and market understanding."
+    ],
+    tags: ["Data Analysis", "Power BI", "Excel", "Visualization"],
+    image: "assets/experience/sales_data/sales_data.png"
   }
 ];
 
@@ -177,7 +150,7 @@ export const SKILLS: SkillCategory[] = [
   {
     category: "Hard Skills",
     items: [
-      "Python", "SQL", "Power BI", "Google Looker", "Excel", "Canva"
+      "Python", "Power BI", "Google Looker", "Excel", "Canva"
     ]
   },
   {
@@ -313,7 +286,7 @@ export const GALLERY: GalleryItem[] = [
   {
     id: 'g1',
     title: "Graduation Day",
-    description: "Celebrating the completion of my Bachelor's degree in Mathematics at Mataram University",
+    description: "Celebrating the completion of my *Bachelor's degree in Mathematics* at *Mataram University*",
     images: ["assets/gallery/graduate/1.jpg", "assets/gallery/graduate/2.jpg", "assets/gallery/graduate/3.jpg", "assets/gallery/graduate/4.jpg", "assets/gallery/graduate/5.jpg", "assets/gallery/graduate/6.jpg" ]
 
   },

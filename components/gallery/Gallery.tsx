@@ -12,6 +12,14 @@ const Gallery: React.FC = () => {
   const touchStartX = useRef<number>(0);
   const touchEndX = useRef<number>(0);
 
+  // Helper to parse bold text using * syntax
+  const parseBoldText = (text: string | React.ReactNode, className = "font-bold text-white") => {
+    if (typeof text !== 'string') return text;
+    return text.split('*').map((part, index) => 
+      index % 2 === 1 ? <span key={index} className={className}>{part}</span> : part
+    );
+  };
+
   const handleOpenModal = (item: GalleryItem) => {
     setSelectedItem(item);
     setCurrentImageIndex(0);
@@ -92,13 +100,15 @@ const Gallery: React.FC = () => {
                   alt={item.title} 
                   className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 pointer-events-none">
-                  <ZoomIn className="w-10 h-10 text-white drop-shadow-lg" />
+                <div className="absolute top-4 right-4 flex items-start justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 pointer-events-none">
+                  <div className="bg-black/50 p-2 rounded-full backdrop-blur-sm">
+                    <ZoomIn className="w-6 h-6 text-white" />
+                  </div>
                 </div>
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                 <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                <p className="text-gray-200 text-sm">{item.description}</p>
+                <p className="text-gray-200 text-sm">{parseBoldText(item.description)}</p>
               </div>
             </motion.div>
           ))}
@@ -119,7 +129,7 @@ const Gallery: React.FC = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-5xl w-[95%] md:w-full bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-2xl max-h-[90vh] flex flex-col md:block"
+              className="relative max-w-5xl w-[95%] md:w-full bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-2xl max-h-[90vh] lg:h-[85vh] flex flex-col"
             >
               <button
                 onClick={() => setSelectedItem(null)}
@@ -128,9 +138,9 @@ const Gallery: React.FC = () => {
                 <X className="w-6 h-6" />
               </button>
               
-              <div className="grid md:grid-cols-[2fr,1fr] h-full overflow-y-auto md:overflow-hidden">
+              <div className="flex flex-col lg:grid lg:grid-cols-[65%_35%] flex-1 min-h-0 overflow-hidden">
                 <div 
-                  className="bg-black flex items-center justify-center p-2 relative group h-[40vh] md:h-auto min-h-[200px] md:min-h-[500px] shrink-0"
+                  className="bg-black flex items-center justify-center p-0 relative group h-[40%] min-h-[250px] lg:h-full w-full shrink-0"
                   onTouchStart={handleTouchStart}
                   onTouchMove={handleTouchMove}
                   onTouchEnd={handleTouchEnd}
@@ -163,13 +173,13 @@ const Gallery: React.FC = () => {
                     <>
                       <button 
                         onClick={(e) => { e.stopPropagation(); handlePrevImage(); }}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-colors hidden md:block"
+                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 backdrop-blur-sm text-white p-2 rounded-full transition-colors hidden md:block"
                       >
                         <ChevronLeft className="w-6 h-6" />
                       </button>
                       <button 
                         onClick={(e) => { e.stopPropagation(); handleNextImage(); }}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-colors hidden md:block"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 backdrop-blur-sm text-white p-2 rounded-full transition-colors hidden md:block"
                       >
                         <ChevronRight className="w-6 h-6" />
                       </button>
@@ -186,14 +196,19 @@ const Gallery: React.FC = () => {
                     </>
                   )}
                 </div>
-                <div className="p-6 md:p-8 flex flex-col justify-center bg-white dark:bg-gray-800">
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                    {selectedItem.title}
-                  </h3>
-                  <div className="w-20 h-1 bg-secondary rounded-full mb-6"></div>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm md:text-base">
-                    {selectedItem.description}
-                  </p>
+                {/* Unified Scroll Container */}
+                <div className="flex-1 lg:h-full overflow-y-auto bg-white dark:bg-gray-800 p-6 md:p-8 custom-scrollbar">
+                  <div className="flex flex-col min-h-full">
+                    <div className="flex-shrink-0">
+                      <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                        {selectedItem.title}
+                      </h3>
+                      <div className="w-20 h-1 bg-secondary rounded-full mb-6"></div>
+                    </div>
+                    <div className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm md:text-base">
+                      {parseBoldText(selectedItem.description, "font-bold text-gray-900 dark:text-white")}
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>

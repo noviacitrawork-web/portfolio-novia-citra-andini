@@ -4,6 +4,14 @@ import { ChevronRight, CheckCircle2 } from 'lucide-react';
 import { ABOUT_DETAILS } from '../../constants';
 
 const About: React.FC = () => {
+  // Helper to parse bold text using * syntax
+  const parseBoldText = (text: string | React.ReactNode) => {
+    if (typeof text !== 'string') return text;
+    return text.split('*').map((part, index) => 
+      index % 2 === 1 ? <span key={index} className="font-bold text-gray-900 dark:text-white">{part}</span> : part
+    );
+  };
+
   const scrollToProjects = (e: React.MouseEvent) => {
     e.preventDefault();
     const targetElement = document.getElementById('projects');
@@ -52,14 +60,14 @@ const About: React.FC = () => {
             </h3>
             
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-              {ABOUT_DETAILS.introduction}
+              {parseBoldText(ABOUT_DETAILS.introduction)}
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               {ABOUT_DETAILS.highlights.map((highlight, index) => (
                 <div key={index} className="flex items-start space-x-2">
                   <CheckCircle2 className="w-5 h-5 text-secondary flex-shrink-0 mt-1" />
-                  <span className="text-gray-700 dark:text-gray-300">{highlight}</span>
+                  <span className="text-gray-700 dark:text-gray-300">{parseBoldText(highlight)}</span>
                 </div>
               ))}
             </div>
