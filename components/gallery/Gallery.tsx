@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { GALLERY, CAROUSEL_ITEMS, GALLERY_DESCRIPTION } from '../../constants';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ZoomIn, ChevronLeft, ChevronRight, Loader2 } from 'lucide-react';
+import { X, ZoomIn, ChevronLeft, ChevronRight, Loader2, ChevronDown, ChevronUp } from 'lucide-react';
 import Carousel from '../Carousel';
 import { GalleryItem } from '../../types';
 
@@ -9,8 +9,12 @@ const Gallery: React.FC = () => {
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
+  const [showAll, setShowAll] = useState(false);
+  
   const touchStartX = useRef<number>(0);
   const touchEndX = useRef<number>(0);
+
+  const visibleGallery = showAll ? GALLERY : GALLERY.slice(0, 3);
 
   // Helper to parse bold text using * syntax
   const parseBoldText = (text: string | React.ReactNode, className = "font-bold text-white") => {
@@ -83,8 +87,8 @@ const Gallery: React.FC = () => {
         </div>
 
         {/* Grid Section */}
-        <div className="flex flex-wrap justify-center gap-8">
-          {GALLERY.map((item, index) => (
+        <div className="flex flex-wrap justify-center gap-8 mb-12">
+          {visibleGallery.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 20 }}
@@ -100,7 +104,7 @@ const Gallery: React.FC = () => {
                   alt={item.title} 
                   className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute top-4 right-4 flex items-start justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 pointer-events-none">
+                <div className="absolute top-4 right-4 hidden md:flex items-start justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 pointer-events-none">
                   <div className="bg-black/50 p-2 rounded-full backdrop-blur-sm">
                     <ZoomIn className="w-6 h-6 text-white" />
                   </div>
@@ -113,6 +117,25 @@ const Gallery: React.FC = () => {
             </motion.div>
           ))}
         </div>
+
+        {GALLERY.length > 3 && (
+          <div className="flex justify-center mt-8">
+             <button 
+               onClick={() => setShowAll(!showAll)}
+               className="flex items-center gap-2 px-6 py-3 bg-white dark:bg-card border border-gray-200 dark:border-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all text-gray-900 dark:text-white font-medium group hover:-translate-y-1"
+             >
+               {showAll ? (
+                 <>
+                   Show Less Gallery <ChevronUp size={20} className="group-hover:-translate-y-1 transition-transform" />
+                 </>
+               ) : (
+                 <>
+                   Show More Gallery <ChevronDown size={20} className="group-hover:translate-y-1 transition-transform" />
+                 </>
+               )}
+             </button>
+          </div>
+        )}
       </div>
 
       <AnimatePresence>

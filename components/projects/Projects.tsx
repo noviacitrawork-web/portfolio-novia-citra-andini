@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { Folder, ExternalLink, X, ZoomIn } from "lucide-react";
+import { Folder, ExternalLink, X, ZoomIn, ChevronDown, ChevronUp } from "lucide-react";
 import { PROJECTS, PROJECTS_DESCRIPTION } from "../../constants";
 import { motion, AnimatePresence } from "framer-motion";
 import { Project } from "../../types";
 
 const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleProjects = showAll ? PROJECTS : PROJECTS.slice(0, 3);
 
   // Helper to parse bold text using * syntax
   const parseBoldText = (
@@ -74,9 +77,9 @@ const Projects: React.FC = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-50px" }}
-          className="flex flex-wrap justify-center gap-8"
+          className="flex flex-wrap justify-center gap-8 mb-12"
         >
-          {PROJECTS.map((project) => (
+          {visibleProjects.map((project) => (
             <motion.div
               key={project.id}
               variants={item}
@@ -91,10 +94,10 @@ const Projects: React.FC = () => {
                 <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors z-10 pointer-events-none"></div>
 
                 {/* View Full Size Overlay */}
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 flex items-center justify-center pointer-events-none">
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 hidden md:flex items-center justify-center pointer-events-none">
                   <div className="flex items-center gap-2 text-white text-sm font-bold uppercase tracking-wider bg-primary/90 px-4 py-2 rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                     <ZoomIn size={16} />
-                    <span>View Full Size</span>
+                    <span>More</span>
                   </div>
                 </div>
 
@@ -174,6 +177,25 @@ const Projects: React.FC = () => {
             </motion.div>
           ))}
         </motion.div>
+
+        {PROJECTS.length > 3 && (
+          <div className="flex justify-center mt-8">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="flex items-center gap-2 px-6 py-3 bg-white dark:bg-card border border-gray-200 dark:border-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all text-gray-900 dark:text-white font-medium group hover:-translate-y-1"
+            >
+              {showAll ? (
+                <>
+                  Show Less Projects <ChevronUp size={20} className="group-hover:-translate-y-1 transition-transform" />
+                </>
+              ) : (
+                <>
+                  Show More Projects <ChevronDown size={20} className="group-hover:translate-y-1 transition-transform" />
+                </>
+              )}
+            </button>
+          </div>
+        )}
       </div>
 
       <AnimatePresence>

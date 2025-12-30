@@ -131,7 +131,7 @@ const Carousel: React.FC<CarouselProps> = ({ items, autoPlayInterval = 5000 }) =
             <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
                <p className="text-white text-lg font-bold mb-2">{items[currentIndex].title}</p>
                <p className="text-white/80 text-sm max-w-md text-center px-4 mb-4 line-clamp-2">{parseBoldText(items[currentIndex].description, "font-bold text-white")}</p>
-               <div className="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-wider bg-primary/80 px-3 py-1.5 rounded-full">
+               <div className="hidden md:flex items-center gap-2 text-white text-xs font-bold uppercase tracking-wider bg-primary/80 px-3 py-1.5 rounded-full">
                   <ZoomIn size={14} /> View Full Size
                </div>
             </div>
