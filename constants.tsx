@@ -81,11 +81,57 @@ export const EXPERIENCES: Experience[] = [
     company: "Jadi Maju",
     period: "Nov 2025 - Present",
     description: [
-      "Performed sentiment analysis from 34 program databases.",
-      "Identified patterns in participant feedback and translated insights into reports.",
-      "Conducted market research for new class themes."
+      "Performed sentiment analysis on participant feedback by extracting, cleaning, and consolidating data from 34 program databases.",
+      "Identified patterns in positive–negative sentiment, participant suggestions, and recurring challenges, and translated insights into structured analytical reports.",
+      "Conducted market and content research on new class themes, potential speakers, and relevant tools, and built a structured research database to support curriculum and product development."
     ]
   },
+  {
+    id: '2',
+    role: "Researcher & Speaker",
+    company: "Mataram University",
+    period: "Dec. 2024 - Jul. 2025",
+    description: [
+      "Developed and presented an object detection model (YOLOv7) at a National Seminar to identify Anthracnose pests on chili.",
+      "Achieved 94% detection accuracy through dataset annotation and image preparation for model training.",
+      "Analyzed and trained neural network models (LSTM vs. Backpropagation) to predict Solana price time series data.",
+      "Presented the model comparison at a National Seminar, demonstrating the LSTM model achieved 96% accuracy, outperforming Backpropagation"
+    ]
+  },
+  {
+    id: '3',
+    role: "Internship",
+    company: "PT. PLN (Persero) Unit Induk Wilayah NTB",
+    period: "Jul. 2024 - Dec. 2024",
+    description: [
+      "Recorded and archived PLN media publications (social media, newspapers) using Microsoft Excel to facilitate monitoring and reporting processes.",
+      "Compiled and archived over 40,000 local TV running text broadcast records using Microsoft Excel, ensuring organized and accessible data documentation."
+    ]
+  },
+  {
+    id: '4',
+    role: "Teaching Assistant",
+    company: "Mataram University",
+    period: "Sep. 2023 - Dec. 2024",
+    description: [
+      "Assisted 154 students in Programming Algorithms and Database courses, achieving over a 90% pass rate in laboratory sessions.",
+      "Designed Database practical modules focused on data visualization and interactive dashboard development using Power BI.",
+      "Supervised final data visualization projects, leading two students to obtain copyright certificates for their work.",
+      "Taught algorithmic concepts and guided Python implementation to improve student understanding of programming exercises."
+    ]
+  },
+  {
+    id: '5',
+    role: "Moderator",
+    company: "Mataram University",
+    period: "Sep. 2023 - Dec. 2024",
+    description: [
+      "Guided the National Digital Start-Up Competition (3 days), managing event flow and Q&A sessions for 100+ participants.",
+      "Facilitated the Mental Health Festival, moderating discussions and creating interactive dialogue for 40+ participants.",
+      "Led the \"Python Training for Data Science\" seminar, guiding technical sessions and Q&A to ensure effective knowledge transfer to 70+ participants."
+    ]
+  }
+
 ];
 
 export const PROJECTS: Project[] = [
@@ -174,7 +220,11 @@ export const EDUCATION: Education[] = [
     period: "Aug 2021 - Jul 2025",
     gpa: "3.36/4.00",
     details: [
-      "Fresh graduate with a strong interest in Data Science and Machine Learning."
+      "Served as a Teaching Assistant for Programming Algorithms and Database courses, assisting 154 students.",
+      "Presented 2 Machine Learning research projects (YOLOv7 Object Detection & LSTM Prediction) at National Seminars.",
+      "Selected as a Finalist in the Science and Technology National Competition 2024 (Scientific Writing).",
+      "Led the Public Relation & Media division at Gamatika Coding Club, managing a team of 8 members.",
+      "Moderated the \"Python Training for Data Science\" seminar (70+ participants) and the National Digital Start-Up Competition (100+ participants)."
     ],
     image: "/assets/education/logo_unram.png"
   },
@@ -184,7 +234,9 @@ export const EDUCATION: Education[] = [
     period: "2024",
     gpa: "Score 96/100",
     details: [
-      "Completed Independent Study in Data Science with a score of 96/100."
+      "Completed the Kampus Merdeka Batch 6 independent study program in Data Science (Score: 96/100).",
+      "Developed a Capstone Project, creating a cancer prediction application using SVM algorithms.", 
+      "Conducted 2 webinars related to Data Science during the program."
     ],
     image: "/assets/education/logo_bisaai.png"
   }
@@ -197,7 +249,7 @@ export const CERTIFICATIONS: Certification[] = [
     issuer: "CertNexus",
     date: "Oct 2024",
     image: "/assets/certificates/certnexus/aibiz.jpg",
-    hoverText: "Successfully obtained the AIBIZ™ credential from CertNexus",
+    hoverText: "demonstrating foundational competence in applying Artificial Intelligence and data-driven insights to support business decision-making and strategy",
     link:"https://certifications.certnexus.com/1fc2521e-5cb3-4ace-86e2-5db043be94e3#acc.Wmc1ix9w"
   },
   {
@@ -206,153 +258,273 @@ export const CERTIFICATIONS: Certification[] = [
     issuer: "CertNexus",
     date: "Jul 2024",
     image: "/assets/certificates/certnexus/dsbiz.png",
-    hoverText: "Successfully obtained the DSBIZ™ credential from CertNexus",
+    hoverText: "demonstrating competence in applying Data Science and Business Intelligence to support business decision-making and strategy",
     link:"https://www.credential.net/ebed4275-99c4-458d-bdab-3614dc4ee56f#acc.nl2wkINj"
   },
   {
     id: 'c3',
-    title: "Finalist, Science and Technology National Competition 2024",
-    issuer: "National Competition",
-    date: "Oct 2024",
-    image: "assets/certificates/finalist_national_seminar/Finalist Karya Ilmiah.jpg",
-    hoverText: "Became a finalist in the national seminar for participation in the Science And Technology National Competition 2024 in the Scientific Writing category",
+    title: "Presenter Certificate – National Seminar Merdeka Belajar",
+    issuer: "Universitas Mataram",
+    date: "2024",
+    image: "/assets/certificates/national_seminar_merdeka_belajar/1.png",
+    hoverText: "Presenter at the National Seminar Merdeka Belajar by Universitas Mataram, presenting research on chili anthracnose pest detection using machine learning",
+    link: ""
   },
   {
     id: 'c4',
-    title: "Independent Study MSIB 6 Data Science",
-    issuer: "BISA AI Academy",
-    date: "Jun 2024",
-    image: "assets/certificates/msib_6/MSIB 6.png",
-    hoverText: "Completed Independent Study in Data Science from BISA AI Academy"
+    title: "Presenter Certificate – National Seminar on Mathematics Education and Its Applications",
+    issuer: "Universitas Mataram & ITB",
+    date: "2024",
+    image: "/assets/certificates/national_seminar_merdeka_belajar/1.png", 
+    hoverText: "Presenter at the National Seminar on Mathematics Education (Universitas Mataram & ITB), presenting a comparative study of machine learning models for cryptocurrency price prediction.",
+    link: ""
   },
   {
     id: 'c5',
-    title: "Journal Review Session Presenter",
-    issuer: "Mataram University",
-    date: "Dec 2024",
-    image: "assets/certificates/national_seminar_presenter/national_seminar_presenter.jpg",
-    hoverText: "Became a presenter at the National Seminar at Mataram University"
+    title: "Guest Speaker – Loka Karya Gamatika Coding Club",
+    issuer: "Gamatika Coding Club",
+    date: "2024",
+    image: "assets/certificates/gamatika_coding_club/1.png",
+    hoverText: "Shared insights on applying mathematics in computing as a guest speaker at Gamatika Coding Club’s Loka Karya.",
+    link: ""
   },
   {
     id: 'c6',
-    title: "Mental Health Fest Moderator",
-    issuer: "Mataram University",
-    date: "Nov 2022",
-    image: "assets/certificates/mental_health_fest_moderator/Moderator Mental Health Fest.jpg",
-    hoverText: "Served as the moderator for the Mental Health Fest event held at Mataram University"
+    title: "Guest Speaker – Journal Review Class, Gamatika Research Club",
+    issuer: "Gamatika Research Club",
+    date: "2024",
+    image: "/assets/certificates/default.png",
+    hoverText: "Discussed types of machine learning research and shared research ideas with participants.",
+    link: ""
   },
   {
     id: 'c7',
-    title: "Python Training for Data Science Moderator",
-    issuer: "Mataram University",
-    date: "Sep 2023",
-    image: "assets/certificates/python_training_data_science_moderator/Moderator Python Training.jpg",
-    hoverText: "Served as the moderator for the Python Training for Data Science workshop at Mataram University"
+    title: "Guest Speaker – Sharing Session, Gamatika Coding Club",
+    issuer: "Gamatika Coding Club",
+    date: "2024",
+    image: "/assets/certificates/default.png",
+    hoverText: "Shared insights on independent study programs and internship experiences with participants at Gamatika Coding Club’s sharing session.",
+    link: ""
   },
   {
     id: 'c8',
-    title: "Secretary OPTION",
-    issuer: "Mataram University",
-    date: "2022",
-    image: "assets/certificates/secretary_option/Sekretaris OPTION.jpg",
-    hoverText: "Served as the secretary of the OPTION organization at Mataram University"
+    title: "Teaching Assistant – Algorithms & Programming",
+    issuer: "Universitas Mataram",
+    date: "2023 - 2024",
+    image: "/assets/gallery/asdos/asdos.jpg", 
+    hoverText: "Delivered structured labs on basic Python and programming algorithms.",
+    link: ""
   },
   {
     id: 'c9',
-    title: "WDSC Moderator",
-    issuer: "Mataram University",
-    date: "Jul 2022",
-    image: "assets/certificates/wdsc_moderator/Moderator WDSC.jpg",
-    hoverText: "Served as the moderator for the Workshop and Digital Startup Competition 2022 at Mataram University"
+    title: "Teaching Assistant – Database Systems",
+    issuer: "Universitas Mataram",
+    date: "2023 - 2024",
+    image: "/assets/gallery/asdos/asdos.jpg",
+    hoverText: "Guided students in database fundamentals and structured data management.",
+    link: ""
   },
   {
     id: 'c10',
-    title: "Webinar Speaker at BISA AI Academy",
-    issuer: "BISA AI Academy",
-    date: "Mar 2022",
-    image: "assets/certificates/webinar_speaker_bisaai/Sertif Pemateri 1.png",
-    hoverText: "Delivered a webinar on Quality Control Statistics at BISA AI Academy"
+    title: "Scientific Paper Finalist – Universitas Sriwijaya",
+    issuer: "Universitas Sriwijaya",
+    date: "Oct 2024",
+    image: "assets/certificates/finalist_national_seminar/Finalist Karya Ilmiah.jpg",
+    hoverText: "Finalist in a scientific writing competition with research-based analysis.",
+    link: ""
   },
   {
     id: 'c11',
-    title: "Webinar Speaker at BISA AI Academy",
+    title: "Copyright Holder – Infographic Design",
+    issuer: "Intellectual Property Office",
+    date: "2024",
+    image: "/assets/certificates/default.png",
+    hoverText: "Holder of copyright for data-driven infographic content.",
+    link: ""
+  },
+  {
+    id: 'c12',
+    title: "Presenter – Statistical Quality Control (Variable Control Charts)",
+    issuer: "BISA AI Academy",
+    date: "Mar 2022",
+    image: "assets/certificates/webinar_speaker_bisaai/Sertif Pemateri 1.png",
+    hoverText: "Presented quality control methods using variable control charts.",
+    link: ""
+  },
+  {
+    id: 'c13',
+    title: "Presenter – Statistical Quality Control (Attribute Control Charts)",
     issuer: "BISA AI Academy",
     date: "Mar 2022",
     image: "assets/certificates/webinar_speaker_bisaai/Sertif Pemateri 2.png",
-    hoverText: "Delivered a webinar on Quality Control Attributes at BISA AI Academy"}
+    hoverText: "Explained attribute control charts for quality monitoring.",
+    link: ""
+  },
+  {
+    id: 'c14',
+    title: "Head of Public Relations & Media",
+    issuer: "Gamatika Coding Club",
+    date: "2024",
+    image: "/assets/certificates/default.png",
+    hoverText: "Led organizational communication, media strategy, and publications.",
+    link: ""
+  },
+  {
+    id: 'c15',
+    title: "MSIB Batch 6 – Bisa AI (Data Science)",
+    issuer: "BISA AI Academy",
+    date: "Jun 2024",
+    image: "assets/certificates/msib_6/MSIB 6.png",
+    hoverText: "National program focused on data science, analytics, and AI applications.",
+    link: ""
+  },
+  {
+    id: 'c16',
+    title: "Moderator – Workshop & Digital Startup Competition",
+    issuer: "Universitas Mataram",
+    date: "Jul 2022",
+    image: "assets/certificates/wdsc_moderator/Moderator WDSC.jpg",
+    hoverText: "Moderated discussions and sessions for digital startup competitions.",
+    link: ""
+  },
+  {
+    id: 'c17',
+    title: "Moderator – Python for Data Science Webinar",
+    issuer: "Universitas Mataram",
+    date: "Sep 2023",
+    image: "assets/certificates/python_training_data_science_moderator/Moderator Python Training.jpg",
+    hoverText: "Facilitated a technical webinar on Python for data science.",
+    link: ""
+  },
+  {
+    id: 'c18',
+    title: "Moderator – Mental Health Fest Webinar",
+    issuer: "Universitas Mataram",
+    date: "Nov 2022",
+    image: "assets/certificates/mental_health_fest_moderator/Moderator Mental Health Fest.jpg",
+    hoverText: "Moderated discussions and audience engagement on mental health topics.",
+    link: ""
+  },
+  {
+    id: 'c19',
+    title: "Secretary – Department of Class (OPTION)",
+    issuer: "OPTION Organization",
+    date: "2022",
+    image: "assets/certificates/secretary_option/Sekretaris OPTION.jpg",
+    hoverText: "Managed administration, documentation, and internal coordination.",
+    link: ""
+  },
+  {
+    id: 'c20',
+    title: "Treasurer – Leadership & Organizational Management Training (PRIMA)",
+    issuer: "PRIMA Training",
+    date: "2022",
+    image: "/assets/certificates/default.png",
+    hoverText: "Oversaw budgeting, financial management, and reporting.",
+    link: ""
+  },
+  {
+    id: 'c21',
+    title: "Co-Event Lead – GAMATIKA Bonding Night",
+    issuer: "Gamatika",
+    date: "2023",
+    image: "/assets/certificates/default.png", 
+    hoverText: "Coordinated planning and execution of organizational events.",
+    link: ""
+  }
 ];
 
 export const GALLERY: GalleryItem[] = [
   {
     id: 'g1',
-    title: "Graduation Day",
-    description: "Celebrating the completion of my *Bachelor's degree in Mathematics* at *Mataram University*",
-    images: ["assets/gallery/graduate/1.jpg", "assets/gallery/graduate/2.jpg", "assets/gallery/graduate/3.jpg", "assets/gallery/graduate/4.jpg", "assets/gallery/graduate/5.jpg", "assets/gallery/graduate/6.jpg" ]
-
+    title: "Graduation",
+    description: "Successfully completed a Bachelor’s degree in Mathematics.",
+    images: ["assets/gallery/graduate/1.jpg", "assets/gallery/graduate/2.jpg", "assets/gallery/graduate/3.jpg", "assets/gallery/graduate/4.jpg", "assets/gallery/graduate/5.jpg", "assets/gallery/graduate/6.jpg"]
   },
   {
     id: 'g2',
-    title: "Webinar Speaker at BISA AI Academy",
-    description: "Delivering a webinar on Quality Control Statistics at BISA AI Academy",
-    images: ["assets/gallery/webinar_bisaai/1.png", "assets/gallery/webinar_bisaai/2.png"]
-  },
-  {
-    id: 'g3',
-    title: "Workshop and Digital Startup Competition 2022",
-    description: "Startup Optimization for Creative Tech Business in Society 5.0",
-    images: ["assets/gallery/wdsc/1.png", "assets/gallery/wdsc/2.png", "assets/gallery/wdsc/3.jpg", "assets/gallery/wdsc/4.jpg"]
-  },
-  {
-    id: 'g4',
-    title: " Workshop Python Training for Data Science",
-    description: "Becoming the MC for Python Training for Data Science workshop at Mataram University",
-    images: ["assets/gallery/python_data_science/1.jpg", "assets/gallery/python_data_science/2.jpg", "assets/gallery/python_data_science/3.jpg"]
-  },
-  {
-    id: 'g5',
-    title: "Internship at PT PLN (Persero) Unit Induk Wilayah NTB",
-    description: "Completed internship program at PT PLN (Persero) Unit Induk Wilayah NTB, gaining practical experience in the energy sector",
-    images: ["assets/gallery/pkl_pln/1.jpg", "assets/gallery/pkl_pln/2.jpg"]
-  },
-  {
-    id: 'g6',
-    title: "Journal Review Session",
-    description: "Presented a journal review session at Mataram University, exploring machine learning in research and applications",
-    images: ["assets/gallery/journal_review/1.jpg", "assets/gallery/journal_review/2.jpg", "assets/gallery/journal_review/3.jpg"]
-  },
-  {
-    id: 'g7',
-    title: "Loka Karya Gamatika Coding Club 2025",
-    description: "Presented at the Gamatika Coding Club workshop at Mataram University on 'Computation for Solutions: Computational Mathematics for Real World Problems'",
+    title: "Computational Mathematics Workshop",
+    description: "Workshop on applying computational mathematics to solve real-world problems.",
     images: ["assets/gallery/loka_karya/pamflet_loka_karya.jpg"]
   },
   {
-    id: 'g8',
-    title: "Sharing Session at Gamatika Coding Club 2025",
-    description: "Sharing session at Gamatika Coding Club on 'Growing Further with Internships and Independent Studies'",
+    id: 'g3',
+    title: "Journal Review Class – Machine Learning",
+    description: "Academic session exploring machine learning in research and practical applications.",
+    images: ["assets/gallery/journal_review/1.jpg", "assets/gallery/journal_review/2.jpg", "assets/gallery/journal_review/3.jpg"]
+  },
+  {
+    id: 'g4',
+    title: "Sharing Session – Independent Study & Internship",
+    description: "Sharing insights on growth through independent study and internship programs.",
     images: ["assets/gallery/sharing_session/pamflet_sharing_session.jpg"]
   },
   {
-    id: 'g9',
-    title: "Finalist, Science and Technology National Competition 2024",
-    description: "Became a finalist in the national seminar for participation in the Science And Technology National Competition 2024 in the Scientific Writing category organized by the Mathematics Student Association FMIPA Sriwijaya University on October 30, 2024",
+    id: 'g5',
+    title: "National Mathematics Education Seminar Presenter",
+    description: "Presented research at a national seminar on mathematics education and applications.",
     images: ["assets/gallery/national_seminar/national_seminar.jpg"]
   },
   {
+    id: 'g6',
+    title: "Journal Review Class Speaker",
+    description: "Delivered material and led discussions in a journal review session.",
+    images: ["assets/gallery/journal_review/2.jpg", "assets/gallery/journal_review/3.jpg"]
+  },
+  {
+    id: 'g7',
+    title: "Copyrighted Infographic Project",
+    description: "Final project infographic officially registered with intellectual property rights.",
+    images: ["assets/certificates/finalist_national_seminar/Finalist Karya Ilmiah.jpg"] // Best guess based on "Project/Infographic" context
+  },
+  {
+    id: 'g8',
+    title: "Internship at PLN",
+    description: "Internship experience contributing to organizational and data-related activities.",
+    images: ["assets/gallery/pkl_pln/1.jpg", "assets/gallery/pkl_pln/2.jpg"]
+  },
+  {
+    id: 'g9',
+    title: "Moderator – Digital Startup Competition (Day 1)",
+    description: "Moderated the main discussion sessions of the workshop and startup competition.",
+    images: ["assets/gallery/wdsc/1.png", "assets/gallery/wdsc/2.png"]
+  },
+  {
     id: 'g10',
-    title: "Mental Health Fest Moderator",
-    description: "Served as the moderator for the Mental Health Fest event held at Mataram University, facilitating discussions on mental health awareness and support",
+    title: "Moderator – Digital Startup Competition (Day 2)",
+    description: "Led and moderated core sessions with speakers and participants.",
+    images: ["assets/gallery/wdsc/3.jpg", "assets/gallery/wdsc/4.jpg"]
+  },
+  {
+    id: 'g11',
+    title: "Moderator – Digital Startup Competition (Day 3–4)",
+    description: "Moderated key sessions and final discussions throughout the event.",
+    images: ["assets/gallery/wdsc/1.png"] // Reusing generic image
+  },
+  {
+    id: 'g12',
+    title: "Moderator – Python for Data Science",
+    description: "Moderated a technical session on Python applications in data science.",
+    images: ["assets/gallery/python_data_science/1.jpg", "assets/gallery/python_data_science/2.jpg", "assets/gallery/python_data_science/3.jpg"]
+  },
+  {
+    id: 'g13',
+    title: "Moderator – Mental Health Fest",
+    description: "Moderated discussions focused on mental health awareness and education.",
     images: ["assets/gallery/mental_health_fest/mental_health_fest.jpg"]
   },
- 
-  {    
-    id: 'g11',
-    title: "Teaching Assistant Role",
-    description: "Serving as a Teaching Assistant for the Programming Algorithms and Database courses at Mataram University",
+  {
+    id: 'g14',
+    title: "Moderator – Leadership & Organizational Training",
+    description: "Facilitated leadership and organizational management training sessions.",
+    images: ["assets/certificates/secretary_option/Sekretaris OPTION.jpg"] // Reusing related cert image as placeholder
+  },
+  {
+    id: 'g15',
+    title: "Teaching Assistant Activity",
+    description: "Assisted teaching and guided students during practicum sessions.",
     images: ["assets/gallery/asdos/asdos.jpg"]
   }
-
-
 ];
 
 // Select which gallery items to show in the carousel by ID
