@@ -79,13 +79,18 @@ const Projects: React.FC = () => {
           viewport={{ once: true, margin: "-50px" }}
           className="flex flex-wrap justify-center gap-8 mb-12"
         >
-          {visibleProjects.map((project) => (
-            <motion.div
-              key={project.id}
-              variants={item}
-              whileHover={{ y: -8 }}
-              className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.4rem)] bg-white dark:bg-card rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 hover:border-primary/50 transition-colors group flex flex-col shadow-sm dark:shadow-none"
-            >
+          <AnimatePresence mode="popLayout">
+            {visibleProjects.map((project) => (
+              <motion.div
+                layout
+                key={project.id}
+                variants={item}
+                initial="hidden"
+                animate="show"
+                exit="hidden"
+                whileHover={{ y: -8 }}
+                className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.4rem)] bg-white dark:bg-card rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 hover:border-primary/50 transition-colors group flex flex-col shadow-sm dark:shadow-none"
+              >
               {/* Project Image - Updated to 16:9 Aspect Ratio (PowerPoint Style) */}
               <div
                 className="aspect-video w-full overflow-hidden relative bg-black border-b border-gray-200 dark:border-gray-800 cursor-pointer"
@@ -176,6 +181,7 @@ const Projects: React.FC = () => {
               </div>
             </motion.div>
           ))}
+          </AnimatePresence>
         </motion.div>
 
         {PROJECTS.length > 3 && (
