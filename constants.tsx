@@ -8,7 +8,7 @@ export const ENABLE_FIDGET_SPINNER = false; // Set to false to disable interacti
 export const METADATA = {
   title: "Novia Citra Andini",
   description: "Portfolio of Novia Citra Andini, a Data Scientist and Analyst specializing in AI, Machine Learning, and Business Intelligence.",
-  image: "/assets/profile/profile.png",
+  image: "/assets/images/profile/profile.png",
   url: "https://portfolio-noviacitra.vercel.app/",
   type: "website",
   twitterCard: "summary_large_image"
@@ -55,7 +55,7 @@ export const PERSONAL_INFO = {
   typingRoles: ["Data Analyst", "Data Scientist", "General Affair", "Data Entry", "Research and Development", "Assistant", "Public Speaker", "Moderator"], // Roles for the typing animation
   email: import.meta.env.VITE_EMAIL || "",
   linkedin: import.meta.env.VITE_LINKEDIN_URL || "",
-  profileImage: "assets/profile/profile.png", // Replace with your actual photo URL
+  profileImage: "assets/images/profile/profile.png", // Replace with your actual photo URL
   about: "Mathematics graduate with a strong foundation in data handling, structured analysis, and clear communication. Experienced in documentation, workflow mapping, and presenting ideas effectively to technical and non-technical audiences."
 };
 
@@ -139,12 +139,12 @@ export const PROJECTS: Project[] = [
     id: 'p1',
     title: "Intelligent Anthracnose Detection on Chili Peppers Using YOLOv7",
     role: "Researcher",
-    date: "2025",
+    date: "2024",
     description: [
       "This project developed a *YOLOv7-based object detection model* to identify anthracnose disease in chili plants using image data. The model was trained on labeled images of healthy and infected chilies through data preparation, annotation, and evaluation stages, achieving an *accuracy of 94%*. The results demonstrate YOLOv7’s potential as an effective solution for early pest detection to support agricultural productivity and reduce crop losses.",
     ],
-    tags: ["Data Annotation","Data Labeling","YOLOv7", "Python", "Computer Vision", "Research"],
-    image: "assets/experience/chili_yolov7/chili_yolov7.png"
+    tags: ["Data Annotation", "Data Labeling", "YOLOv7", "Python", "Computer Vision", "Research"],
+    image: "/assets/images/experience/chili_yolov7/chili_yolov7.png"
   },
   {
     id: 'p2',
@@ -154,8 +154,8 @@ export const PROJECTS: Project[] = [
     description: [
       "This project compares Backpropagation and Long Short-Term Memory (LSTM) neural networks for predicting the daily closing price of Solana (SOL) using historical time-series data from Binance. The study involved data preprocessing, normalization, model construction, and evaluation using the Mean Absolute Percentage Error (MAPE) metric. Results show that both models achieved high prediction accuracy, with LSTM slightly outperforming Backpropagation (MAPE 3.14% vs. 3.16%), demonstrating LSTM’s stronger capability in capturing time-series patterns in highly volatile cryptocurrency markets.",
     ],
-    tags: ["LSTM", "Neural Networks", "Python", "Financial Analysis","Machine Learning", "Research"],
-    image: "assets/experience/solana/output.png"
+    tags: ["LSTM", "Neural Networks", "Python", "Financial Analysis", "Machine Learning", "Research"],
+    image: "/assets/images/experience/solana/output.png"
   },
   {
     id: 'p3',
@@ -165,8 +165,8 @@ export const PROJECTS: Project[] = [
     description: [
       "Breast Care is a web-based early detection application for breast cancer developed as a capstone project in the Data Science program at BISA AI Academy. The system applies data mining techniques by comparing multiple classification algorithms—K-Nearest Neighbor (KNN), Support Vector Machine (SVM), and Naive Bayes—to predict benign and malignant breast cancer cases. Using the Breast Cancer Wisconsin Dataset and an 80:20 train-test split, the KNN model achieved the best performance with 97% accuracy, precision, and recall. The final model was deployed using Streamlit and integrated with Firebase, providing an accessible, data-driven decision support tool for early breast cancer screening and public health awareness.",
     ],
-    tags: ["SVM", "Machine Learning", "Health AI", "Python"],
-    image: "assets/experience/breast_cancer/breast_cancer.png"
+    tags: ["SVM", "Machine Learning", "Health AI", "Python", "KNN", "Streamlit"],
+    image: "/assets/images/experience/breast_cancer/breast_cancer.png"
   },
   {
     id: 'p4',
@@ -176,19 +176,41 @@ export const PROJECTS: Project[] = [
     description: [
       "This project documents my internship at PT PLN (Persero) Unit Induk Wilayah NTB, where I supported public communication through systematic media monitoring and documentation. My responsibilities included collecting, archiving, and recording media publications from online platforms, newspapers, and television broadcasts. I managed large-scale datasets using Microsoft Excel and Google Drive to ensure data accuracy, traceability, and structured reporting. The project highlights my experience in data entry workflows, evidence management, monitoring processes, and cross-platform documentation to support organizational reporting and public communication strategies.",
     ],
-    tags: ["Data Management", "Excel", "Internship"],
-    image: "assets/experience/pln/pln.png"
+    tags: ["Data Management", "Excel", "Internship", "Public Communication"],
+    image: "/assets/images/experience/pln/pln.png"
   },
   {
     id: 'p5',
     title: "Data Visualization and Reporting Module Using Power BI",
-    role: "Analyst",
+    role: "Analyst / Instructor",
     date: "2024",
     description: [
-      "Conducted comprehensive sales data analysis and created interactive visualizations to provide actionable business insights. Utilized tools such as Power BI and Excel to identify trends, forecast sales, and support strategic decision-making processes. The project enhanced data-driven approaches within the organization, improving sales performance and market understanding."
+      "This project documents the development and implementation of a database practicum module focused on data visualization and reporting using Power BI. The project introduced students to Power BI features, various chart types, and best practices in building interactive dashboards. As the final assignment, students were required to design data-driven infographics and dashboards and present their analytical insights. The project emphasized structured data processing, visualization clarity, and effective communication of results. Notably, two student projects were successfully registered and awarded copyright certificates, demonstrating the quality and originality of the final outputs."
     ],
-    tags: ["Data Analysis", "Power BI", "Excel", "Visualization"],
-    image: "assets/experience/sales_data/sales_data.png"
+    tags: ["Data Visualization", "Power BI", "Education", "Dashboard", "Mentoring"],
+    image: ["/assets/images/projects/5.png", "/assets/images/projects/5(1).png"]
+  },
+  {
+    id: 'p6',
+    title: "Sentiment Analysis & Program Evaluation for Educational Programs",
+    role: "Data Analyst",
+    date: "2025",
+    description: [
+      "This project focused on sentiment analysis and program evaluation based on participant feedback from three educational programs: Course, Intensive Class, and Webinar, involving 5,500+ participants. Feedback data were processed, categorized, and analyzed to identify sentiment distribution, key themes, root causes, and participant retention indicators. The analysis revealed consistently high satisfaction levels, strong material relevance, and high engagement in hands-on learning formats. Actionable insights were generated to support program improvement, retention strategy, and future class development, including pacing optimization, structured learning materials, and after-class support."
+    ],
+    tags: ["Sentiment Analysis", "Program Evaluation", "Data Analysis", "Customer Feedback"],
+    image: ["/assets/images/projects/6.png", "/assets/images/projects/6(1).png"]
+  },
+  {
+    id: 'p7',
+    title: "Supermarket Sales & Branch Performance Analysis (Q1)",
+    role: "Data Analyst",
+    date: "2025",
+    description: [
+      "An interactive analytical dashboard that explores Q1 supermarket sales data by examining revenue, profit, customer ratings, payment methods, product line performance, and branch-level comparisons. This project focuses on transforming transactional data into actionable insights through data aggregation, KPI analysis, and visual analytics to support data-driven decision making."
+    ],
+    tags: ["Power BI", "Dashboard", "Sales Analysis", "KPI", "Business Intelligence"],
+    image: ["assets/images/projects/7.png", "/assets/images/projects/7.jpeg"]
   }
 ];
 
@@ -226,7 +248,7 @@ export const EDUCATION: Education[] = [
       "Led the Public Relation & Media division at Gamatika Coding Club, managing a team of 8 members.",
       "Moderated the \"Python Training for Data Science\" seminar (70+ participants) and the National Digital Start-Up Competition (100+ participants)."
     ],
-    image: "/assets/education/logo_unram.png"
+    image: "/assets/images/education/logo_unram.png"
   },
   {
     institution: "BISA AI Academy",
@@ -238,7 +260,7 @@ export const EDUCATION: Education[] = [
       "Developed a Capstone Project, creating a cancer prediction application using SVM algorithms.", 
       "Conducted 2 webinars related to Data Science during the program."
     ],
-    image: "/assets/education/logo_bisaai.png"
+    image: "/assets/images/education/logo_bisaai.png"
   }
 ];
 
@@ -248,7 +270,7 @@ export const CERTIFICATIONS: Certification[] = [
     title: "CertNexus AIBIZ™ Credential",
     issuer: "CertNexus",
     date: "Oct 2024",
-    image: "/assets/certificates/certnexus/aibiz.jpg",
+    image: "assets/images/certificates/c1.jpg",
     hoverText: "demonstrating foundational competence in applying Artificial Intelligence and data-driven insights to support business decision-making and strategy",
     link:"https://certifications.certnexus.com/1fc2521e-5cb3-4ace-86e2-5db043be94e3#acc.Wmc1ix9w"
   },
@@ -257,7 +279,7 @@ export const CERTIFICATIONS: Certification[] = [
     title: "CertNexus DSBIZ™ Credential",
     issuer: "CertNexus",
     date: "Jul 2024",
-    image: "/assets/certificates/certnexus/dsbiz.png",
+    image: "/assets/images/certificates/c2.jpg",
     hoverText: "demonstrating competence in applying Data Science and Business Intelligence to support business decision-making and strategy",
     link:"https://www.credential.net/ebed4275-99c4-458d-bdab-3614dc4ee56f#acc.nl2wkINj"
   },
@@ -265,8 +287,8 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'c3',
     title: "Presenter Certificate – National Seminar Merdeka Belajar",
     issuer: "Universitas Mataram",
-    date: "2024",
-    image: "/assets/certificates/national_seminar_merdeka_belajar/1.png",
+    date: "Dec 2024",
+    image: "/assets/images/certificates/c3.jpg",
     hoverText: "Presenter at the National Seminar Merdeka Belajar by Universitas Mataram, presenting research on chili anthracnose pest detection using machine learning",
     link: ""
   },
@@ -274,8 +296,8 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'c4',
     title: "Presenter Certificate – National Seminar on Mathematics Education and Its Applications",
     issuer: "Universitas Mataram & ITB",
-    date: "2024",
-    image: "/assets/certificates/national_seminar_merdeka_belajar/1.png", 
+    date: "Jul 2025",
+    image: "/assets/images/certificates/c4.jpg", 
     hoverText: "Presenter at the National Seminar on Mathematics Education (Universitas Mataram & ITB), presenting a comparative study of machine learning models for cryptocurrency price prediction.",
     link: ""
   },
@@ -283,8 +305,8 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'c5',
     title: "Guest Speaker – Loka Karya Gamatika Coding Club",
     issuer: "Gamatika Coding Club",
-    date: "2024",
-    image: "assets/certificates/gamatika_coding_club/1.png",
+    date: "Oct 2025",
+    image: "/assets/images/certificates/c5.jpg",
     hoverText: "Shared insights on applying mathematics in computing as a guest speaker at Gamatika Coding Club’s Loka Karya.",
     link: ""
   },
@@ -292,8 +314,8 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'c6',
     title: "Guest Speaker – Journal Review Class, Gamatika Research Club",
     issuer: "Gamatika Research Club",
-    date: "2024",
-    image: "/assets/certificates/default.png",
+    date: "Oct 2025",
+    image: "/assets/images/certificates/c6.jpg",
     hoverText: "Discussed types of machine learning research and shared research ideas with participants.",
     link: ""
   },
@@ -301,8 +323,8 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'c7',
     title: "Guest Speaker – Sharing Session, Gamatika Coding Club",
     issuer: "Gamatika Coding Club",
-    date: "2024",
-    image: "/assets/certificates/default.png",
+    date: "May 2025",
+    image: "/assets/images/certificates/c7.jpeg",
     hoverText: "Shared insights on independent study programs and internship experiences with participants at Gamatika Coding Club’s sharing session.",
     link: ""
   },
@@ -310,8 +332,8 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'c8',
     title: "Teaching Assistant – Algorithms & Programming",
     issuer: "Universitas Mataram",
-    date: "2023 - 2024",
-    image: "/assets/gallery/asdos/asdos.jpg", 
+    date: "Dec 2023",
+    image: "/assets/images/certificates/c8.jpg", 
     hoverText: "Delivered structured labs on basic Python and programming algorithms.",
     link: ""
   },
@@ -319,8 +341,8 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'c9',
     title: "Teaching Assistant – Database Systems",
     issuer: "Universitas Mataram",
-    date: "2023 - 2024",
-    image: "/assets/gallery/asdos/asdos.jpg",
+    date: "Dec 2024",
+    image: "/assets/images/certificates/c9.jpg",
     hoverText: "Guided students in database fundamentals and structured data management.",
     link: ""
   },
@@ -329,7 +351,7 @@ export const CERTIFICATIONS: Certification[] = [
     title: "Scientific Paper Finalist – Universitas Sriwijaya",
     issuer: "Universitas Sriwijaya",
     date: "Oct 2024",
-    image: "assets/certificates/finalist_national_seminar/Finalist Karya Ilmiah.jpg",
+    image: "/assets/images/certificates/c10.jpg",
     hoverText: "Finalist in a scientific writing competition with research-based analysis.",
     link: ""
   },
@@ -337,8 +359,8 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'c11',
     title: "Copyright Holder – Infographic Design",
     issuer: "Intellectual Property Office",
-    date: "2024",
-    image: "/assets/certificates/default.png",
+    date: "Jan 2025",
+    image: "/assets/images/certificates/c11.png",
     hoverText: "Holder of copyright for data-driven infographic content.",
     link: ""
   },
@@ -346,8 +368,8 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'c12',
     title: "Presenter – Statistical Quality Control (Variable Control Charts)",
     issuer: "BISA AI Academy",
-    date: "Mar 2022",
-    image: "assets/certificates/webinar_speaker_bisaai/Sertif Pemateri 1.png",
+    date: "2024",
+    image: "/assets/images/certificates/c12.png",
     hoverText: "Presented quality control methods using variable control charts.",
     link: ""
   },
@@ -355,8 +377,8 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'c13',
     title: "Presenter – Statistical Quality Control (Attribute Control Charts)",
     issuer: "BISA AI Academy",
-    date: "Mar 2022",
-    image: "assets/certificates/webinar_speaker_bisaai/Sertif Pemateri 2.png",
+    date: "2024",
+    image: "/assets/images/certificates/c13.png",
     hoverText: "Explained attribute control charts for quality monitoring.",
     link: ""
   },
@@ -364,71 +386,71 @@ export const CERTIFICATIONS: Certification[] = [
     id: 'c14',
     title: "Head of Public Relations & Media",
     issuer: "Gamatika Coding Club",
-    date: "2024",
-    image: "/assets/certificates/default.png",
+    date: "2023",
+    image: "/assets/images/certificates/c14.jpg",
     hoverText: "Led organizational communication, media strategy, and publications.",
     link: ""
   },
   {
-    id: 'c15',
+    id: 'c16',
     title: "MSIB Batch 6 – Bisa AI (Data Science)",
     issuer: "BISA AI Academy",
     date: "Jun 2024",
-    image: "assets/certificates/msib_6/MSIB 6.png",
+    image: "/assets/images/certificates/c16.png",
     hoverText: "National program focused on data science, analytics, and AI applications.",
     link: ""
   },
   {
-    id: 'c16',
+    id: 'c17',
     title: "Moderator – Workshop & Digital Startup Competition",
     issuer: "Universitas Mataram",
-    date: "Jul 2022",
-    image: "assets/certificates/wdsc_moderator/Moderator WDSC.jpg",
+    date: "Sep 2025",
+    image: "/assets/images/certificates/c17.jpg",
     hoverText: "Moderated discussions and sessions for digital startup competitions.",
     link: ""
   },
   {
-    id: 'c17',
+    id: 'c18',
     title: "Moderator – Python for Data Science Webinar",
     issuer: "Universitas Mataram",
-    date: "Sep 2023",
-    image: "assets/certificates/python_training_data_science_moderator/Moderator Python Training.jpg",
+    date: "Nov 2022",
+    image: "/assets/images/certificates/c18.jpg",
     hoverText: "Facilitated a technical webinar on Python for data science.",
     link: ""
   },
   {
-    id: 'c18',
+    id: 'c19',
     title: "Moderator – Mental Health Fest Webinar",
     issuer: "Universitas Mataram",
     date: "Nov 2022",
-    image: "assets/certificates/mental_health_fest_moderator/Moderator Mental Health Fest.jpg",
+    image: "/assets/images/certificates/c19.jpg",
     hoverText: "Moderated discussions and audience engagement on mental health topics.",
     link: ""
   },
   {
-    id: 'c19',
+    id: 'c20',
     title: "Secretary – Department of Class (OPTION)",
     issuer: "OPTION Organization",
     date: "2022",
-    image: "assets/certificates/secretary_option/Sekretaris OPTION.jpg",
+    image: "/assets/images/certificates/c20.jpg",
     hoverText: "Managed administration, documentation, and internal coordination.",
     link: ""
   },
   {
-    id: 'c20',
+    id: 'c21',
     title: "Treasurer – Leadership & Organizational Management Training (PRIMA)",
     issuer: "PRIMA Training",
     date: "2022",
-    image: "/assets/certificates/default.png",
+    image: "/assets/images/certificates/c21.jpg",
     hoverText: "Oversaw budgeting, financial management, and reporting.",
     link: ""
   },
   {
-    id: 'c21',
+    id: 'c22',
     title: "Co-Event Lead – GAMATIKA Bonding Night",
     issuer: "Gamatika",
     date: "2023",
-    image: "/assets/certificates/default.png", 
+    image: "/assets/images/certificates/c21.jpg", 
     hoverText: "Coordinated planning and execution of organizational events.",
     link: ""
   }
@@ -439,91 +461,133 @@ export const GALLERY: GalleryItem[] = [
     id: 'g1',
     title: "Graduation",
     description: "Successfully completed a Bachelor’s degree in Mathematics.",
-    images: ["assets/gallery/graduate/1.jpg", "assets/gallery/graduate/2.jpg", "assets/gallery/graduate/3.jpg", "assets/gallery/graduate/4.jpg", "assets/gallery/graduate/5.jpg", "assets/gallery/graduate/6.jpg"]
+    images: ["/assets/images/gallery/g1.jpg"]
   },
   {
     id: 'g2',
     title: "Computational Mathematics Workshop",
     description: "Workshop on applying computational mathematics to solve real-world problems.",
-    images: ["assets/gallery/loka_karya/pamflet_loka_karya.jpg"]
+    images: ["/assets/images/gallery/g2.jpg"]
   },
   {
     id: 'g3',
     title: "Journal Review Class – Machine Learning",
     description: "Academic session exploring machine learning in research and practical applications.",
-    images: ["assets/gallery/journal_review/1.jpg", "assets/gallery/journal_review/2.jpg", "assets/gallery/journal_review/3.jpg"]
+    images: ["/assets/images/gallery/g3.jpg"]
   },
   {
     id: 'g4',
     title: "Sharing Session – Independent Study & Internship",
     description: "Sharing insights on growth through independent study and internship programs.",
-    images: ["assets/gallery/sharing_session/pamflet_sharing_session.jpg"]
+    images: ["/assets/images/gallery/g4.jpg"]
   },
   {
     id: 'g5',
     title: "National Mathematics Education Seminar Presenter",
     description: "Presented research at a national seminar on mathematics education and applications.",
-    images: ["assets/gallery/national_seminar/national_seminar.jpg"]
+    images: ["/assets/images/gallery/g5.jpg"]
   },
   {
     id: 'g6',
     title: "Journal Review Class Speaker",
     description: "Delivered material and led discussions in a journal review session.",
-    images: ["assets/gallery/journal_review/2.jpg", "assets/gallery/journal_review/3.jpg"]
+    images: ["/assets/images/gallery/g6.jpg"]
   },
   {
     id: 'g7',
-    title: "Copyrighted Infographic Project",
-    description: "Final project infographic officially registered with intellectual property rights.",
-    images: ["assets/certificates/finalist_national_seminar/Finalist Karya Ilmiah.jpg"] // Best guess based on "Project/Infographic" context
+    title: "Internship at PLN",
+    description: "Internship experience contributing to organizational and data-related activities.",
+    images: ["/assets/images/gallery/g8.jpg"]
   },
   {
     id: 'g8',
-    title: "Internship at PLN",
-    description: "Internship experience contributing to organizational and data-related activities.",
-    images: ["assets/gallery/pkl_pln/1.jpg", "assets/gallery/pkl_pln/2.jpg"]
+    title: "Copyrighted Infographic Project",
+    description: "Final project infographic officially registered with intellectual property rights.",
+    images: ["/assets/images/gallery/g7.jpg"]
   },
   {
     id: 'g9',
     title: "Moderator – Digital Startup Competition (Day 1)",
     description: "Moderated the main discussion sessions of the workshop and startup competition.",
-    images: ["assets/gallery/wdsc/1.png", "assets/gallery/wdsc/2.png"]
+    images: ["/assets/images/gallery/g9.jpg"]
   },
   {
     id: 'g10',
     title: "Moderator – Digital Startup Competition (Day 2)",
     description: "Led and moderated core sessions with speakers and participants.",
-    images: ["assets/gallery/wdsc/3.jpg", "assets/gallery/wdsc/4.jpg"]
+    images: ["/assets/images/gallery/g10.jpg"]
   },
   {
     id: 'g11',
     title: "Moderator – Digital Startup Competition (Day 3–4)",
     description: "Moderated key sessions and final discussions throughout the event.",
-    images: ["assets/gallery/wdsc/1.png"] // Reusing generic image
+    images: ["/assets/images/gallery/g11.png"]
   },
   {
     id: 'g12',
     title: "Moderator – Python for Data Science",
     description: "Moderated a technical session on Python applications in data science.",
-    images: ["assets/gallery/python_data_science/1.jpg", "assets/gallery/python_data_science/2.jpg", "assets/gallery/python_data_science/3.jpg"]
+    images: ["/assets/images/gallery/g12.png"]
   },
   {
     id: 'g13',
     title: "Moderator – Mental Health Fest",
     description: "Moderated discussions focused on mental health awareness and education.",
-    images: ["assets/gallery/mental_health_fest/mental_health_fest.jpg"]
+    images: ["/assets/images/gallery/g13.jpg"]
   },
   {
     id: 'g14',
     title: "Moderator – Leadership & Organizational Training",
     description: "Facilitated leadership and organizational management training sessions.",
-    images: ["assets/certificates/secretary_option/Sekretaris OPTION.jpg"] // Reusing related cert image as placeholder
+    images: ["/assets/images/gallery/g14.jpg"]
   },
   {
-    id: 'g15',
+    id: 'g16',
+    title: "Moderator – Python for Data Science",
+    description: "Moderated a technical session on Python applications in data science.",
+    images: ["/assets/images/gallery/g16.jpg"]
+  },
+  {
+    id: 'g17',
+    title: "Moderator – Python for Data Science",
+    description: "Moderated a technical session on Python applications in data science.",
+    images: ["/assets/images/gallery/g17.jpg"]
+  },
+  {
+    id: 'g18',
+    title: "Moderator – Mental Health Fest",
+    description: "Moderated discussions focused on mental health awareness and education.",
+    images: ["/assets/images/gallery/g18.jpg"]
+  },
+  {
+    id: 'g19',
+    title: "Moderator – Mental Health Fest",
+    description: "Moderated discussions focused on mental health awareness and education.",
+    images: ["/assets/images/gallery/g19.jpg"]
+  },
+  {
+    id: 'g20',
+    title: "Moderator – Leadership & Organizational Training",
+    description: "Facilitated leadership and organizational management training sessions.",
+    images: ["/assets/images/gallery/g20.jpg"]
+  },
+  {
+    id: 'g21',
     title: "Teaching Assistant Activity",
     description: "Assisted teaching and guided students during practicum sessions.",
-    images: ["assets/gallery/asdos/asdos.jpg"]
+    images: ["/assets/images/gallery/g21.jpg"]
+  },
+  {
+    id: 'g22',
+    title: "Guest Speaker, Journal Review Class",
+    description: "Academic session exploring machine learning in research and practical applications",
+    images: ["/assets/images/gallery/g22.jpg"]
+  },
+  {
+    id: 'g23',
+    title: "Guest Speaker, Sharing Session",
+    description: "Sharing insights on growth through independent study and internship programs.",
+    images: ["/assets/images/gallery/g23.jpg"]
   }
 ];
 

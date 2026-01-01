@@ -1,11 +1,14 @@
-import React, { useState } from "react";
-import { Folder, ExternalLink, X, ZoomIn, ChevronDown, ChevronUp } from "lucide-react";
+import React, { useState, useRef } from "react";
+import { Folder, ExternalLink, X, ZoomIn, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 import { PROJECTS, PROJECTS_DESCRIPTION } from "../../constants";
 import { motion, AnimatePresence } from "framer-motion";
 import { Project } from "../../types";
 
 const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
   const [showAll, setShowAll] = useState(false);
 
   const visibleProjects = showAll ? PROJECTS : PROJECTS.slice(0, 3);
@@ -29,6 +32,61 @@ const Projects: React.FC = () => {
 
   const handleOpenModal = (project: Project) => {
     setSelectedProject(project);
+    setCurrentImageIndex(0);
+  };
+
+  const handleImageLoad = (src: string) => {
+    setLoadedImages(prev => new Set(prev).add(src));
+  };
+
+  const getProjectImages = (project: Project): string[] => {
+    if (Array.isArray(project.image)) {
+      return project.image;
+    }
+    return [project.image || "https://picsum.photos/400/250"];
+  };
+
+  // Safe accessor for current images when a project is selected
+  const currentProjectImages = selectedProject ? getProjectImages(selectedProject) : [];
+
+  const handleNextImage = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (currentProjectImages.length > 1) {
+      setCurrentImageIndex((prev) => (prev + 1) % currentProjectImages.length);
+    }
+  };
+
+  const handlePrevImage = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (currentProjectImages.length > 1) {
+      setCurrentImageIndex((prev) => (prev - 1 + currentProjectImages.length) % currentProjectImages.length);
+    }
+  };
+
+  const touchStartX = useRef<number>(0);
+  const touchEndX = useRef<number>(0);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    
+    if (touchStartX.current - touchEndX.current > 50) {
+      handleNextImage();
+    }
+    if (touchStartX.current - touchEndX.current < -50) {
+      handlePrevImage();
+    }
+    
+    // Reset values
+    touchStartX.current = 0;
+    touchEndX.current = 0;
   };
 
   const container = {
@@ -109,7 +167,7 @@ const Projects: React.FC = () => {
                 <motion.img
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.6 }}
-                  src={project.image || "https://picsum.photos/400/250"}
+                  src={Array.isArray(project.image) ? project.image[0] : (project.image || "https://picsum.photos/400/250")}
                   alt={project.title}
                   className="w-full h-full object-contain"
                 />
@@ -228,14 +286,63 @@ const Projects: React.FC = () => {
               </button>
 
               <div className="flex flex-col lg:grid lg:grid-cols-[65%_35%] flex-1 min-h-0 overflow-hidden">
-                <div className="bg-black flex items-center justify-center p-0 relative group h-[40%] min-h-[250px] lg:h-full w-full shrink-0">
-                  <img
-                    src={
-                      selectedProject.image || "https://picsum.photos/400/250"
-                    }
-                    alt={selectedProject.title}
-                    className="max-w-full max-h-full w-auto object-contain"
-                  />
+                <div 
+                  className="bg-black flex items-center justify-center p-0 relative group h-[40%] min-h-[250px] lg:h-full w-full shrink-0"
+                  onTouchStart={handleTouchStart}
+                  onTouchMove={handleTouchMove}
+                  onTouchEnd={handleTouchEnd}
+                >
+                  <AnimatePresence mode='wait'>
+                    <div className="relative w-full h-full flex items-center justify-center">
+                      {!loadedImages.has(currentProjectImages[currentImageIndex]) && (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <Loader2 className="w-10 h-10 animate-spin text-white" />
+                        </div>
+                      )}
+                      
+                      <motion.img
+                        key={`${selectedProject.id}-${currentImageIndex}`}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -20 }}
+                        transition={{ duration: 0.3 }}
+                        src={currentProjectImages[currentImageIndex]}
+                        alt={selectedProject.title}
+                        onLoad={() => handleImageLoad(currentProjectImages[currentImageIndex])}
+                        className={`max-w-full max-h-full w-auto object-contain transition-opacity duration-300 ${
+                          loadedImages.has(currentProjectImages[currentImageIndex]) ? 'opacity-100' : 'opacity-0'
+                        }`}
+                      />
+                    </div>
+                  </AnimatePresence>
+
+                  {/* Navigation Buttons */}
+                  {currentProjectImages.length > 1 && (
+                    <>
+                      <button 
+                        onClick={handlePrevImage}
+                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 backdrop-blur-sm text-white p-2 rounded-full transition-colors hidden md:block z-20"
+                      >
+                        <ChevronLeft className="w-6 h-6" />
+                      </button>
+                      <button 
+                        onClick={handleNextImage}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 backdrop-blur-sm text-white p-2 rounded-full transition-colors hidden md:block z-20"
+                      >
+                        <ChevronRight className="w-6 h-6" />
+                      </button>
+                      
+                      {/* Dots Indicator */}
+                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+                        {currentProjectImages.map((_, idx) => (
+                          <div 
+                            key={idx}
+                            className={`w-2 h-2 rounded-full transition-colors ${idx === currentImageIndex ? 'bg-white' : 'bg-white/30'}`}
+                          />
+                        ))}
+                      </div>
+                    </>
+                  )}
                 </div>
                 {/* Unified Scroll Container */}
                 <div className="flex-1 lg:h-full overflow-y-auto bg-white dark:bg-gray-800 p-6 md:p-8 custom-scrollbar">

@@ -13,7 +13,7 @@ export interface Project {
   date: string;
   description: string[];
   tags: string[];
-  image?: string; // Added for project visualization
+  image?: string | string[]; // Added for project visualization
   videoEmbed?: string; // Added for video iframe support
   link?: string; // Added for external links (e.g. LinkedIn post)
 }
