@@ -592,7 +592,7 @@ export const GALLERY: GalleryItem[] = [
 ];
 
 // Select which gallery items to show in the carousel by ID
-const CAROUSEL_IDS = ['g1', 'g3', 'g4','g10'];
+const CAROUSEL_IDS = ['g1', 'g5', 'g9','g13','g7','g22','g23'];
 
 export const CAROUSEL_ITEMS: GalleryItem[] = CAROUSEL_IDS.map(id => 
   GALLERY.find(item => item.id === id)
