@@ -79,7 +79,7 @@ export const EXPERIENCES: Experience[] = [
     id: '1',
     role: "Intern Research and Development",
     company: "Jadi Maju",
-    period: "Nov 2025 - Present",
+    period: "Nov. 2025 - Dec. 2025 ",
     description: [
       "Performed sentiment analysis on participant feedback by extracting, cleaning, and consolidating data from 34 program databases.",
       "Identified patterns in positive–negative sentiment, participant suggestions, and recurring challenges, and translated insights into structured analytical reports.",
