@@ -1,6 +1,12 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import nodemailer from 'nodemailer';
 
+// Hardcode colors to avoid import issues in Vercel Serverless environment
+const THEME_COLORS = {
+  primary: '#447F98',
+  secondary: '#629BB5'
+};
+
 // Simple in-memory rate limiting (per container instance)
 const rateLimit = new Map<string, number[]>();
 const WINDOW_MS = 15 * 60 * 1000; // 15 minutes
@@ -9,7 +15,7 @@ const MAX_REQUESTS = 5; // 5 emails per 15 minutes
 // Security: Allowed Origins
 const ALLOWED_ORIGINS = [
   'https://www.noviacitraandini.site',
-  'https://noviacitraandini.vercel.app/',
+  'https://portfolio-noviacitra.vercel.app',
   'http://localhost:5173',
   'http://localhost:3000'
 ];
@@ -63,7 +69,7 @@ export default async function handler(
     return response.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, email, message, honeypot } = request.body;
+  const { name, email, subject, message, honeypot } = request.body;
 
   // Honeypot Check (Anti-Spam)
   if (honeypot) {
@@ -72,7 +78,7 @@ export default async function handler(
     return response.status(200).json({ message: 'Email sent successfully' });
   }
 
-  if (!name || !email || !message) {
+  if (!name || !email || !subject || !message) {
     return response.status(400).json({ error: 'Missing required fields' });
   }
 
@@ -80,8 +86,8 @@ export default async function handler(
   const pass = process.env.GMAIL_APP_PASSWORD;
 
   if (!user || !pass) {
-    console.error('Missing Gmail credentials');
-    return response.status(500).json({ error: 'Server configuration error' });
+    console.error('Missing Gmail credentials in environment variables.');
+    return response.status(500).json({ error: 'Server configuration error: Missing Credentials' });
   }
 
   try {
@@ -101,10 +107,11 @@ export default async function handler(
       from: `"${name}" <${user}>`, // Sender address (must be authenticated user for Gmail)
       to: user, // Send to yourself
       replyTo: email, // Reply to the user's email
-      subject: `Pesan Baru dari Portofolio: ${name}`,
+      subject: `[Portfolio] ${subject} - ${name}`,
       text: `
 Nama: ${name}
 Email: ${email}
+Subject: ${subject}
 
 Pesan:
 ${message}
@@ -114,17 +121,17 @@ ${message}
 <html>
 <head>
   <style>
-    body { font-family: 'Inter', sans-serif; background-color: #D6EBF3; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; margin: 0; padding: 0; }
     .container { max-width: 600px; margin: 40px auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
-    .header { background: linear-gradient(to right, #447F98, #629BB5); padding: 30px; text-align: center; color: white; }
+    .header { background: linear-gradient(to right, ${THEME_COLORS.primary}, ${THEME_COLORS.secondary}); padding: 30px; text-align: center; color: white; }
     .header h1 { margin: 0; font-size: 24px; font-weight: 700; }
     .content { padding: 30px; color: #1f2937; }
     .field { margin-bottom: 20px; }
     .label { font-size: 12px; text-transform: uppercase; color: #6b7280; font-weight: 600; letter-spacing: 0.05em; margin-bottom: 4px; }
     .value { font-size: 16px; line-height: 1.5; color: #111827; }
-    .message-box { background-color: #f9fafb; border: 1px solid #B9D8E1; border-radius: 8px; padding: 16px; margin-top: 8px; white-space: pre-wrap; }
-    .footer { background-color: #f9fafb; padding: 20px; text-align: center; font-size: 12px; color: #9ca3af; border-top: 1px solid #B9D8E1; }
-    .button { display: inline-block; background-color: #447F98; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: 500; margin-top: 20px; }
+    .message-box { background-color: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-top: 8px; white-space: pre-wrap; }
+    .footer { background-color: #f9fafb; padding: 20px; text-align: center; font-size: 12px; color: #9ca3af; border-top: 1px solid #e5e7eb; }
+    .button { display: inline-block; background-color: ${THEME_COLORS.primary}; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: 500; margin-top: 20px; }
   </style>
 </head>
 <body>
@@ -140,7 +147,12 @@ ${message}
       
       <div class="field">
         <div class="label">Email</div>
-        <div class="value"><a href="mailto:${email}" style="color: #447F98; text-decoration: none;">${email}</a></div>
+        <div class="value"><a href="mailto:${email}" style="color: ${THEME_COLORS.primary}; text-decoration: none;">${email}</a></div>
+      </div>
+
+      <div class="field">
+        <div class="label">Subject</div>
+        <div class="value"><strong>${subject}</strong></div>
       </div>
 
       <div class="field">
@@ -150,9 +162,9 @@ ${message}
 
       <div style="text-align: center;">
         <!-- Button with nested span for better dark mode support -->
-        <a href="mailto:${email}?subject=${encodeURIComponent("Pesan dari Novia Citra Andini")}&body=${encodeURIComponent(`Halo ${name},\n\nTerima kasih telah menghubungi saya.\n`)}" 
+        <a href="mailto:${email}?subject=${encodeURIComponent(`Re: ${subject}`)}&body=${encodeURIComponent(`Halo ${name},\n\nTerima kasih telah menghubungi saya.\n`)}" 
            class="button" 
-           style="display: inline-block; background-color: #447F98; color: #ffffff; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #629BB5;">
+           style="display: inline-block; background-color: ${THEME_COLORS.primary}; color: #ffffff; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid ${THEME_COLORS.primary};">
            <span style="color: #ffffff !important; font-family: sans-serif;">Balas via Email</span>
         </a>
       </div>

@@ -1,9 +1,10 @@
 import React, { useState, useRef } from 'react';
-import { GALLERY, CAROUSEL_ITEMS, GALLERY_DESCRIPTION } from '../../constants';
+import { GALLERY, CAROUSEL_ITEMS, GALLERY_DESCRIPTION } from '../../src/constants';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ZoomIn, ChevronLeft, ChevronRight, Loader2, ChevronDown, ChevronUp } from 'lucide-react';
 import Carousel from '../Carousel';
 import { GalleryItem } from '../../types';
+import { parseBoldText } from '../../src/utis';
 
 const Gallery: React.FC = () => {
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
@@ -16,13 +17,7 @@ const Gallery: React.FC = () => {
 
   const visibleGallery = showAll ? GALLERY : GALLERY.slice(0, 3);
 
-  // Helper to parse bold text using * syntax
-  const parseBoldText = (text: string | React.ReactNode, className = "font-bold text-white") => {
-    if (typeof text !== 'string') return text;
-    return text.split('*').map((part, index) => 
-      index % 2 === 1 ? <span key={index} className={className}>{part}</span> : part
-    );
-  };
+
 
   const handleOpenModal = (item: GalleryItem) => {
     setSelectedItem(item);

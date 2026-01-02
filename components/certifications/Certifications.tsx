@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Award, ExternalLink, Calendar, X, ZoomIn, ChevronDown, ChevronUp } from 'lucide-react';
-import { CERTIFICATIONS, CERTIFICATIONS_DESCRIPTION } from '../../constants';
+import { CERTIFICATIONS, CERTIFICATIONS_DESCRIPTION } from '../../src/constants';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Certifications: React.FC = () => {

@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ZoomIn, ChevronLeft, ChevronRight, Loader2 } from 'lucide-react';
 import { GalleryItem } from '../types';
+import { parseBoldText } from '../src/utis';
 
 interface CarouselProps {
   items: GalleryItem[];
@@ -18,13 +19,7 @@ const Carousel: React.FC<CarouselProps> = ({ items, autoPlayInterval = 5000 }) =
   const touchStartX = useRef<number>(0);
   const touchEndX = useRef<number>(0);
 
-  // Helper to parse bold text using * syntax
-  const parseBoldText = (text: string | React.ReactNode, className = "font-bold text-gray-900 dark:text-white") => {
-    if (typeof text !== 'string') return text;
-    return text.split('*').map((part, index) => 
-      index % 2 === 1 ? <span key={index} className={className}>{part}</span> : part
-    );
-  };
+
 
   useEffect(() => {
     if (isPaused || selectedItem) return;

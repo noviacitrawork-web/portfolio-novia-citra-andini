@@ -1,5 +1,5 @@
 import { title } from 'process';
-import { Experience, Project, SkillCategory, Education, Certification, GalleryItem } from './types';
+import { Experience, Project, SkillCategory, Education, Certification, GalleryItem } from '../types';
 import { Linkedin, Mail, FileText, Phone, Instagram, Github } from 'lucide-react';
 
 export const RESUME_URL = `https://drive.google.com/uc?export=download&id=${import.meta.env.VITE_RESUME_FILE_ID}`;

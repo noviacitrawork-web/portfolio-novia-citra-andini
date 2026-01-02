@@ -1,6 +1,6 @@
 import React from 'react';
 import { BookOpen, ExternalLink } from 'lucide-react';
-import { PUBLICATIONS } from '../../constants';
+import { PUBLICATIONS } from '../../src/constants';
 import { motion } from 'framer-motion';
 
 const Publications: React.FC = () => {

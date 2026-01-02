@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import { ThemeProvider } from './contexts/ThemeContext';
 import NotFound from './components/NotFound';
-import { METADATA } from './constants';
+import { METADATA } from './src/constants';
+import { PERSONAL_INFO } from './src/constants';
 
 // Lazy load components
 const Hero = lazy(() => import('./components/hero/Hero'));
@@ -75,7 +76,7 @@ function App() {
                     <Skills />
                     <Contact />
                     <footer className="bg-gray-100 dark:bg-dark py-8 text-center text-gray-500 dark:text-gray-400 text-sm transition-colors duration-500 border-t border-gray-200 dark:border-gray-800">
-                      <p>© {new Date().getFullYear()} Novia Citra Andini. All rights reserved.</p>
+                      <p>© {new Date().getFullYear()} {PERSONAL_INFO.name}. All rights reserved.</p>
                     </footer>
                   </Suspense>
                 </main>
