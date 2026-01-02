@@ -193,7 +193,7 @@ const Hero: React.FC = () => {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3 bg-gradient-to-r from-secondary to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 text-white font-bold rounded-full flex items-center justify-center transition-all shadow-lg shadow-cyan-500/25 border border-transparent"
+              className="px-8 py-3 bg-gradient-to-r from-secondary to-pink-600 hover:from-pink-500 hover:to-pink-600 text-white font-bold rounded-full flex items-center justify-center transition-all shadow-lg shadow-pink-500/25 border border-transparent"
             >
               Hire Me Now <MessageCircle className="ml-2 w-4 h-4 fill-current" />
             </motion.a>

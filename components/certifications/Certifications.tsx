@@ -15,7 +15,7 @@ const Certifications: React.FC = () => {
       <div className="absolute inset-0 bg-[linear-gradient(30deg,#80808008_1px,transparent_1px),linear-gradient(150deg,#80808008_1px,transparent_1px)] bg-[size:20px_34px] z-0"></div>
       
       {/* Central Spotlight effect */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#D6EBF3_100%)] dark:bg-[radial-gradient(circle_at_center,transparent_0%,transparent_100%)] z-0 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(255,192,203,0.3)_100%)] dark:bg-[radial-gradient(circle_at_center,transparent_0%,transparent_100%)] z-0 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 

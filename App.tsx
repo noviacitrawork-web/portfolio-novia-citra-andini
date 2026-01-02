@@ -30,8 +30,6 @@ function App() {
     // Core Colors
     root.style.setProperty('--color-primary', hexToRgb(THEME_COLORS.primary));
     root.style.setProperty('--color-secondary', hexToRgb(THEME_COLORS.secondary));
-    root.style.setProperty('--color-dark', hexToRgb(THEME_COLORS.dark));
-    root.style.setProperty('--color-card', hexToRgb(THEME_COLORS.card));
     
     // Light Mode Specifics
     root.style.setProperty('--color-bg-light', hexToRgb(THEME_COLORS.light));
@@ -89,7 +87,7 @@ function App() {
                     <Gallery />
                     <Skills />
                     <Contact />
-                    <footer className="bg-gray-100 dark:bg-dark py-8 text-center text-gray-500 dark:text-gray-400 text-sm transition-colors duration-500 border-t border-gray-200 dark:border-gray-800">
+                    <footer className="bg-pink-50 dark:bg-dark py-8 text-center text-pink-800 dark:text-pink-400 text-sm transition-colors duration-500 border-t border-pink-200 dark:border-pink-900">
                       <p>© {new Date().getFullYear()} {PERSONAL_INFO.name}. All rights reserved.</p>
                     </footer>
                   </Suspense>

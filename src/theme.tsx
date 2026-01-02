@@ -10,12 +10,6 @@ export const THEME_COLORS = {
   // Secondary: Accents (#ff3385)
   secondary: '#ff3385', 
   
-  // Dark: Background color in dark mode (Deep Vibrant Pink)
-  dark: '#2a0011', 
-  
-  // Card: Component background color in dark mode (Rich Dark Pink)
-  card: '#4d001f',
-  
   // Light: Main background color in light mode (Pink 50)
   light: '#fdf2f8',
   

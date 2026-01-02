@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PERSONAL_INFO } from '../../src/constants';
-import ThemeToggle from '../theme/ThemeToggle';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -133,18 +132,10 @@ const Navbar: React.FC = () => {
                 {link.name}
               </motion.a>
             ))}
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 + navLinks.length * 0.1, duration: 0.5 }}
-            >
-              <ThemeToggle />
-            </motion.div>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-4 z-50">
-            <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-900 dark:text-gray-300 hover:text-primary dark:hover:text-white focus:outline-none p-2 relative z-50"

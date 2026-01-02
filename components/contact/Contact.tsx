@@ -146,7 +146,7 @@ const Contact: React.FC = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-3 px-6 bg-primary hover:bg-blue-600 text-white font-medium rounded-lg flex items-center justify-center gap-2 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+              className="w-full py-3 px-6 bg-primary hover:bg-secondary text-white font-medium rounded-lg flex items-center justify-center gap-2 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
                 <>
@@ -216,7 +216,7 @@ const Contact: React.FC = () => {
             onClick={scrollToTop}
             whileHover={{ scale: 1.1, y: -5 }}
             whileTap={{ scale: 0.9 }}
-            className="p-3 bg-gray-200 dark:bg-gray-800 hover:bg-secondary text-gray-900 dark:text-white rounded-full transition-all shadow-lg border border-gray-300 dark:border-gray-700 hover:border-secondary group"
+            className="p-3 bg-pink-100 dark:bg-card hover:bg-secondary text-primary dark:text-white hover:text-white rounded-full transition-all shadow-lg border border-primary/20 hover:border-secondary group"
             aria-label="Scroll to top"
           >
             <ArrowUp className="w-6 h-6 group-hover:animate-bounce" />

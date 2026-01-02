@@ -141,7 +141,7 @@ const Projects: React.FC = () => {
                 className="aspect-video w-full overflow-hidden relative bg-black border-b border-gray-200 dark:border-gray-800 cursor-pointer"
                 onClick={() => handleOpenModal(project)}
               >
-                <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors z-10 pointer-events-none"></div>
+                <div className="absolute inset-0 group-hover:bg-transparent transition-colors z-10 pointer-events-none"></div>
 
                 {/* View Full Size Overlay */}
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 hidden md:flex items-center justify-center pointer-events-none">
