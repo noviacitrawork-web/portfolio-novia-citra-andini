@@ -11,11 +11,11 @@ const Certifications: React.FC = () => {
 
   return (
     <section id="certifications" className="py-24 bg-gray-50 dark:bg-dark relative overflow-hidden transition-colors duration-500">
-       {/* Texture Pattern: Geometric Triangles (Geometry Theme) */}
-      <div className="absolute inset-0 bg-[linear-gradient(30deg,#80808008_1px,transparent_1px),linear-gradient(150deg,#80808008_1px,transparent_1px)] bg-[size:20px_34px] z-0"></div>
-      
-      {/* Central Spotlight effect */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(255,192,203,0.3)_100%)] dark:bg-[radial-gradient(circle_at_center,transparent_0%,transparent_100%)] z-0 pointer-events-none"></div>
+      {/* Texture Pattern: Dot Grid (Standard Theme) */}
+      <div className="absolute inset-0 bg-[radial-gradient(#00000033_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff33_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.1] pointer-events-none"></div>
+
+      {/* Soft Gradient Overlay (Matches Projects Section) */}
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 via-transparent to-gray-50/50 dark:from-dark/50 dark:via-transparent dark:to-dark/50 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
