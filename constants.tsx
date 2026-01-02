@@ -453,6 +453,222 @@ export const CERTIFICATIONS: Certification[] = [
     image: "/assets/images/certificates/c21.jpg", 
     hoverText: "Coordinated planning and execution of organizational events.",
     link: ""
+  },
+  {
+    id: 'h1',
+    title: "Spatial Data Analysis Using Machine Learning (R)",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Analisa Data Spatial Machine Learning Menggunakan R.png",
+    hoverText: "Demonstrating the ability to analyze spatial data and apply machine learning techniques using R for data-driven insights.",
+    link: ""
+  },
+  {
+    id: 'h2',
+    title: "Spatial Data Analysis with R",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Analisis data spasial dengan R.png",
+    hoverText: "Gaining foundational skills in spatial data analysis and visualization using R to support analytical decision-making.",
+    link: ""
+  },
+  {
+    id: 'h3',
+    title: "SWOT Analysis for Business Planning",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Analisis SWOT Dalam Perencanaan Bisnis Bagi Pemula.png",
+    hoverText: "Applying SWOT analysis to evaluate business strategies and support structured decision-making processes.",
+    link: ""
+  },
+  {
+    id: 'h4',
+    title: "Basic Excel",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Basic Excel.png",
+    hoverText: "Demonstrating proficiency in basic Excel functions for data organization, analysis, and reporting.",
+    link: ""
+  },
+  {
+    id: 'h5',
+    title: "Basic Python",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Basic python.png",
+    hoverText: "Acquiring fundamental Python programming skills for data analysis and automation tasks.",
+    link: ""
+  },
+  {
+    id: 'h6',
+    title: "Big Data Analytics with PySpark",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Big Data Analytics dengan PySpark.png",
+    hoverText: "Understanding big data processing and analytics using PySpark for scalable data analysis.",
+    link: ""
+  },
+  {
+    id: 'h7',
+    title: "Data Science with R",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Data Science Dengan R.png",
+    hoverText: "Applying data science concepts using R, including data manipulation, analysis, and visualization.",
+    link: ""
+  },
+  {
+    id: 'h8',
+    title: "Deep Learning with Keras (Python)",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Deep Learning Dengan Keras Python.png",
+    hoverText: "Implementing deep learning models using Keras to solve predictive and classification problems.",
+    link: ""
+  },
+  {
+    id: 'h9',
+    title: "Deep Learning with TensorFlow",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Deep Learning dengan TensorFlow.png",
+    hoverText: "Building and training neural networks using TensorFlow for advanced data modeling.",
+    link: ""
+  },
+  {
+    id: 'h10',
+    title: "Feature Extraction for Speech Data",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Feature Extraction Speech.png",
+    hoverText: "Learning techniques for extracting meaningful features from speech data for machine learning tasks.",
+    link: ""
+  },
+  {
+    id: 'h11',
+    title: "Generative Adversarial Networks with PyTorch",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Generative Adversarial Networks dengan Pytorch.png",
+    hoverText: "Understanding GAN architectures and implementing generative models using PyTorch.",
+    link: ""
+  },
+  {
+    id: 'h12',
+    title: "Image Processing with OpenCV",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Image Proccessing with OpenCV.png",
+    hoverText: "Applying image processing techniques using OpenCV for computer vision applications.",
+    link: ""
+  },
+  {
+    id: 'h13',
+    title: "Image Processing Fundamentals",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Image Processing.png",
+    hoverText: "Understanding core concepts of digital image processing and analysis.",
+    link: ""
+  },
+  {
+    id: 'h14',
+    title: "Introduction to Data Mining",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Introduction Data Mining.png",
+    hoverText: "Learning fundamental data mining techniques to discover patterns and insights from data.",
+    link: ""
+  },
+  {
+    id: 'h15',
+    title: "Interpersonal Communication in Business",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Komunikasi interpersonal dalam bisnis.png",
+    hoverText: "Developing effective communication skills to support collaboration and professional interactions.",
+    link: ""
+  },
+  {
+    id: 'h16',
+    title: "Machine Learning with Scikit-learn (Python)",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Machine learning dengan scikit learn python.png",
+    hoverText: "Implementing supervised and unsupervised learning models using scikit-learn.",
+    link: ""
+  },
+  {
+    id: 'h17',
+    title: "Machine Learning Fundamentals",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Machine Learning.png",
+    hoverText: "Understanding core machine learning concepts, algorithms, and applications.",
+    link: ""
+  },
+  {
+    id: 'h18',
+    title: "Management Fundamentals",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Manajemen.png",
+    hoverText: "Gaining basic management knowledge to support organizational and project activities.",
+    link: ""
+  },
+  {
+    id: 'h19',
+    title: "Natural Language Processing with Deep Learning",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Natural Languange Processing (NLP) dengan Deep Learning.png",
+    hoverText: "Applying deep learning techniques to process and analyze natural language data.",
+    link: ""
+  },
+  {
+    id: 'h20',
+    title: "Object Detection Using Deep Learning",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Object Detection Deep Learning.png",
+    hoverText: "Building deep learning models for object detection and visual recognition tasks.",
+    link: ""
+  },
+  {
+    id: 'h21',
+    title: "Introduction to Image Recognition",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Pendahuluan Image Recognition.png",
+    hoverText: "Understanding image recognition concepts and their applications in computer vision.",
+    link: ""
+  },
+  {
+    id: 'h22',
+    title: "GAN Development",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Pengembangan GAN.png",
+    hoverText: "Exploring advanced development techniques for Generative Adversarial Networks.",
+    link: ""
+  },
+  {
+    id: 'h23',
+    title: "Speech Classification Using Machine Learning",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Speech Classification Menggunakan Machine Learning.png",
+    hoverText: "Applying machine learning algorithms to classify and analyze speech data.",
+    link: ""
+  },
+  {
+    id: 'h24',
+    title: "Word Embedding for NLP",
+    issuer: "BISA AI Academy",
+    date: "2024",
+    image: "/assets/images/certificates/Sertif course/Word Embedding untuk NLP.png",
+    hoverText: "Understanding word embedding techniques to represent textual data for NLP models.",
+    link: ""
   }
 ];
 
