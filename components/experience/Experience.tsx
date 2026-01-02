@@ -45,7 +45,7 @@ const Experience: React.FC = () => {
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white">{exp.role}</h3>
                   <p className="text-primary font-medium">{exp.company}</p>
                 </div>
-                <span className="text-sm text-gray-500 mt-1 sm:mt-0 font-mono bg-gray-100 dark:bg-gray-900 px-3 py-1 rounded-full w-fit border border-gray-200 dark:border-gray-800">
+                <span className="text-sm text-gray-500 mt-1 sm:mt-0 font-mono bg-gray-100 dark:bg-card px-3 py-1 rounded-full w-fit border border-gray-200 dark:border-gray-800">
                   {exp.period}
                 </span>
               </div>

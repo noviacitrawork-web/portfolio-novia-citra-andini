@@ -162,7 +162,7 @@ const Projects: React.FC = () => {
 
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex justify-between items-start mb-4">
-                  <div className="p-2 bg-gray-100 dark:bg-gray-900 rounded-lg text-primary">
+                  <div className="p-2 bg-gray-100 dark:bg-card rounded-lg text-primary">
                     <Folder size={20} />
                   </div>
                   <div className="flex flex-col items-end">
@@ -204,7 +204,7 @@ const Projects: React.FC = () => {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2 py-1 text-xs font-medium text-cyan-700 dark:text-cyan-300 bg-cyan-100 dark:bg-cyan-900/30 rounded-md"
+                        className="px-2 py-1 text-xs font-medium text-primary dark:text-pink-300 bg-pink-100 dark:bg-pink-900/30 rounded-md"
                       >
                         {tag}
                       </span>
@@ -263,7 +263,7 @@ const Projects: React.FC = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-5xl w-[95%] md:w-full bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-2xl max-h-[90vh] lg:h-[85vh] flex flex-col"
+              className="relative max-w-5xl w-[95%] md:w-full bg-white dark:bg-card rounded-2xl overflow-hidden shadow-2xl max-h-[90vh] lg:h-[85vh] flex flex-col"
             >
               <button
                 onClick={() => setSelectedProject(null)}
@@ -332,7 +332,7 @@ const Projects: React.FC = () => {
                   )}
                 </div>
                 {/* Unified Scroll Container */}
-                <div className="flex-1 lg:h-full overflow-y-auto bg-white dark:bg-gray-800 p-6 md:p-8 custom-scrollbar">
+                <div className="flex-1 lg:h-full overflow-y-auto bg-white dark:bg-card p-6 md:p-8 custom-scrollbar">
                   <div className="flex flex-col min-h-full">
                     <div className="flex-shrink-0">
                       <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4">
@@ -351,7 +351,7 @@ const Projects: React.FC = () => {
                         {selectedProject.tags.map((tag) => (
                           <span 
                             key={tag} 
-                            className="px-2 py-1 text-xs font-medium text-cyan-700 dark:text-cyan-300 bg-cyan-100 dark:bg-cyan-900/30 rounded-md"
+                            className="px-2 py-1 text-xs font-medium text-primary dark:text-pink-300 bg-pink-100 dark:bg-pink-900/30 rounded-md"
                           >
                             {tag}
                           </span>

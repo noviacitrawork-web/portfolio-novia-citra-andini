@@ -86,7 +86,7 @@ const Contact: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-md mx-auto mb-16 bg-gray-50 dark:bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800"
+          className="max-w-md mx-auto mb-16 bg-gray-50 dark:bg-card p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800"
         >
           <form onSubmit={handleSubmit} className="space-y-4 text-left">
             {/* Honeypot Field - Invisible to users, visible to bots */}
@@ -197,7 +197,7 @@ const Contact: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, type: "spring", stiffness: 200 }}
               whileHover={{ scale: 1.1, rotate: 5 }}
-              className="p-4 bg-gray-100 dark:bg-gray-900 rounded-full text-gray-600 dark:text-gray-400 hover:text-white hover:bg-primary transition-colors shadow-sm dark:shadow-none"
+              className="p-4 bg-gray-100 dark:bg-card rounded-full text-gray-600 dark:text-gray-400 hover:text-white hover:bg-primary transition-colors shadow-sm dark:shadow-none"
               aria-label={link.name}
             >
               {link.icon}

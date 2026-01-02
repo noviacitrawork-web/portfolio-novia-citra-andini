@@ -164,7 +164,7 @@ const Hero: React.FC = () => {
               {PERSONAL_INFO.typingRoles.map((role, index) => (
                 <span 
                   key={index} 
-                  className="px-3 py-1 text-xs md:text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 rounded-full border border-gray-200 dark:border-gray-700 shadow-sm"
+                  className="px-3 py-1 text-xs md:text-sm font-medium text-primary dark:text-primary-foreground bg-primary/10 dark:bg-primary/20 rounded-full border border-primary/20 dark:border-primary/30 shadow-sm"
                 >
                   {role}
                 </span>
@@ -254,8 +254,8 @@ const Hero: React.FC = () => {
                  <svg className="w-full h-full overflow-visible dark:drop-shadow-[0_0_20px_rgba(68,127,152,0.8)] pointer-events-none" viewBox="0 0 100 100">
                     <defs>
                       <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#447F98" />
-                        <stop offset="100%" stopColor="#629BB5" />
+                        <stop offset="0%" stopColor="rgb(var(--color-primary))" />
+                        <stop offset="100%" stopColor="rgb(var(--color-secondary))" />
                       </linearGradient>
                     </defs>
                     <circle 
@@ -280,13 +280,13 @@ const Hero: React.FC = () => {
                     {PROFILE_BACKGROUND_STYLE === 'MATH_GRID' && (
                       <>
                         {/* Base Gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-gray-50 to-blue-50 dark:from-gray-800 dark:via-gray-900 dark:to-slate-900"></div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-gray-50 to-pink-50 dark:from-dark dark:via-gray-900 dark:to-slate-900"></div>
                         {/* Math Pattern: Coordinate Dots */}
                         <div className="absolute inset-0 opacity-[0.15] dark:opacity-[0.2]" 
                              style={{ 
                                backgroundImage: 'radial-gradient(currentColor 1px, transparent 1px)', 
                                backgroundSize: '20px 20px',
-                               color: '#447F98' // Primary color dots
+                               color: 'rgb(var(--color-primary))' // Primary color dots
                              }}>
                         </div>
                         {/* Abstract Glow Orb */}
@@ -306,22 +306,22 @@ const Hero: React.FC = () => {
 
                     {PROFILE_BACKGROUND_STYLE === 'TECH_CIRCUIT' && (
                       <>
-                        <div className="absolute inset-0 bg-slate-50 dark:bg-slate-900"></div>
+                        <div className="absolute inset-0 bg-gray-50 dark:bg-dark"></div>
                         {/* Circuit Grid */}
                         <div className="absolute inset-0 opacity-20" 
                              style={{ 
-                               backgroundImage: 'linear-gradient(#3B82F6 1px, transparent 1px), linear-gradient(90deg, #3B82F6 1px, transparent 1px)', 
+                               backgroundImage: 'linear-gradient(var(--color-primary) 1px, transparent 1px), linear-gradient(90deg, var(--color-primary) 1px, transparent 1px)', 
                                backgroundSize: '20px 20px' 
                              }}>
                         </div>
                         {/* Tech Rings */}
                         <div className="absolute inset-0 flex items-center justify-center">
-                           <div className="w-[90%] h-[90%] border border-blue-500/30 rounded-full"></div>
-                           <div className="absolute w-[70%] h-[70%] border border-dashed border-cyan-500/40 rounded-full animate-[spin_10s_linear_infinite]"></div>
-                           <div className="absolute w-[50%] h-[50%] border-2 border-t-transparent border-l-transparent border-r-blue-400/50 border-b-blue-400/50 rounded-full animate-[spin_3s_linear_infinite_reverse]"></div>
+                           <div className="w-[90%] h-[90%] border border-primary/30 rounded-full"></div>
+                           <div className="absolute w-[70%] h-[70%] border border-dashed border-secondary/40 rounded-full animate-[spin_10s_linear_infinite]"></div>
+                           <div className="absolute w-[50%] h-[50%] border-2 border-t-transparent border-l-transparent border-r-primary/50 border-b-primary/50 rounded-full animate-[spin_3s_linear_infinite_reverse]"></div>
                         </div>
                         {/* Glow */}
-                        <div className="absolute inset-0 bg-blue-500/5 rounded-full blur-xl"></div>
+                        <div className="absolute inset-0 bg-primary/5 rounded-full blur-xl"></div>
                       </>
                     )}
 

@@ -15,7 +15,7 @@ const Certifications: React.FC = () => {
       <div className="absolute inset-0 bg-[linear-gradient(30deg,#80808008_1px,transparent_1px),linear-gradient(150deg,#80808008_1px,transparent_1px)] bg-[size:20px_34px] z-0"></div>
       
       {/* Central Spotlight effect */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#D6EBF3_100%)] dark:bg-[radial-gradient(circle_at_center,transparent_0%,#020617_100%)] z-0 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#D6EBF3_100%)] dark:bg-[radial-gradient(circle_at_center,transparent_0%,transparent_100%)] z-0 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
@@ -45,7 +45,7 @@ const Certifications: React.FC = () => {
              >
                 {/* Image & Hover Effect - Updated to 16:9 Aspect Ratio - Added onClick */}
                 <div 
-                  className="relative aspect-video w-full overflow-hidden bg-gray-100 dark:bg-gray-900 p-2 border-b border-gray-200 dark:border-gray-800 cursor-pointer"
+                  className="relative aspect-video w-full overflow-hidden bg-gray-100 dark:bg-card p-2 border-b border-gray-200 dark:border-gray-800 cursor-pointer"
                   onClick={() => setSelectedImage(cert.image)}
                 >
                    <img 

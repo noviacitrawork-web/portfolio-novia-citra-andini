@@ -94,7 +94,7 @@ const Skills: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: index * 0.2 }}
-              className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-700 transition-all shadow-lg shadow-gray-200/50 dark:shadow-none"
+              className="bg-white/80 dark:bg-card/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-700 transition-all shadow-lg shadow-gray-200/50 dark:shadow-none"
             >
               <h3 className="text-xl font-bold text-secondary mb-6 border-b border-gray-200 dark:border-gray-800 pb-3 flex items-center gap-2">
                 {skillGroup.category.includes("AI") && <Brain className="w-5 h-5" />}
@@ -111,7 +111,7 @@ const Skills: React.FC = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 + (i * 0.05) }}
                     whileHover={{ scale: 1.05 }}
-                    className="flex items-center gap-2 px-3 py-2 bg-gray-100 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 text-sm rounded-lg border border-gray-300 dark:border-gray-700 hover:border-primary hover:text-gray-900 dark:hover:text-white transition-all cursor-default group"
+                    className="flex items-center gap-2 px-3 py-2 bg-gray-100 dark:bg-pink-900/20 text-gray-700 dark:text-gray-300 text-sm rounded-lg border border-gray-300 dark:border-pink-900/30 hover:border-primary hover:text-gray-900 dark:hover:text-white transition-all cursor-default group"
                   >
                     <span className="text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors">
                       {getSkillIcon(skill)}

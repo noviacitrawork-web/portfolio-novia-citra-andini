@@ -90,7 +90,7 @@ const About: React.FC = () => {
               <motion.div
                 key={index}
                 whileHover={{ y: -5 }}
-                className="w-full sm:w-[calc(50%-0.75rem)] bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm text-center"
+                className="w-full sm:w-[calc(50%-0.75rem)] bg-white dark:bg-card p-6 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm text-center"
               >
                 <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-2">
                   {stat.value}

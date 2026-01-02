@@ -90,7 +90,7 @@ const Gallery: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.4rem)] group relative overflow-hidden rounded-xl shadow-lg bg-white dark:bg-gray-800 cursor-pointer"
+              className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.4rem)] group relative overflow-hidden rounded-xl shadow-lg bg-white dark:bg-card cursor-pointer"
               onClick={() => handleOpenModal(item)}
             >
               <div className="aspect-w-16 aspect-h-9 overflow-hidden">
@@ -147,7 +147,7 @@ const Gallery: React.FC = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-5xl w-[95%] md:w-full bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-2xl max-h-[90vh] lg:h-[85vh] flex flex-col"
+              className="relative max-w-5xl w-[95%] md:w-full bg-white dark:bg-card rounded-2xl overflow-hidden shadow-2xl max-h-[90vh] lg:h-[85vh] flex flex-col"
             >
               <button
                 onClick={() => setSelectedItem(null)}
@@ -215,7 +215,7 @@ const Gallery: React.FC = () => {
                   )}
                 </div>
                 {/* Unified Scroll Container */}
-                <div className="flex-1 lg:h-full overflow-y-auto bg-white dark:bg-gray-800 p-6 md:p-8 custom-scrollbar">
+                <div className="flex-1 lg:h-full overflow-y-auto bg-white dark:bg-card p-6 md:p-8 custom-scrollbar">
                   <div className="flex flex-col min-h-full">
                     <div className="flex-shrink-0">
                       <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4">

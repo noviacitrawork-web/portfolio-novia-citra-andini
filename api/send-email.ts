@@ -3,8 +3,8 @@ import nodemailer from 'nodemailer';
 
 // Hardcode colors to avoid import issues in Vercel Serverless environment
 const THEME_COLORS = {
-  primary: '#447F98',
-  secondary: '#629BB5'
+  primary: '#db2777',
+  secondary: '#ec4899'
 };
 
 // Simple in-memory rate limiting (per container instance)

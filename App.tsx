@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import { ThemeProvider } from './contexts/ThemeContext';
 import NotFound from './components/NotFound';
-import { METADATA } from './src/constants';
-import { PERSONAL_INFO } from './src/constants';
+import { METADATA, PERSONAL_INFO } from './src/constants';
+import { THEME_COLORS, hexToRgb } from './src/theme';
 
 // Lazy load components
 const Hero = lazy(() => import('./components/hero/Hero'));
@@ -24,6 +24,20 @@ const LoadingFallback = () => (
 
 function App() {
   useEffect(() => {
+    // Dynamic Theme Injection - Converting Hex to RGB for Tailwind opacity support
+    const root = document.documentElement;
+    
+    // Core Colors
+    root.style.setProperty('--color-primary', hexToRgb(THEME_COLORS.primary));
+    root.style.setProperty('--color-secondary', hexToRgb(THEME_COLORS.secondary));
+    root.style.setProperty('--color-dark', hexToRgb(THEME_COLORS.dark));
+    root.style.setProperty('--color-card', hexToRgb(THEME_COLORS.card));
+    
+    // Light Mode Specifics
+    root.style.setProperty('--color-bg-light', hexToRgb(THEME_COLORS.light));
+    root.style.setProperty('--color-card-light', hexToRgb(THEME_COLORS.cardLight));
+    root.style.setProperty('--color-border', hexToRgb(THEME_COLORS.border));
+
     // Update Title
     document.title = METADATA.title;
     

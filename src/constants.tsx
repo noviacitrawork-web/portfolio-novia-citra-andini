@@ -392,61 +392,61 @@ export const CERTIFICATIONS: Certification[] = [
     link: ""
   },
   {
-    id: 'c16',
+    id: 'c15',
     title: "MSIB Batch 6 – Bisa AI (Data Science)",
     issuer: "BISA AI Academy",
     date: "Jun 2024",
-    image: "/assets/images/certificates/c16.png",
+    image: "/assets/images/certificates/c15.png",
     hoverText: "National program focused on data science, analytics, and AI applications.",
     link: ""
   },
   {
-    id: 'c17',
+    id: 'c16',
     title: "Moderator – Workshop & Digital Startup Competition",
     issuer: "Universitas Mataram",
     date: "Sep 2025",
-    image: "/assets/images/certificates/c17.jpg",
+    image: "/assets/images/certificates/c16.jpg",
     hoverText: "Moderated discussions and sessions for digital startup competitions.",
     link: ""
   },
   {
-    id: 'c18',
+    id: 'c17',
     title: "Moderator – Python for Data Science Webinar",
     issuer: "Universitas Mataram",
     date: "Nov 2022",
-    image: "/assets/images/certificates/c18.jpg",
+    image: "/assets/images/certificates/c17.jpg",
     hoverText: "Facilitated a technical webinar on Python for data science.",
     link: ""
   },
   {
-    id: 'c19',
+    id: 'c18',
     title: "Moderator – Mental Health Fest Webinar",
     issuer: "Universitas Mataram",
     date: "Nov 2022",
-    image: "/assets/images/certificates/c19.jpg",
+    image: "/assets/images/certificates/c18.jpg",
     hoverText: "Moderated discussions and audience engagement on mental health topics.",
     link: ""
   },
   {
-    id: 'c20',
+    id: 'c19',
     title: "Secretary – Department of Class (OPTION)",
     issuer: "OPTION Organization",
     date: "2022",
-    image: "/assets/images/certificates/c20.jpg",
+    image: "/assets/images/certificates/c19.jpg",
     hoverText: "Managed administration, documentation, and internal coordination.",
     link: ""
   },
   {
-    id: 'c21',
+    id: 'c20',
     title: "Treasurer – Leadership & Organizational Management Training (PRIMA)",
     issuer: "PRIMA Training",
     date: "2022",
-    image: "/assets/images/certificates/c21.jpg",
+    image: "/assets/images/certificates/c20.jpg",
     hoverText: "Oversaw budgeting, financial management, and reporting.",
     link: ""
   },
   {
-    id: 'c22',
+    id: 'c21',
     title: "Co-Event Lead – GAMATIKA Bonding Night",
     issuer: "Gamatika",
     date: "2023",
