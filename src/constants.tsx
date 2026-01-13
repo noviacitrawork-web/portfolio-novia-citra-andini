@@ -211,6 +211,17 @@ export const PROJECTS: Project[] = [
     ],
     tags: ["Power BI", "Dashboard", "Sales Analysis", "KPI", "Business Intelligence"],
     image: ["assets/images/projects/7.png", "/assets/images/projects/7.jpeg"]
+  },
+  {
+    id: 'p8',
+    title: "Event Management Automation using Google Sheets & Google Calendar",
+    role: "Data Analyst",
+    date: "2026",
+    description: [
+      "This project is an automated event scheduling system built using Google Sheets and Google Calendar. Google Sheets acts as the main data source where events are managed in a structured table, while Google Apps Script automatically syncs the data to Google Calendar. The system supports flexible time input, automatic event updates, and color-coded statuses to help organize events efficiently. Through this project, I focused on simplifying operational workflows by reducing manual scheduling and minimizing human error. This automation demonstrates my ability to design practical solutions, work with real-world data, and implement end-to-end workflow automation using Google tools."
+    ],
+    tags: ["Google Sheets", "Google Calendar", "Event Management", "Automation", "Google Apps Script"],
+    image: ["/assets/images/projects/p8/1.png", "/assets/images/projects/p8/2.png", "/assets/images/projects/p8/3.png", "/assets/images/projects/p8/4.png", "/assets/images/projects/p8/5.png"]
   }
 ];
 
