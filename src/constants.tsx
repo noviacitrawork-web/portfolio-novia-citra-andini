@@ -51,8 +51,8 @@ export const PERSONAL_INFO = {
   firstName: "Novia Citra", // First line of name in Hero
   lastName: "Andini", // Second line of name in Hero
   logo: "Novia", // Logo text in Navbar
-  role: "Data Analyst | Data Scientist | Mathematics Graduate | Public Speaker | Moderator", // Static role for SEO/Metadata
-  typingRoles: ["Data Analyst", "Data Scientist", "General Affair", "Data Entry", "Research and Development", "Assistant", "Public Speaker", "Moderator"], // Roles for the typing animation
+  role: "Data Analyst | Data Scientist | Mathematics Graduate | Public Speaker | Moderator | Event Coordinator | Media Monitoring", // Static role for SEO/Metadata
+  typingRoles: ["Data Analyst", "Data Scientist", "General Affair", "Data Entry", "Research and Development", "Assistant", "Public Speaker", "Moderator", "Event Coordinator", "Media Monitoring"], // Roles for the typing animation
   email: import.meta.env.VITE_EMAIL || "",
   linkedin: import.meta.env.VITE_LINKEDIN_URL || "",
   profileImage: "assets/images/profile/profile.png", // Replace with your actual photo URL
