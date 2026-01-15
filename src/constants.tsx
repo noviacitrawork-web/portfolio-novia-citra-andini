@@ -137,6 +137,17 @@ export const EXPERIENCES: Experience[] = [
 export const PROJECTS: Project[] = [
   {
     id: 'p1',
+    title: "Event Management Automation using Google Sheets & Google Calendar",
+    role: "Data Analyst",
+    date: "2026",
+    description: [
+      "This project is an automated event scheduling system built using Google Sheets and Google Calendar. Google Sheets acts as the main data source where events are managed in a structured table, while Google Apps Script automatically syncs the data to Google Calendar. The system supports flexible time input, automatic event updates, and color-coded statuses to help organize events efficiently. Through this project, I focused on simplifying operational workflows by reducing manual scheduling and minimizing human error. This automation demonstrates my ability to design practical solutions, work with real-world data, and implement end-to-end workflow automation using Google tools."
+    ],
+    tags: ["Google Sheets", "Google Calendar", "Event Management", "Automation", "Google Apps Script"],
+    image: ["/assets/images/projects/p8/1.png", "/assets/images/projects/p8/2.png", "/assets/images/projects/p8/3.png", "/assets/images/projects/p8/4.png", "/assets/images/projects/p8/5.png"]
+  },
+  {
+    id: 'p2',
     title: "Intelligent Anthracnose Detection on Chili Peppers Using YOLOv7",
     role: "Researcher",
     date: "2024",
@@ -147,7 +158,7 @@ export const PROJECTS: Project[] = [
     image: "/assets/images/experience/chili_yolov7/chili_yolov7.png"
   },
   {
-    id: 'p2',
+    id: 'p3',
     title: "Machine Learning Models for Cryptocurrency Price Prediction (Solana Case Study)",
     role: "Researcher",
     date: "2025",
@@ -158,7 +169,7 @@ export const PROJECTS: Project[] = [
     image: "/assets/images/experience/solana/output.png"
   },
   {
-    id: 'p3',
+    id: 'p4',
     title: "Breast Care: Web-Based Breast Cancer Early Detection System Using Machine Learning",
     role: "Developer",
     date: "2024",
@@ -169,7 +180,7 @@ export const PROJECTS: Project[] = [
     image: "/assets/images/experience/breast_cancer/breast_cancer.png"
   },
   {
-    id: 'p4',
+    id: 'p5',
     title: "Media Monitoring and Public Communication Documentation at PT PLN (Persero) UIW NTB",
     role: "Intern",
     date: "2024",
@@ -180,7 +191,7 @@ export const PROJECTS: Project[] = [
     image: "/assets/images/experience/pln/pln.png"
   },
   {
-    id: 'p5',
+    id: 'p6',
     title: "Data Visualization and Reporting Module Using Power BI",
     role: "Analyst / Instructor",
     date: "2024",
@@ -191,7 +202,7 @@ export const PROJECTS: Project[] = [
     image: ["/assets/images/projects/5.png", "/assets/images/projects/5(1).png"]
   },
   {
-    id: 'p6',
+    id: 'p7',
     title: "Sentiment Analysis & Program Evaluation for Educational Programs",
     role: "Data Analyst",
     date: "2025",
@@ -202,7 +213,7 @@ export const PROJECTS: Project[] = [
     image: ["/assets/images/projects/6.png", "/assets/images/projects/6(1).png"]
   },
   {
-    id: 'p7',
+    id: 'p8',
     title: "Supermarket Sales & Branch Performance Analysis (Q1)",
     role: "Data Analyst",
     date: "2025",
@@ -212,17 +223,7 @@ export const PROJECTS: Project[] = [
     tags: ["Power BI", "Dashboard", "Sales Analysis", "KPI", "Business Intelligence"],
     image: ["assets/images/projects/7.png", "/assets/images/projects/7.jpeg"]
   },
-  {
-    id: 'p8',
-    title: "Event Management Automation using Google Sheets & Google Calendar",
-    role: "Data Analyst",
-    date: "2026",
-    description: [
-      "This project is an automated event scheduling system built using Google Sheets and Google Calendar. Google Sheets acts as the main data source where events are managed in a structured table, while Google Apps Script automatically syncs the data to Google Calendar. The system supports flexible time input, automatic event updates, and color-coded statuses to help organize events efficiently. Through this project, I focused on simplifying operational workflows by reducing manual scheduling and minimizing human error. This automation demonstrates my ability to design practical solutions, work with real-world data, and implement end-to-end workflow automation using Google tools."
-    ],
-    tags: ["Google Sheets", "Google Calendar", "Event Management", "Automation", "Google Apps Script"],
-    image: ["/assets/images/projects/p8/1.png", "/assets/images/projects/p8/2.png", "/assets/images/projects/p8/3.png", "/assets/images/projects/p8/4.png", "/assets/images/projects/p8/5.png"]
-  }
+  
 ];
 
 export const SKILLS: SkillCategory[] = [

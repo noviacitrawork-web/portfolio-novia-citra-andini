@@ -35,7 +35,7 @@ const Contact: React.FC = () => {
       }
 
       setSubmitStatus('success');
-      setFormState({ name: '', email: '', message: '', honeypot: '' });
+      setFormState({ name: '', email: '', subject: '', message: '', honeypot: '' });
     } catch (error: any) {
       console.error("Error:", error);
       setSubmitStatus('error');
