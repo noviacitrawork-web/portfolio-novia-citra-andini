@@ -77,6 +77,26 @@ export const SOCIAL_LINKS = [
 export const EXPERIENCES: Experience[] = [
   {
     id: '1',
+    role: "General Admin Executive",
+    company: "Raptcha Event",
+    period: "Februari 2026 - Present",
+    description: [
+      "Handling general administrative tasks and internal coordination to support event operations.",
+      "Assisting in the preparation and execution of events in an organized and professional manner.",   
+     ]
+  },
+  {
+    id: '2',
+    role: "Tutor & Media",
+    company: "MandaliCode",
+    period: "January 2026 - Present",
+    description: [
+      "Supporting coding learning activities with a creative and engaging educational approach.",
+      "Assisting in media and content management to strengthen MandaliCode’s communication and branding.",   
+     ]
+  },
+  {
+    id: '3',
     role: "Intern Research and Development",
     company: "Jadi Maju",
     period: "Nov. 2025 - Dec. 2025 ",
@@ -87,7 +107,7 @@ export const EXPERIENCES: Experience[] = [
     ]
   },
   {
-    id: '2',
+    id: '4',
     role: "Researcher & Speaker",
     company: "Mataram University",
     period: "Dec. 2024 - Jul. 2025",
@@ -99,7 +119,7 @@ export const EXPERIENCES: Experience[] = [
     ]
   },
   {
-    id: '3',
+    id: '5',
     role: "Internship",
     company: "PT. PLN (Persero) Unit Induk Wilayah NTB",
     period: "Jul. 2024 - Dec. 2024",
@@ -109,7 +129,7 @@ export const EXPERIENCES: Experience[] = [
     ]
   },
   {
-    id: '4',
+    id: '6',
     role: "Teaching Assistant",
     company: "Mataram University",
     period: "Sep. 2023 - Dec. 2024",
@@ -121,7 +141,7 @@ export const EXPERIENCES: Experience[] = [
     ]
   },
   {
-    id: '5',
+    id: '7',
     role: "Moderator",
     company: "Mataram University",
     period: "Sep. 2023 - Dec. 2024",
