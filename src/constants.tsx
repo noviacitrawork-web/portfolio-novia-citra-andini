@@ -89,7 +89,7 @@ export const EXPERIENCES: Experience[] = [
     id: '2',
     role: "Tutor & Media",
     company: "MandaliCode",
-    period: "Jan. 2026 - Present",
+    period: "Jan. 2026 - May 2026",
     description: [
       "Supporting coding learning activities with a creative and engaging educational approach.",
       "Assisting in media and content management to strengthen MandaliCode’s communication and branding.",   
